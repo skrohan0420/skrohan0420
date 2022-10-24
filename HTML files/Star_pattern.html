@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	 <center style="width: 100%;">
+		<input type="Text" id="input">
+		<button id="btn" onclick="StarPattern()"> Get </button>
+
+		<p id="p" style="width:100%; text-align:justify all;">
+			
+		</p>
+	</center>
+	
+
+
+	<script type="text/javascript">
+		
+		function StarPattern() {
+			var LastRow = Number(document.getElementById('input').value);
+			var p = document.getElementById('p');
+
+			for (var i = 1; i <= LastRow; i++) {
+				p.innerHTML = p.innerHTML + '<br>';
+				for (var x = 1; x <= i ; x++) {
+					p.innerHTML = p.innerHTML + '* \xa0\xa0';
+				}	
+			}
+		}
+
+
+	</script>
+
+</body>
+</html>

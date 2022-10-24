@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slidfen in jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+          $("button").click(function(){
+          	$("#p1").css("color","red").slideUp(3000).slideDown(2000);
+          	$("#p2").css("color","blue").slideUp(3000).slideDown(2000);
+          	$("#p3").css("color","green").slideUp(3000).slideDown(2000);
+          	$("#p4").css("color","purple").slideUp(3000).slideDown(2000);
+          });
+		});
+	</script>
+</head>
+<body>
+	<button>Slider button</button>
+<p id="p1">This is a slider in jquery</p>
+<p id="p2">This is a slider in jquery</p>
+<p id="p3">This is a slider in jquery</p>
+<p id="p4">This is a slider in jquery</p>
+</body>
+</html>

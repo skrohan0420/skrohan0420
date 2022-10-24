@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<div>
+		<input type="text" name="number" id="n1" onkeyup="TIME()"><br>
+		<input type="radio" name="time" id="S" checked="true">second
+		<input type="radio" name="time" id="M">minute
+		<input type="radio" name="time" id="H">hour
+		<input type="radio" name="time" id="D">day
+	</div>
+	<div>
+		<input type="text" name="number" id="n2" onkeyup="time()"><br>
+		<input type="radio" name="time2" id="s" checked="true">second
+		<input type="radio" name="time2" id="m">minute
+		<input type="radio" name="time2" id="h">hour
+		<input type="radio" name="time2" id="d">day
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+			
+		function TIME()
+		{
+			let N1 = Number(document.getElementById('n1').value);
+			let N2 = Number(document.getElementById('n2').value);
+	
+			var Second = document.getElementById('S');
+			var Minute = document.getElementById('M');
+			var Hour = document.getElementById('H');
+			var Day = document.getElementById('D');
+
+			var second = document.getElementById('s');
+			var minute = document.getElementById('m');
+			var hour = document.getElementById('h');
+			var day = document.getElementById('d');
+
+
+			if ((Second.checked == true) && (second.checked == true))
+			{
+				console.log('Working Second+Second-up');
+				document.getElementById('n2').value = N1 + ' Second';
+			}
+			else if ((Second.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Second+Minute-up');
+				document.getElementById('n2').value = N1 / 60 + ' Minute';
+			}
+			else if ((Second.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Second+Hour-up');
+				document.getElementById('n2').value = (N1 / 60) / 60 + ' Hour';
+			}
+			else if ((Second.checked == true) && (day.checked == true))
+			{
+				console.log('Working Second+Day-up');
+				document.getElementById('n2').value = ((N1 / 60) / 60) / 24 + ' Day';
+			}	
+			else if ((Minute.checked == true) && (second.checked == true))
+			{
+				console.log('Working Minute+Second-up');
+				document.getElementById('n2').value = N1 * 60 + ' Second';
+			}	
+			else if ((Minute.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Minute+Minute-up');
+				document.getElementById('n2').value = N1 + ' Minute';
+			}
+			else if ((Minute.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Minute+Hour-up');
+				document.getElementById('n2').value = N1 / 60 + ' Hour';
+			}
+			else if ((Minute.checked == true) && (day.checked == true))
+			{
+				console.log('Working Minute+Day-up');
+				document.getElementById('n2').value = (N1 / 60) / 24 + ' Day';
+			}
+			else if ((Hour.checked == true) && (second.checked == true))
+			{
+				console.log('Working Hour+Second-up');
+				document.getElementById('n2').value = ((N1 * 60) * 60) + ' Second';
+			}
+			else if ((Hour.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Hour+Minute-up');
+				document.getElementById('n2').value = N1 * 60 + ' Minute';
+			}
+			else if ((Hour.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Hour+Hour-up');
+				document.getElementById('n2').value = N1 + ' Hour';
+			}
+			else if ((Hour.checked == true) && (day.checked == true))
+			{
+				console.log('Working Hour+Day-up');
+				document.getElementById('n2').value = N1 / 24 + ' Day';
+			}
+			else if ((Day.checked == true) && (second.checked == true))
+			{
+				console.log('Working Day+Second-up');
+				document.getElementById('n2').value = ((N1 * 24) * 60) * 60 + ' Second';
+			}
+			else if ((Day.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Day+Minute-up');
+				document.getElementById('n2').value = (N1 * 24) * 60 + ' Minute';
+			}
+			else if ((Day.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Day+Hour-up');
+				document.getElementById('n2').value = N1 * 24 + ' Hour';
+			}
+			else if ((Day.checked == true) && (day.checked == true))
+			{
+				console.log('Working Day+Day-up');
+				document.getElementById('n2').value = N1 + ' Day';
+			}
+		}
+
+
+		function time()
+		{
+			let N1 = Number(document.getElementById('n1').value);
+			let N2 = Number(document.getElementById('n2').value);
+	
+			var Second = document.getElementById('S');
+			var Minute = document.getElementById('M');
+			var Hour = document.getElementById('H');
+			var Day = document.getElementById('D');
+
+			var second = document.getElementById('s');
+			var minute = document.getElementById('m');
+			var hour = document.getElementById('h');
+			var day = document.getElementById('d');
+
+
+			if ((Second.checked == true) && (second.checked == true))
+			{
+				console.log('Working Second+Second-down');
+				document.getElementById('n1').value = N2 + ' Second';
+			}
+			else if ((Second.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Minute+Second-down');
+				document.getElementById('n1').value = N2 * 60 + ' Second';
+			}
+			else if ((Second.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Hour+Second-down');
+				document.getElementById('n1').value = (N2 * 60) * 60 + ' Second';
+			}
+			else if ((Second.checked == true) && (day.checked == true))
+			{
+				console.log('Working Day+Second-down');
+				document.getElementById('n1').value = ((N2 * 60) * 60) * 24 + ' Second';
+			}	
+			else if ((Minute.checked == true) && (second.checked == true))
+			{
+				console.log('Working Second+Minute-down');
+				document.getElementById('n1').value = N2 / 60 + ' Minute';
+			}	
+			else if ((Minute.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Minute+Minute-down');
+				document.getElementById('n1').value = N2 + ' Minute';
+			}
+			else if ((Minute.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Hour+Minute-down');
+				document.getElementById('n1').value = N2 * 60 + ' Minute';
+			}
+			else if ((Minute.checked == true) && (day.checked == true))
+			{
+				console.log('Working Day+Minute-down');
+				document.getElementById('n1').value = (N2 * 60) * 24 + ' Minute';
+			}
+			else if ((Hour.checked == true) && (second.checked == true))
+			{
+				console.log('Working Second+Hour-down');
+				document.getElementById('n1').value = ((N2 / 60) / 60) + ' Hour';
+			}
+			else if ((Hour.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Minute+Hour-down');
+				document.getElementById('n1').value = N2 / 60 + ' Hour';
+			}
+			else if ((Hour.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Hour+Hour-down');
+				document.getElementById('n1').value = N2 + ' Hour';
+			}
+			else if ((Hour.checked == true) && (day.checked == true))
+			{
+				console.log('Working Day+Hour-down');
+				document.getElementById('n1').value = N2 * 24 + ' Hour';
+			}
+			else if ((Day.checked == true) && (second.checked == true))
+			{
+				console.log('Working Second+Day-down');
+				document.getElementById('n1').value = ((N2 / 24) / 60) / 60 + ' Day';
+			}
+			else if ((Day.checked == true) && (minute.checked == true))
+			{
+				console.log('Working Minute+Day-down');
+				document.getElementById('n1').value = (N2 / 24) / 60 + ' Day';
+			}
+			else if ((Day.checked == true) && (hour.checked == true))
+			{
+				console.log('Working Hour+Day-down');
+				document.getElementById('n1').value = N2 / 24 + ' Day';
+			}
+			else if ((Day.checked == true) && (day.checked == true))
+			{
+				console.log('Working Day+Day-down');
+				document.getElementById('n1').value = N2 + ' Day';
+			}
+		}
+	</script>
+</body>
+</html>

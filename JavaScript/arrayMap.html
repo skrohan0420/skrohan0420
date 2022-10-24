@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+	
+
+
+
+
+	var arr = [12,22,34,45,66,78]
+
+	var newArr = arr.map(test)
+
+	function test(x){
+		return x * 10
+	}
+
+	console.log(newArr)
+
+	
+
+
+
+
+
+
+
+
+
+
+	var arr2 = [
+		{
+			name : 'Rohan',
+			age : 22
+		},
+		{
+			name : 'Ram',
+			age : 42
+		},
+		{
+			name : 'rahul',
+			age : 21
+		}
+	]
+
+	var newArr2 = arr2.map(test2)
+
+	function test2(x){
+		return x.name + ' : ' + x.age
+	}
+
+	console.log(newArr2)
+
+	</script>
+
+</body>
+</html>

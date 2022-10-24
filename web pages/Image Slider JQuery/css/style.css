@@ -1,0 +1,69 @@
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: content-box;
+}
+#slider{
+    width: 90vw;
+    height: 80vh;
+    margin:50px auto;
+    box-shadow: 0px 0px 10px 3px grey;
+    position: relative;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+    color: blueviolet;
+}
+
+div#slider {
+	overflow: hidden; 
+	border: 5px solid #3949ab; 
+}
+div#slider figure img { 
+	width: 20%; 
+	height:100%;  
+	float: left; 
+}
+div#slider figure { 
+	position: relative;
+  	width: 500%;
+  	margin: 0;
+  	left: 0;
+  	transition: 1.8s ease-in-out;
+  
+ 
+}	
+.btn-next, .btn-prev{
+  	position: absolute;
+  	top: 45%;
+  	cursor: pointer;
+  	color: white;
+  	background: #3949ab;
+  	padding: 20px;
+  	font-size: 50px;
+  	border:none;
+  	transition: .5s ease;
+
+}
+.btn-prev:hover{
+	color: white;
+  	background: transparent;
+}
+.btn-next:hover{
+	color: white;
+  	background: transparent;
+}
+
+.btn-prev{
+  	left: 0px;
+  	border-radius: 0px 40px 40px 0px;
+}
+.btn-next{
+ 	 right: 0px;
+ 	 border-radius: 40px 0px 0px 40px;
+}
+button:active{
+	transform: scale(2);
+}

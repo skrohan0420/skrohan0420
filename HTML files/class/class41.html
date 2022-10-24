@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		
+		h1{
+			text-align: center;
+			margin: 5px;
+			padding: 10px;
+			background-color: lightskyblue;
+		}
+
+	</style>
+
+</head>
+<body>
+
+
+	<h1> HELLO WORLD! </h1>
+	<h1> HELLO WORLD! </h1>
+	<h1> HELLO WORLD! </h1>
+
+	<button id="Toggle">Toggle</button>
+	<button id="Fade">Fade In</button>
+	<button id="Slide">Slide Up</button>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#Toggle").click(function(){
+    			$("h1").toggle(500);
+  			});
+  			$("#Fade").click(function(){
+    			$("h1").fadeToggle(500);
+  			});
+  			$("#Slide").click(function(){
+    			$("h1").slideToggle(500);
+  			});
+		});
+	</script>
+	</script>
+
+</body>
+</html>

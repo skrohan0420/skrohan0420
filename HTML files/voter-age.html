@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8">
+   <title>Voter-Age</title>
+   <style type="text/css">
+      body{
+         text-align: center;
+         margin: 0px;
+         padding: 0px;
+         margin-top: 100px;
+      }
+   </style>
+</head>
+<body>
+   <h1 style="color: gary; font-weight: normal; text-decoration: underline;">Calculate Your Age</h1>
+   <label style="font-weight: normal; font-size: 1.2em;">Type your age:</label>
+   <input type="date" id="date" size="4">
+   <button id="calc" onclick="cal()">Calculate</button>
+   <h3 id="demo" style="font-weight: normal;"></h3>
+   <h1 id="v" style="font-weight: normal;"></h1>
+<script type="text/javascript">
+      function cal()
+      {
+      let   myDate = new Date(document.getElementById("date").value),
+            milli = myDate.getTime(),
+            newDate = new Date(),
+            newMilli = newDate.getTime(),
+            newage =  Math.floor((newMilli - milli) / 1000 / 60 / 60 / 24 / 30 / 12);
+
+            document.getElementById("demo").innerHTML ="You are " + newage + " years old"; 
+            console.log(milli);
+            console.log(newMilli);
+            console.log(newage);
+
+         if (newage >= 18)
+            {
+               document.getElementById("v").innerHTML = "You are a Voter";
+               document.getElementById("v").style.color = " green";
+            }
+         else
+            {
+               document.getElementById("v").innerHTML = "You are a Non-Voter";
+               document.getElementById("v").style.color = " red";
+
+            } 
+      }
+</script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+.mainForm{
+    height: 100vh;
+    width: 100vw;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+.container{
+    width: 60%;
+    height: 80vh;
+    border: 1px solid #111;
+    margin:auto;
+    margin-top: 50px;
+}
+.lableGroup{
+    float: left;
+    width: 40%;
+    height: 100%;
+}
+.formGroup{
+    float: left;
+    width: 35%;
+    height: 100%;
+}
+.alertGroup{
+    float: left;
+    width: 25%;
+    height: 100%;
+}
+.lableGroup p{
+    height:40px;
+    padding:0 0 0 40px; 
+    font-size: 1.5em;
+}
+.inputGroup {
+    height:40px;
+    /* padding:0 0 0 20px;  */
+}
+.inputGroup input{
+    height: 30px;
+    width: 200px;
+    outline: none;
+    font-size: 1.2em;
+}
+.alertGroup p{
+    height:40px;
+    color: red;
+}
+.lableGroup, .alertGroup, .formGroup{
+    margin-top: 20px;
+}
+.lableGroup span{
+    padding-left: 40px;
+    position: relative;
+    bottom: 3px;
+}
+.lableGroup input{
+    height:15px;
+    width: 15px;
+    margin-left: 10px;
+}
+.terms{
+    margin-top:20px;
+}
+.btn{
+    margin-top: 80px;
+}
+.btn button{
+    height: 40px;
+    width: 150px;
+}

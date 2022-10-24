@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100vw;
+			height: 100vh;
+			margin: 0px;
+			padding: 0px;
+			background: #000;
+		}
+		div{
+			box-sizing: border-box;
+			height: 100px;
+			width: 100px;
+			border: 20px solid darkslategrey;
+			border-top: 20px solid grey;
+			border-radius: 50%;
+			animation: div;
+			animation-duration: 2s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		@keyframes div{
+			0%{
+				transform: rotate(0deg);
+			}
+			
+			100%{
+				transform: rotate(360deg);
+			}
+		}
+	</style>
+</head>
+<body>
+
+	<div>
+		
+	</div>
+
+</body>
+</html>

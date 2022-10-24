@@ -1,0 +1,639 @@
+body{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	background-color: #000000;
+	background: linear-gradient(90deg,#bdc3c7,#2c3e50); 
+	/* background: linear-gradient(90deg,#4ca1af ,#c4e0e5);*/
+	/* background: linear-gradient(90deg,#4ca1af ,#c4e0e5);
+	background: linear-gradient(90deg,#13547a ,#80d0c7); */
+}
+
+
+.fa-color.navbar-brand a{
+	color: #FFFFFF;
+}
+
+	.navbar 
+{
+	color:#FFF;
+	background-color:rgba(0,0,0,0.8)  ;
+	border-radius: 30px;
+	margin-top: 20px;
+	margin: 10px;
+	
+}
+.navbar-nav a
+{
+	color: white;
+}
+
+.navbar-nav a:hover
+{
+	background: #FFFFFF;
+	border-radius: 12px;
+}
+
+.navtext{
+	
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: #fff;
+}
+	
+
+
+
+
+
+
+
+
+/*
+.My_Portfolio
+{
+	position: absolute;
+	left: 45%;
+	top: 20px;
+}
+.tittle
+{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
+	color: white;
+}
+.tittle span
+{
+	font-weight: bold;
+}
+
+.landing-text{
+	height: 100vh;
+	width: 100%;
+	color: #fff;
+	font-size: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000;
+}
+
+
+.ul-body
+{
+	width: 500px;
+	height: 50px;
+	position: absolute;
+	bottom: 10px;
+	 background-color: rgb(78, 22, 22); 
+	left: 37.3%;
+
+}
+*/
+
+
+/*/========================================================================================[	About-me   ]==========================================================================================/*/
+
+.about-me-body
+{
+	width: 100%;
+	height: auto;
+	background:transparent;
+	overflow: hidden;
+	position: relative;
+	/* border: 3px solid red; */
+
+}
+
+
+
+.about_box
+{
+	width: 100%;
+	border-radius: 14px;
+	overflow: hidden;
+	margin-top: 100px;
+	
+}
+
+.my_img
+{
+	width: 400px;
+	height: 400px;
+	border-radius: 50%;
+	overflow: hidden;
+	margin-top: 50px;
+	margin-bottom: 10px;
+	border: 5px solid #ECF0F1;
+}
+
+.about-text-body
+{
+	color: #fff;
+	line-height: 40px;
+}
+
+.about-ul
+{
+	color: #fff;
+	list-style: none;
+}
+
+
+
+.about-hr
+{
+	padding: 1.3px;
+	margin-top: 0px;
+	float: left;
+	width: 100%;
+	background: #f5b027;
+}
+
+
+.btn-about-1
+{
+	width: 150px;
+	height: 40px;
+	float: left;
+	background-color: transparent;
+	margin-left: 20px;
+	border-radius: 5px;
+	color: #fff;
+	border: 2.5px solid #f5b027 ;
+	margin-bottom: 10px;
+}
+.about-p {
+ 
+  color: #fff;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto; 
+  letter-spacing: .15em;
+  animation: 
+    typing 3.5s steps(50, end),
+    blink-caret .5s step-end infinite;
+}
+
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+
+
+
+
+.progress
+{
+
+	width: 100%;
+	height: 200px;
+	background:transparent;
+	border-radius: 3px;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-bottom: 20px;
+
+}
+
+ 
+  
+  .progress-bar
+  {
+
+	display: block;
+    height: 100%;
+    background: linear-gradient(90deg,#ffd33d,#ea4aaa 17%,#b34bff 34%,#01feff 51%,#ffd33d 68%,#ea4aaa 85%,#b34bff);
+    background-size: 300% 100%;
+    animation: progress-animation 2s linear infinite;
+
+  }
+    
+    
+@keyframes progress-animation
+{
+	0%
+    	{background-position: 100%}
+  100%
+    	{background-position: 0}
+}
+/*/====================================================================================[	About-me-end   ]===========================================================================================/*/
+
+
+/*/=============================================================================[	services ]====================================================================================/*/
+.service_body
+{
+	/* background-image:url("../#Images/1/ /(12/).jpg"); */
+	background:transparent;
+	height: auto;
+	background-size: cover;
+	position: relative;
+	margin-top: 10px;
+	/* background: #e0e0e0; */
+	
+}
+
+
+.services-card
+{
+	width: 300px;
+	height: auto;
+	justify-content: space-between;
+	margin-left: 20px;
+	background:transparent;
+/*	background:rgba(0,0,0,0.7);*/
+	margin: 30px;
+	border-radius: 50px;
+	box-shadow:  20px 20px 60px #2c3e50,
+             -20px -20px 60px #bdc3c7;
+		
+			 
+}
+
+.card-1:hover 
+{
+	background-color:#34495E;
+	color: #fff;
+}
+
+.card-2:hover
+{
+	background-color:#212F3C;
+	color: #fff;
+}
+.card-3:hover
+{
+	background-color: #34495E;
+	color: #fff;
+}
+.card-4:hover
+{
+	background-color:#212F3C;
+	color: #fff;
+}
+.card-5:hover
+{
+	background-color: #34495E ;
+	color: #fff;
+}
+.card-6:hover
+{
+	background-color: #212F3C;
+	color: #fff;
+}
+.services-card i
+{
+	font-size:50px;
+	margin: 10px;
+	color:red ;
+	display: flex;
+	justify-content: center;
+}
+.services-card h6
+{
+	font-size: 25px;
+	/* color: rgba(213, 219, 219,0.5); */
+	display: flex;
+	justify-content: center;
+}
+.services-card p
+{
+	font-size: 17px;
+	margin: 3px;
+	margin-top: 15px;;
+	align-items: center;
+	padding: 8px;
+	/* color: rgba(213, 219, 219,0.5);*/
+} 
+/*/=============================================================================[	services-end  ]================================================================================/*/
+
+
+/*/=============================================================================[ Web_Designs ]====================================================================================/*/
+
+.skills_body
+{
+	width: 100%;
+	height: auto;
+	padding-bottom: 70px;
+	background-image: url("img/img-4.jpg");
+	background-size: cover;
+	background-position: center;
+    background-color: rgb(0,0,0,0.5);
+}
+
+
+
+	
+
+/*/============================================================================[ Web_Designs end ]====================================================================================/*/
+
+
+
+
+/*/============================================================================[ Slider_img ]====================================================================================/*/
+
+.slide-background
+{
+	background: #313131;
+	height: 900px;
+	width: 100%;
+	position: relative;
+}
+.slideshow
+{
+	width: 80%;
+	height: 700px;
+	border: 5px solid #f5b027;
+	position: absolute;
+	top: 12%;
+			left: 10%;
+}
+#slideimg
+{
+	width: 100%;
+	height: 690px;
+}
+
+/*/============================================================================[ Slider_img end ]====================================================================================/*/
+
+
+/*/============================================================================[ Contact From ]====================================================================================/*/
+.ui_body{
+	position: relative;
+	background-image: url(img/1\ \(10\).jpg);
+	background-size: cover;
+	width: 100%;
+	height: auto;
+	background-attachment: fixed;
+}
+
+.contact
+{
+	margin: 20px;
+	border-radius:12px ;
+	padding: 10px;
+	border: none;
+	width: 100%;
+}
+
+
+.login_btn
+{
+	margin: 20px;
+	border-radius:12px ;
+	padding: 10px;
+	width: 100%;
+}
+/*/============================================================================[ Contact From end ]====================================================================================/*/
+
+
+
+
+/*/============================================================================[ helping_cards ]====================================================================================/*/
+
+.helping_cards_background
+{
+	background:transparent;
+}
+
+
+.helping_cards 
+{
+	width: 450px;
+	height: 300px;
+	/* border: 3px solid #000; */
+	border-radius: 12px;
+	position: relative;
+	overflow: hidden;
+	
+}
+  
+ .helping_cards img
+{
+	width: 100%;
+	height: 100%;
+}
+
+
+.helping_cards .overlay
+{
+	width: 100%;
+	height: 100%;
+/*	background: rgba(0,0,0,0.5);*/
+	background: rgba(255,255,255,1.00);
+	color: black;
+	position: absolute;
+	top:80%;
+	left: 0;
+	z-index: 1;
+	transition: .5s ;
+}
+
+.helping_cards:hover .overlay
+{
+	top: 0px;
+}
+  
+  .text 
+{
+	color: black;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	text-align: center;
+}
+
+.text h1
+{
+	font-size: 20px;
+}
+
+.text p
+{
+	font-size: 15px;
+}
+
+.helping_cards_icons a
+
+{
+	font-size: 26px;
+	color: #000;
+	margin: 10px;
+}
+
+.helping_cards_icons .fa-instagram:hover 
+{
+	color: #DC0965;
+}
+
+.helping_cards_icons .fa-facebook:hover 
+{
+	color: #180080;
+}
+
+.helping_cards_icons .fa-twitter:hover 
+{
+	color: #00B1CE;
+}
+/*/============================================================================[ helping_cards end ]====================================================================================/*/
+
+
+/*/============================================================================[ Clients & Servics  ]====================================================================================/*/
+.card_balckground
+{
+	background:transparent;
+}
+
+.card 
+{
+	box-shadow: 0 0 30px rgba(0,0,0,0.5);
+	overflow: hidden;
+	border-radius: 15px;
+  	transition: transform .2s;
+	margin-bottom: 30px;
+	
+	
+ }
+
+.card:hover {
+  -ms-transform: scale(1.1); 
+  -webkit-transform: scale(1.1); 
+  transform: scale(1.1); 
+}
+
+.img-1 img
+{
+	height: 200px;
+	width: 100%;
+}
+
+.img-2 img
+{
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	z-index: 1;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 7px solid #fff;
+	margin-top: -60px;
+}
+
+.card-text
+{
+	padding: 15px;
+}
+
+.card-footer a
+{
+	font-size: 1.3rem;
+	margin: 10px;
+}
+
+.card-footer a .fa-facebook
+{
+	color: #472AFD;
+	height: auto;
+	width: auto;
+	padding: 3px;
+	border-left: 3px solid #34495E ;
+	border-right: 3px solid #34495E ;
+	
+}
+
+.card-footer a .fa-twitter
+{
+	color: #3498DB;
+	height: auto;
+	width: auto;
+	padding: 3px;
+	border-left: 3px solid #34495E ;
+	border-right: 3px solid #34495E ;
+	
+}
+
+.card-footer a .fa-instagram
+{
+	color: #FD2A74;
+	height: auto;
+	width: auto;
+	padding: 3px;
+	border-left: 3px solid #34495E ;
+	border-right: 3px solid #34495E ;
+	
+}
+
+.cards-btn
+{
+	height: auto;
+	width: auto;
+}
+
+
+
+
+.other_background
+{
+	height: 70vh;
+}
+
+.other
+{
+	height: auto;
+	width: 100%;
+	
+}
+
+.other img
+{
+	height: 100%;
+	width: 100%;
+}
+
+.other p
+{
+	height: 100%;
+	width: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 50px;
+}
+/*/============================================================================[ Clients & Servics end  ]====================================================================================/*/
+
+
+/* =============================================================================================[ my-text ]=================================================================================*/
+
+.my-text
+{
+	width: 100%;
+	height: 500px;
+	/* border: 2px solid black; */
+	display: flex;
+	align-items: center;
+	font-size: large;
+	color: white;
+}
+.my-text span
+{
+	font-size: 35px;
+}
+/* =============================================================================================[ my-text end ]=================================================================================*/

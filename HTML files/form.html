@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> form in html</title>
+</head>
+<body>
+
+	<a href="home.html"><h1 align="center"><button>home</button></h1></a>	
+	<form method="post" autocomplete="off">
+<p>
+	<label>Name<font color="red">=</font></label>
+    <input type="text" name="" placeholder=" your name" required="yes">
+</p>
+<p>
+	<label>Email<font color="red">=</font></label>
+	<input type="Email" name="" placeholder="xyz@.com" required="yes">
+</p>
+<p>
+	<label>phone no.<font color="red">=</font></label>
+	<input type="number" name="" placeholder="your mobile no." required="yes" min="1000000000" max="9999999999">
+</p>
+<p>
+	<label>password<font color="red">=</font></label>
+	<input type="password" name="pwd" placeholder="***********" minlength="6" maxlength="10">
+</p>
+
+<label>
+	Gender
+</label>
+
+
+<label>
+	<input type="radio" name="gen" value="male" checked="true">male
+</label>
+<label>
+    <input type="radio" name="gen" value="female" >female
+</label>
+<label>
+    <input type="radio" name="gen" value="others" >others
+</label>
+<br>
+<br>
+
+<label>
+	<font color="red">*</font>Education<font color="red">*</font>
+</label>
+
+<select name="edu" required="true">
+	<option value="">--choose one--</option>
+    <option value="10"> madhyamik </option> 
+    <option value="10+2"> H.S. </option>
+</select>
+<br><br>
+<label>
+	date of birth
+</label>
+<input type="date" name="dob">
+<br><br>
+<label>
+	LANGUAGE KNOWN<font color="red">*</font>
+</label>
+<lable>
+    <input type="checkbox" name="langl" value="bng"> BENGALI
+</lable>
+<label>
+	<input type="checkbox" name="langl" value="eng"> ENGLIHS
+</label>
+<label>
+	<input type="checkbox" name="langl" value="hin"> HINDI
+</label>
+<br><br>
+<label>
+	ADDRESS
+</label>
+<textarea name="address" cols="30" rows="3" placeholder="write your address here"></textarea> 
+<br><br>
+<label>
+	
+	Uplode Profile Picture
+</label>
+<input type="file" name="profilepic" accept="image/*">
+<br><br><br>
+<input type="reset" value="reset all">
+<input type="submit" value="register" >
+</form>
+</body>
+</html>

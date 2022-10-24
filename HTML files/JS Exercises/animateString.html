@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+	*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+	}
+		p{
+			padding: 5px;
+			width: 100%;
+			border: 1px solid gray;
+			margin-top: 100px;
+		}
+	</style>
+</head>
+
+<body onload="animate_string('target')">
+  <p id="target">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+  quis,jaio, jdijdj</p>
+
+  <script type="text/javascript">
+		
+		function animate_string(id) {
+    		var element = document.getElementById(id);
+    		var textNode = element.childNodes[0]; // assuming no other children
+    		var text = textNode.data;
+
+			setInterval(function () {
+ 				text = text[text.length - 1] + text.substring(0, text.length - 1);
+  				textNode.data = text;
+			}, 35);
+		}
+
+	</script>
+</body>
+</html>

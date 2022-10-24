@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Countdown Timer using JS</title>
+</head>
+<body>
+  <h1 align="center" id="timer"></h1>
+  <center>
+    <button type="button" id="start" onclick="startTimer()">Start</button>
+    <button type="button" id="stop" onclick="stopTimer()" disabled>Stop</button>
+  </center>
+
+  <script type="text/javascript">
+    var x;
+
+    function startTimer() 
+    {
+      document.getElementById("start").disabled = true;
+      document.getElementById("stop").disabled = false;
+
+      //var endTime = Date.parse(new Date()) + (5*24*60*60*1000);
+      var endTime = Date.parse(new Date("JULY 29, 2021 14:00:00"));
+
+      x = setInterval(function(){
+        var diff = endTime - Date.parse(new Date());
+       
+
+        var second = Math.floor((diff / 1000) % 60);
+        var minute = Math.floor((diff / (1000 * 60)) % 60);
+        var hour = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        var day = Math.floor((diff / (1000 * 60 * 60 * 24)) % 7);
+        var week = Math.floor((diff / (1000 * 60 * 60 * 24 * 7)));
+
+        document.getElementById('timer').innerHTML = week + " Weeks " + day + " Days " + hour + " Hours " + minute + " Minutes " + second + " Seconds";
+
+        if (diff < 0) 
+        {
+          clearInterval(x);
+          document.getElementById('timer').innerHTML = "TIME EXPIRED!";
+          document.getElementById("start").disabled = false;
+          document.getElementById("stop").disabled = true;
+        }
+      }, 1000);
+    }
+
+    function stopTimer() 
+    {
+      clearInterval(x);
+      document.getElementById('timer').innerHTML = "TIMMER STOPPED!";
+      document.getElementById("start").disabled = false;
+      document.getElementById("stop").disabled = true;
+    }
+  </script>
+</body>
+</html>

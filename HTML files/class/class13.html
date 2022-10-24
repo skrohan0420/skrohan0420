@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		body{
+			margin: 0;
+			padding: 0;
+		}
+		#content{
+			display: none;
+		}
+		#loader
+		{
+			position: fixed;
+			width: 100%;
+			height: 100vh;
+			background-color: antiquewhite;
+		}
+		.loader-content{
+			position: absolute;
+			height: 400px;
+			width: 400px;
+			border: 8px solid #FFCC00;
+			border-left: transparent;
+			border-top: transparent;
+			box-shadow:  10px 10px 10px #C59E00;
+			border-radius: 50%;
+			left: 35%;
+			top: 8%;
+			animation: rotation linear 2s infinite;
+		}
+		@keyframes rotation
+		{
+			from{ transform: rotate(0deg); }
+			to{ transform: rotate(360deg); }
+		}
+	</style>
+</head>
+<body onload="getloader()">
+	<div id="loader">
+		<div class="loader-content"></div>
+	</div>
+	<div id="content">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	</div>
+
+
+
+	<script type="text/javascript">
+		function getloader()
+		{
+			setTimeout(function() {
+				document.getElementById('content').style.display = "block"; 
+				document.getElementById('loader').style.display = "none"; 
+			}, 5000);
+		}
+		getloader();
+	</script>
+</body>
+</html>

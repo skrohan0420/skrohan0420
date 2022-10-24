@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+</head>
+<body align="center">
+
+
+	<p id="demo">
+		Here we load data
+	</p>
+	<button onclick="loadData()">Click</button>
+
+
+
+
+	
+	<script type="text/javascript">
+
+		function loadData() {
+			var xhttp = new XMLHttpRequest();
+
+			xhttp.onreadystatechange = function() {
+				if(this.readyState == 4 && this.status == 200){
+					$("#demo").html(this.responseText);
+					console.log(this.responseText);
+				}else if(this.readyState == 4 && this.status == 404){
+					$("#demo").html("file not found");
+				}
+			}
+
+
+			// xhttp.open('GET','content/readme.txt',true)
+			xhttp.open('GET','https://dummyjson.com/products',true)
+			xhttp.send()
+		}
+
+	</script>
+	<script type="text/javascript">
+		// 5 steps OF readyState
+
+		// 1. 0: REQUEST NOT INITIALIZED
+		// 2. 1: SERVER CONNECTION ESTABLISHED
+		// 3. 2: REQUEST RESEVED
+		// 4. 3: PROCESSING REQUEST
+		// 5. 4: REQUEST FINISHED AND RESPONSE IS READY
+
+
+
+
+		// responseText or responseXML
+
+
+
+
+		//     		  
+		// 			Staus
+		//			  |
+		//		   200: "OK"
+		// 		   403: "Forbidden"
+		//		   404: "Not Found" 
+
+
+
+		//  Go To Wiki for all HTTP status code: 
+		// 					|
+		// 	https://en.wikipedia.org/wiki/List_of_HTTP_status_codes#:~:text=Status%20codes%20are%20issued%20by,common%20applications%20of%20the%20HTTP.
+
+
+
+	</script>
+</body>
+</html>

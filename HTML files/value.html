@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="text" id="txt">
+	<input type="text" id="txt2">
+	<button onclick="getvalue()">val</button>
+	<h1 id="hmm"></h1>
+
+
+
+
+	<script type="text/javascript">
+		function getvalue() {
+			var val = Number(document.getElementById('txt').value)
+			var val2 = Number(document.getElementById('txt').value)
+				document.getElementById('hmm').innerTEXT = val + val2;
+		}
+	</script>
+</body>
+</html>

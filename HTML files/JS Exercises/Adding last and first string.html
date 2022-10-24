@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+
+
+
+	<script type="text/javascript">
+		const mainStr = (str) => 
+			str.length < 3 ? str : str.slice(0,3) + str.slice(-3); 
+
+
+
+		console.log(mainStr('abc'));
+		console.log(mainStr('abc123def'));
+		console.log(mainStr('abc123abc123'));
+		console.log(mainStr('ab'));
+	</script>
+</body>
+</html>

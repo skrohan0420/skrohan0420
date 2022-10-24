@@ -1,0 +1,11 @@
+The REPL feature is very useful in experimenting with Node.js codes and to debug JavaScript codes
+
+
+
+
+READ - reads user's input, parses the input intp javascript data-structure and stores in memory the
+Eval - takes and evaluates the data structure
+Print - Prints the result
+Loop - Loops and avobe command until the user presses the crtl-c twice
+
+

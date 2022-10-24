@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="startTimer()">start</button>
+    <button type="button" disabled onclick="stopTimer()">stop</button>
+    <h1 align="center" id="timer"></h1>
+   
+
+
+
+                            <!-- Not working -->
+
+
+
+    <script>
+        var x;
+
+        function startTimer()
+        {
+            var endTime = date.parse(new Date()) + (15*24*60*60*1000);
+
+            x = setInterval(function()
+            {
+                var diff = endTime - date.parse(new Date());
+
+                var second = Math.floor((diff/1000)%60);
+                var minute = Math.floor((diff/(1000*60))%60);
+                var hour = Math.floor((diff/(1000*60*60))%24);
+                var day = Math.floor((diff/(1000*60*60*24)));
+                var week = Math.floor((diff/(1000*60*60*24*7)));
+
+                document.getElementById("timer").innerHTML = week+' '+day+' '+hour+' '+minute+' '+second;
+                if (diff<0)
+                {
+                    clearInterval(x);
+                    document.getElementById("timer").innerHTML="TIME-EXPIRED"
+                }
+            },1000);
+
+        }
+        function stopTimer()
+        {
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login & Registration Form</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+
+	<div class="container">
+
+		<div class="blueBg">
+			<div class="box signin">
+				<h2>Already Have an Account ?</h2>
+				<button class="signinBtn">Sign In</button>
+			</div>
+
+			<div class="box signup">
+				<h2>Don't Have an Account ?</h2>
+				<button class="signupBtn">Sign Up</button>
+			</div>
+		</div>
+
+
+
+
+		<div class="formBx">
+
+			<div class="form signinForm">
+				<form autocomplete="off" method="post">
+					<h3>Sign In</h3>
+					<input type="text" name="username" placeholder="Username"> 
+					<input type="password" name="password" placeholder="Password" id="pass"style="margin-bottom: 5px;"> 
+
+					<div class="showhide">
+						<input type="checkbox" name="showhide" onclick="show()">
+						<span id="show">show</span>
+					</div>
+
+					<input type="submit" name="signin" value="Login"> 
+					<a href="#" class="forgot">Forgot Password</a>
+				</form>
+			</div>
+
+			<div class="form signupForm">
+				<form autocomplete="off" method="post">
+					<h3>Sign Up</h3>
+					<input type="text" name="name" placeholder="Your name"> 
+					<input type="email" name="email" placeholder="Email Address"> 
+					<input type="password" name="password" placeholder="Password"> 
+					<input type="password" name="conpassword" placeholder="Confirm Password"> 
+
+					<input type="submit" name="signup" value="Register"> 
+				</form>
+			</div>
+
+		</div>
+
+	</div>
+
+
+
+	<script type="text/javascript" src="script.js"></script>
+</body>
+</html>

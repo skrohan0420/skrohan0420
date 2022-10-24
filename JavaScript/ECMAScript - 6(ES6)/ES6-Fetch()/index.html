@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body align="center">
+    
+    <form id="myForm">
+        Title <input type="text" id="titleText"> <br><br>
+        Body <input type="text" id="bodyText"> <br><br>
+        userId <input type="text" id="userId"> <br><br>
+        <input type="submit" value="Save"> 
+    </form>
+
+
+
+
+
+    <script type="text/javascript" src="../jquery-3.6.0.js"></script>
+    <script type="text/javascript">
+        // fetch("content/readme.txt")
+        //   .then(response => response.text())
+        //   .then(data => document.write(data))
+
+       
+
+
+
+
+
+
+        // fetch("https://dummyjson.com/products")
+        //     .then(response => response.json())
+        //     .then(data => console.log(data))
+
+
+
+
+
+
+
+
+
+        // fetch("Error")
+        //     .then(response => response.json())
+        //     .then(data => console.log(data))
+        //     .catch(err => console.log("Cant fetch Data"))
+
+
+
+
+
+
+        // fetch("https://jsonplaceholder.typicode.com/users")
+        //     .then((response) => response.json())
+        //     .then((data) => {
+        //         console.log(data)
+        //         for(var i in data){
+        //             document.write(`${data[i].name} --- ${data[i].email} --- ${data[i].address.city} <br>`)
+        //         }
+        //     })
+        //     .catch(err => console.log("Cant fetch Data"))
+
+
+
+
+
+
+        // Insert into database
+
+        // var obj = {
+        //     title: $("#title").val(),
+        //     body: $("#body").val(),
+        //     userId: $("#userId").val()
+        // }
+
+        // fetch('https://jsonplaceholder.typicode.com/posts', {
+        //     method: 'POST',
+        //     body: JSON.stringify(obj),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        // .then((response) => response.json())
+        // .then((json) => console.log(json));
+
+
+
+
+
+
+
+        // insert data with form
+
+        // $("#myForm").on("submit",function(e){
+
+        //     e.preventDefault()
+
+        //     // var obj = {
+        //     //     title: $("#titleText").val(),
+        //     //     body: $("#bodyText").val(),
+        //     //     userId: $("#userId").val()
+        //     // }
+
+        //     fetch('https://jsonplaceholder.typicode.com/posts', {
+        //         method: 'POST',
+        //         body: new FormData(document.getElementById('myForm')),
+        //         headers: {
+        //             'Content-type': 'application/x-www-form-urlencoded',
+        //         },
+        //     })
+        //     .then((response) => response.json())
+        //     .then((json) => console.log(json))
+        //     $(this).trigger('reset')
+        // })
+
+       
+
+
+
+
+
+
+
+
+        // Updating data
+
+
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        //     method: 'PUT',
+        //     body: JSON.stringify({
+        //         id: 1,
+        //         title: 'foo',
+        //         body: 'bar',
+        //         userId: 1,
+        //     }),
+        //     headers: {
+        //         'Content-type': 'application/json; charset=UTF-8',
+        //     },
+        // })
+        // .then((response) => response.json())
+        // .then((json) => console.log(json));
+
+
+
+
+
+        // DELETE data
+
+        // fetch('https://jsonplaceholder.typicode.com/posts/1', {
+        //     method: 'DELETE',
+        // });
+
+
+
+
+        // Browser Testing
+        // if(window.fetch){
+        //    console.log(true)
+        // }else{
+        //    console.log(false)
+        // }
+
+
+    </script>
+
+
+</body>
+</html>

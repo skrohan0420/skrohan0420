@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery button toggle</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		p{
+			padding: 20PX;
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".btn").click(function(){
+			$("p.normal").toggle();
+			$("p.fast").toggle("fast");
+			$("p.slow").toggle("slow");
+			$("p.very-fast").toggle(90);
+			$("p.very-slow").toggle(2000);
+           });
+		});
+	</script>
+</head>
+<body>
+	<button type="button" class="btn">Toggle paragraph</button>
+  <p class="very-fast">Click on the button to see the toggle effect</p>
+  <p class="normal">Click on the button to see the toggle effect</p>
+  <p class="fast">Click on the button to see the toggle effect</p>
+  <p class="slow">Click on the button to see the toggle effect</p>
+  <p class="very-slow">Click on the button to see the toggle effect</p>
+</body>
+</html>

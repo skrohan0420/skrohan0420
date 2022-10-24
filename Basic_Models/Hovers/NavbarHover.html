@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+			font-family: sans-serif;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-color: #ff3;
+		}
+		.main{
+			margin-top: 20%;
+			border: 1px solid black;
+			width: fit-content;
+			padding: 20px;
+			position: absolute;
+			background-color: #333;
+		}
+		h1{
+			text-align: center;
+			font-size: 3ch;
+			z-index: 1000;
+			text-transform: uppercase;
+			line-height: 5px;
+			letter-spacing: 1px;
+			color: #ff3;
+			height: fit-content;
+			cursor: pointer;
+		}
+		#box{
+			/*background: blue;*/
+			width: 5px;
+			height: 5px;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			
+		}
+		h1:hover #box{
+			/*background-color: rgba(255, 255, 255, 1.0);*/
+			border: 2px solid #ff3;
+			display: block;
+			transition: 0.5s;
+			height: 100%;
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+
+
+	<div class="main">
+		
+		<h1>
+			<div id="box"></div>
+			Hover On Me
+		</h1>
+
+	</div>
+
+</body>
+</html>

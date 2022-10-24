@@ -1,0 +1,23 @@
+.btn
+		{
+			padding: 5px 8px;
+			border: 1px solid #000;
+			color: blue;
+			font-size: 14px;
+			outline: none;
+			font-style: italic;
+			border-radius: 10px;
+		}
+.body
+{
+	background-color: lightgreen;
+	background-size: cover;
+}
+input[type="text"]:focus, input[type="password"]:focus
+{
+	border-bottom-color: white;
+}
+.btn1:hover
+{
+	background-color: lightblue;
+}

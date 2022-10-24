@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<h1>Magnific Popup JQuery</h1>
+
+
+	<div id="showContent">
+		<img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg" class="img img1">
+
+		
+		<img src="https://images.unsplash.com/photo-1618588507085-c79565432917?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="img img2">
+
+		<img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg" class="img img3">
+	</div>
+
+
+	<div id="hidContent">
+		<div>
+			<img src="img/cancel.png" id="cancel">
+		</div>
+
+		<div id="imgShow">
+			<img src="https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg" class="show show1">
+			<img src="https://images.unsplash.com/photo-1618588507085-c79565432917?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8YmVhdXRpZnVsJTIwbmF0dXJlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" class="show show2">
+			<img src="https://cdn.pixabay.com/photo/2015/12/01/20/28/road-1072823__340.jpg" class="show show3">
+		</div>	
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.img1').click(function(){
+				$('.show1').fadeIn(500)
+				$('#cancel').show(500)
+			});
+			$('.img2').click(function(){
+				$('.show2').fadeIn(500)
+				$('#cancel').show(500)
+			});
+			$('.img3').click(function(){
+				$('.show3').fadeIn(500)
+				$('#cancel').show(500)
+			});
+			$('#cancel').click(function(){
+				$('.show').fadeOut(500)
+				$('#cancel').hide(500)
+				
+			});
+		});
+	</script>
+</body>
+</html>

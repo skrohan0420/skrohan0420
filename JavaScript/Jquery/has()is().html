@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+
+	<style type="text/css">
+		
+		.first{
+			padding: 20px;
+			border: 1px solid red;
+			background: wheat;
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<h1>has is method</h1>
+
+	<div class="first">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur <b>adipisicing elit, sed do eiusmod</b>
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</p>
+	</div>
+
+	<ul>
+		<li>Orange</li>
+		<li>
+			<span>Apple</span>
+		</li>
+		<li>Bnanna</li>
+		<li>Grapes</li>
+	</ul>
+
+	<p class="test">
+		<span>Lorem ipsum dolor sit amet, consectetur</span> adipisicing elit, sed do eiusmod
+	</p>
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+
+		$(document).ready(function(){
+			// $('p').has('span').css('background','gold')
+			// $('p').has('b, span').css('background','gold')
+			// $('li').has('span').css('background','gold')
+
+
+			$('p').click(function(){
+				if ($(this).parent().is('div')){
+					$(this).css('background','lightblue')
+				}
+			})
+			
+		})
+
+
+	</script>
+</body>
+</html>

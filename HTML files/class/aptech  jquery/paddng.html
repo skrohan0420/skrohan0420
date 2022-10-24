@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>text collor change</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		.f1{
+			color: red;
+			text-transform: uppercase;
+		}
+		.f2{
+			background-color: blue;
+		}
+		.f3{
+			font-style: bold;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("h1").addClass("f1");
+				$("p.f3").addClass("f2");
+			});
+		});
+	</script>
+</head>
+<body>
+<h1>Gourab Batabyal</h1>
+<p class="f3">Add a background padding into this paragraph element</p>
+<button>Click on me to change the color of the text</button>
+</body>
+</html>

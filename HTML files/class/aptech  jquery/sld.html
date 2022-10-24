@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide event</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<p id="a1">Jquery slide Event is working</p>
+<p id="a2">Jquery slide Event is working</p>
+<p id="a3">Jquery slide Event is working</p>
+<p id="a4">Jquery slide Event is working</p>
+<p id="a5">Jquery slide Event is working</p>
+<button>Slide</button>
+<script type="text/javascript">
+	$("document").ready(function(){
+		$("button").click(function(){
+			$("#a1").css("color","red").slideUp(3000).slideDown(2000);
+			$("#a2").css("color","blue").slideUp(2000).slideDown(3000);
+			$("#a3").css("color","green").slideUp(5000).slideDown(5000);
+			$("#a4").css("color","pink").slideUp(4000).slideDown(4000);
+			$("#a5").css("color","purple").slideUp(3000).slideDown(6000);
+			
+			
+
+		});
+	});
+</script>
+</body>
+</html>

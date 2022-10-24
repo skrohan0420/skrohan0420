@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Preloader-1</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@100&display=swap" rel="stylesheet">
+  <style type="text/css">
+    body
+    {
+      font-family: 'Commissioner', sans-serif;
+    }
+    .content
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      margin-top: 100px;
+      height: 200px;
+      width: 200px;
+     /* border: 1px solid black;*/
+      
+    }
+    .border-6
+    {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      height: 20px;
+      width: 100px;
+      color: gray;
+    }
+    .border-1
+    {
+      height: 150px;
+      width: 150px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-top: 3px solid #13ecb6;
+      border-bottom: 3px solid #13ecb6;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-left-color: rgba(255, 255, 255, 0.0);
+      border-right-color: rgba(255, 255, 255, 0.0);
+      animation-name: a;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      z-index: 1;
+      position: relative;
+
+    }
+    .border-2
+    {
+      border: 1px solid black;
+      height: 140px;
+      width: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      border-left: 3px solid #13ecb6;
+      border-right: 3px solid #13ecb6;
+      border-top-color: rgba(255, 255, 255, 0.0);
+      border-bottom-color: rgba(255, 255, 255, 0.0);
+      animation-name: b;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      z-index: 2;
+      position: relative;
+    }
+    .border-3
+    {
+      border: 1px solid black;
+      height: 130px;
+      width: 130px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-top: 3px solid #13ecb6;
+      border-bottom: 3px solid #13ecb6;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-left-color: rgba(255, 255, 255, 0.0);
+      border-right-color: rgba(255, 255, 255, 0.0);
+      animation-name: c;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      z-index: 3;
+      position: relative;
+    }
+    .border-4
+    {
+      border: 1px solid black;
+      height: 120px;
+      width: 120px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-top: 1px solid white;
+      border-bottom: 1px solid white;
+      border-left: 3px solid #13ecb6;
+      border-right: 3px solid #13ecb6;
+      border-top-color: rgba(255, 255, 255, 0.0);
+      border-bottom-color: rgba(255, 255, 255, 0.0);
+      animation-name: d;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      z-index: 4;
+      position: relative;
+    }
+    .border-5
+    {
+      border: 1px solid black;
+      height: 110px;
+      width: 110px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border-top: 3px solid #13ecb6;
+      border-bottom: 3px solid #13ecb6;
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+      border-left-color: rgba(255, 255, 255, 0.0);
+      border-right-color: rgba(255, 255, 255, 0.0);
+      animation-name: e;
+      animation-duration: 14s;
+      animation-iteration-count: infinite;
+      z-index: 5;
+      position: relative;
+    }
+
+    @keyframes a
+    {
+      0%
+      {
+        transform: rotate(0deg);
+      }
+      50%
+      {
+        transform: rotate(360deg);
+       
+      }
+      100%
+      {
+        transform: rotate(720deg);
+      }
+    }
+    @keyframes b
+    {
+      0%
+      {
+        transform: rotate(0deg);
+      }
+      50%
+      {
+        transform: rotate(360deg);
+      }
+      100%
+      {
+        transform: rotate(720deg);
+      }
+    }
+    @keyframes c
+    {
+       0%
+      {
+        transform: rotate(0deg);
+      }
+      50%
+      {
+        transform: rotate(360deg);
+      }
+      100%
+      {
+        transform: rotate(720deg);
+      }
+    }
+    @keyframes d
+    {
+       0%
+      {
+        transform: rotate(0deg);
+      }
+      50%
+      {
+        transform: rotate(360deg);
+      }
+      100%
+      {
+        transform: rotate(720deg);
+      }
+    }
+    @keyframes e
+    {
+       0%
+      {
+        transform: rotate(0deg);
+      }
+      50%
+      {
+        transform: rotate(360deg);
+      }
+      100%
+      {
+        transform: rotate(720deg);
+      }
+    }
+  </style>
+</head>
+<body bgcolor="#2c2a2d">
+  <div class="content">
+    <div class="border border-1">
+      <div class="border border-2">
+        <div class="border border-3">
+          <div class="border border-4">
+             <div class="border border-5">
+             </div>
+          </div>   
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="border-6">
+    Please Wait.....
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<input type="num" id="num-1">
+	<br>
+	1st num
+	<br>
+	<input type="num" id="num-2">
+	<br>
+	2nd num
+	<br>
+	<br>
+	<input type="radio" id="sum" name="sus" checked="true">sum
+	<input type="radio" id="sub" name="sus">sub
+	<input type="radio" id="div" name="sus">div
+	<input type="radio" id="mul" name="sus">mul
+	<br>
+	<br>
+	<button type="button" onclick="cal()">calculate</button>
+	<br>	
+	<h1 id="ans">
+		Answer
+	</h1>
+
+
+
+	<script type="text/javascript">
+		function cal() 
+		{
+			var A = Number(document.getElementById('num-1').value)
+			var B =	Number(document.getElementById('num-2').value)
+
+			if (document.getElementById('sum').checked == true)
+		    {
+		    	var sum = A + B ;
+		    	document.getElementById('ans').innerHTML = sum;
+		    }
+		    else if (document.getElementById('sub').checked == true)
+		    {
+		    	var sum = A - B ;
+		    	document.getElementById('ans').innerHTML = sum;
+		    }
+		    else if (document.getElementById('div').checked == true)
+		    {
+		    	var sum = A / B ;
+		    	document.getElementById('ans').innerHTML = sum;
+		    }
+		     else
+		    {
+		    	var sum = A * B ;
+		    	document.getElementById('ans').innerHTML = sum;
+		    }
+		}
+
+	</script>
+
+</body>
+</html>

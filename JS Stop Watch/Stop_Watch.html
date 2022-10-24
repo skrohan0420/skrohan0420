@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS Stop Watch</title>
+
+    <style type="text/css">
+        *{
+            font-family: sans-serif;
+            color: gray;
+        }
+        #maincon{
+           /* border: 1px solid red;*/
+            margin: auto;
+            margin-top: 0px;
+            width: fit-content;
+            display: grid;
+            place-items: center;
+           /* margin-top: 200px;*/
+        }
+        #timer{
+            font-size: 3em;
+            border: 1px solid gray;
+            padding: 10px;
+            width: 240px;
+            text-align: center;
+            margin-top: 0px;
+            
+        }
+        button{
+            margin-top: 0px;
+            width: 60px;
+            height: 30px;
+            font-size: 1.8ch;
+            font-weight: 500;
+        }
+        h4{
+            border: 1px solid black;
+            width: 240px;
+            text-align: center;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        .head{
+            text-align: center;
+            /*border: 1px solid black;*/         
+            width: 240px;
+            padding: 10px;
+            font-size: 2em;
+            margin: auto;
+            /*position: relative;
+            left: 40%;*/
+            text-decoration: underline;
+            padding-left: 25px;
+        }
+    </style>
+</head>
+<body>
+
+        <h1 class="head">JS Stop Watch</h1>
+        <div id="maincon">
+            <h1 id="timer">00:00:00</h1>
+
+            <div>
+                <button onclick="start()" id="start">Start</button>
+                <button onclick="lap()" disabled id="lap">Lap</button>
+                <button onclick="pause()" disabled id="pause">Pause</button>
+                <button onclick="reset()" disabled id="reset">Reset</button>
+            </div>
+
+            <div id="result_lap"></div>
+        </div>
+
+
+
+
+
+
+    <script type="text/javascript">
+        
+
+        let output = document.getElementById('timer');
+
+        let ms = 0;
+        let sec = 0;
+        let min = 0;
+
+
+
+        function timer(){
+            ms++;
+            if (ms >= 100){
+                sec++;
+                ms = 0;
+            }
+            if (sec === 60){
+                min++;
+                sec = 0;
+            }
+            if (min === 60){
+                ms, sec, min = 0;
+            }  
+
+
+            let milli = ms < 10 ? `0`+ ms : ms;
+            let seconds = sec < 10 ? `0`+ sec : sec;
+            let minute = min < 10 ? `0` + min : min;
+
+            let runTime = `${minute}:${seconds}:${milli}`;
+            output.innerHTML = runTime; 
+        }
+        
+
+
+        function start(){
+            time = setInterval(timer,10); 
+            document.getElementById('start').disabled = true;
+            document.getElementById('lap').disabled = false;
+            document.getElementById('reset').disabled = false;
+            document.getElementById('pause').disabled = false;
+        }
+
+
+        function pause(){
+            
+            
+            clearInterval(time);
+            document.getElementById('start').disabled = false;
+                
+            
+        }
+
+
+        function reset(){
+            clearInterval(time);
+            document.getElementById('start').disabled = false;
+            document.getElementById('lap').disabled = true;
+            document.getElementById('pause').disabled = true;
+            document.getElementById('reset').disabled = true;
+            document.getElementById('result_lap').innerHTML = '';
+
+            ms = 0;
+            sec = 0;
+            min = 0;
+            output.innerHTML = '00:00:00'; 
+        }
+
+
+        function lap(){
+
+            let milli = ms < 10 ? `0`+ ms : ms;
+            let seconds = sec < 10 ? `0`+ sec : sec;
+            let minute = min < 10 ? `0` + min : min;
+
+            let runTime = `${minute}:${seconds}:${milli}`;
+            let lapTime = minute +':'+ seconds +':'+ milli;
+            
+
+            document.getElementById('result_lap').innerHTML = document.getElementById('result_lap').innerHTML + '<h4>'+' '+lapTime+'</h4>';
+            
+        }
+
+
+
+
+
+    </script>
+</body>
+</html>

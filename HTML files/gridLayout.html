@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.top-row{
+			min-width: 100vw;
+			/*border: 1px solid black;*/
+			min-height: 40vh;
+			display: flex;
+			padding: 10px;
+			background: blueviolet;
+		}
+		.top-row .left{
+			min-height: 100%;
+			min-width: 50%;
+			/*border: 1px solid black;*/
+			background: wheat;
+		}
+		.top-row .left .left-content{
+			min-height: 100%;
+			min-width: 50%;
+			border: 1px solid blueviolet;
+		}
+		.top-row .right{
+			min-height: 100%;
+			min-width: 50%;
+			/*border: 1px solid black;*/
+			background: wheat;
+
+		}
+		.top-row .right .right-child-col{
+			min-width: 100%;
+			min-height: 33.333333%;
+			border: 1px solid blueviolet;
+		}
+		.top-row .right .row{
+			display: flex;
+			min-height: 33.333333%;
+			min-width: 100%;
+		}
+		.top-row .right .row .right-child-row{
+			min-width: 33.333333%;
+			min-height: 33%;
+			border: 1px solid blueviolet;
+		}
+		.middle-row{
+			min-width: 100vw;
+			min-height: 20vh;
+			/*border: 1px solid black;*/
+			padding: 10px;
+			display: flex;
+			background: blueviolet;
+
+		}
+		.middle-row .middle-child{
+			min-height: 100%;
+			min-width: 20%;
+			border: 1px solid blueviolet;
+			background: wheat;
+
+		}
+		.bottom-row{
+			min-width: 100vw;
+			min-height: 40vh;
+			/*border: 1px solid black;*/	
+			padding: 10px;
+			display: flex;
+			background: blueviolet;
+
+		}
+		.bottom-row .left{
+			min-width: 50%;
+			min-height: 100%;
+			/*border: 1px solid black;*/
+			display: grid;
+			grid-template-columns: auto auto;
+		}
+		.bottom-row .left .left-child{
+			min-width: 50%;
+			min-height: 50%;
+			border: 1px solid blueviolet;
+			background: wheat;
+
+		}
+		.bottom-row .right{
+			min-width: 50%;
+			min-height: 100%;
+			border: 1px solid blueviolet;
+			background: wheat;
+
+		}
+	</style>
+</head>
+<body>
+
+	<div class="top-row">
+		<div class="left">
+			<div class="left-content"></div>
+		</div>
+		<div class="right">
+			<div class="right-child-col"></div>
+			<div class="right-child-col"></div>
+			<div class="row">
+				<div class="right-child-row"></div>
+				<div class="right-child-row"></div>
+				<div class="right-child-row"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="middle-row">
+		<div class="middle-child"></div>
+		<div class="middle-child"></div>
+		<div class="middle-child"></div>
+		<div class="middle-child"></div>
+		<div class="middle-child"></div>
+	</div>
+
+	<div class="bottom-row">
+		<div class="left">
+			<div class="left-child"></div>
+			<div class="left-child"></div>
+			<div class="left-child"></div>
+			<div class="left-child"></div>
+		</div>
+		<div class="right"></div>
+	</div>
+
+
+</body>
+</html>

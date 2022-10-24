@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		function sum(...theArgs) {
+		  let total = 0;
+		  for (const i of theArgs) {
+		    total += i;
+		  }
+		  return total;
+		}
+
+		console.log(sum(1, 2, 3,6));
+		// expected output: 6
+
+		console.log(sum(1, 2, 3, 4));
+		// expected output: 10
+
+
+		function myFun(a,  b, ...manyMoreArgs) {
+		  console.log("a", a)
+		  console.log("b", b)
+		  console.log("manyMoreArgs", manyMoreArgs)
+		}
+
+		myFun("one", "two", "three", "four", "five", "six")
+
+
+	</script>
+
+</body>
+</html>

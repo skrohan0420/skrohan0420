@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        .f1{
+            color:red;
+            text-transform: uppercase;
+        }
+        .f2{
+            background-color:blue;
+            
+        }
+        .f3{
+            font-style: bold;
+        }
+    </style>
+</head>
+<body>
+   <h1>content</h1>
+   <p class="f3">background-color</p>
+   <button>click</button>
+    
+    <script>
+        $(document).ready(function(){
+			$('button').click(function(){
+               $('h1').addClass('f1');
+               $('p.f3').addClass('f2');
+            });
+		});
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		.p1{
+			background-color: blue;
+			height: 20px;
+			width: 50px;
+			position: absolute;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<button>click</button>
+	<div class="p1">Jquery</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('button').click(function(){
+			var a = $('div');
+			a.animate({
+				left: '200px'
+			},500);
+			a.animate({
+				fontSize: '100px',
+				height: '150px',
+				width: '300px'
+			},500);
+			});
+		});
+	</script>
+
+</body>
+</html>

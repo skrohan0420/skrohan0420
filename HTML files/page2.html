@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electricity Bill Calculator</title>
+  </head>
+  <style>
+    .container {
+      text-align: center;
+    }
+
+    button {
+      display: block;
+      margin: 20px auto;
+      background-color: transparent;
+      border: 3px solid green;
+      outline: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-weight: 900;
+      border-radius: 13px;
+      transition: all 0.3s ease;
+    }
+
+    button:hover,
+    button:focus {
+      background-color: green;
+      color: white;
+      box-shadow: inset 2px 2px 2px 1px white;
+    }
+
+    button:active {
+      opacity: 0.7;
+    }
+
+    #result {
+      margin: 20px auto;
+      height: 40px;
+      width: 200px;
+      border: 2px solid darkblue;
+    }
+  </style>
+
+  <body>
+    <div class="container">
+      <h1>Electricity Bill Calculator</h1>
+      <label for="unitCount">Enter Your Total Units :</label>
+      <input type="number" id="unitCount" />
+      <button onclick="calc()">Calculate Amount</button>
+      <h1 id="result"></h1>
+    </div>
+
+    <script>
+      function calc() {
+        // Grabbing the html elements
+        let unitCount = document.getElementById("unitCount").value;
+        let result = document.getElementById("result");
+
+        // Price Variables
+        const first_25 = 4.25;
+        const next_50 = 4.75;
+        const next_75 = 5.5;
+        const next_100 = 6.5;
+        const above_100 = 7.25;
+
+        if (unitCount <= 25) {
+          result.innerText = unitCount * first_25;
+          result.style.color = "greenyellow";
+        } else if (unitCount <= 75) {
+          result.innerText = 25 * first_25 + (unitCount - 25) * next_50;
+          result.style.color = "green";
+        } else if (unitCount <= 125) {
+          result.innerText =
+            25 * first_25 + 50 * next_50 + (unitCount - 75) * next_75;
+          result.style.color = "blue";
+        } else if (unitCount <= 225) {
+          result.innerText =
+            25 * first_25 +
+            50 * next_50 +
+            75 * next_75 +
+            (unitCount - 100) * next_100;
+          result.style.color = "orange";
+        } else {
+          result.innerText =
+            25 * first_25 +
+            50 * next_50 +
+            75 * next_75 +
+            100 * next_100 +
+            (unitCount - 250) * above_100;
+          result.style.color = "red";
+        }
+      }
+    </script>
+  </body>
+</html>

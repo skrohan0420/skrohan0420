@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+	<style type="text/css">
+		div{
+			padding: 20px;
+			border: 1px solid blueviolet;
+		}
+		.inner{
+			display: flex;
+		}
+		.inner div{
+			background: wheat;
+		}
+		div{
+			background: wheat;
+		}
+	</style>
+</head>
+<body>
+
+
+
+
+	<h1>ancestors</h1>
+
+	<div class="main">
+		main
+		<div class="outer">
+			outer
+			<div class="inner">
+				inner
+				<div>A</div>
+				<div>B</div>
+				<div id="c">C</div>
+				<div>D</div>
+				<div class="e">E</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<h1>filter</h1>
+	<div id="first">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</p>
+	</div>
+
+	<ul>
+		<li>Orange</li>
+		<li>Apple</li>
+		<li>Bnanna</li>
+		<li>Grapes</li>
+	</ul>
+
+	<div id="last">
+		<p class="test">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		</p>
+	</div>
+
+
+
+
+	<script type="text/javascript">
+		// Ancestor methods
+		// 
+		// parent()       -------->	direct parent
+		// parents()  	  --------> all parents
+		// parentsUntil() --------> limited or specified parents
+		// closest()  	  --------> closest element
+		// offsetParent() --------> relative position parents
+
+
+
+		// desendants methods
+		// 
+		// children()     --------> all direct childrens
+		// find()     	  --------> any childrens
+
+
+
+		// Siblings Methods
+		// 
+		// siblings()	  -------->	all siblings
+		// next()		  -------->	next siblings
+		// nextAll()	  -------->	all next siblings
+		// nextUntil()	  -------->	limited or specified siblings
+		// prev()		  -------->	previous siblings
+		// prevAll()	  -------->	all previous siblings
+		// prevUntil()	  -------->	limited or specified previous siblings
+
+
+
+		// filtering
+		// 
+		// first()		 --------> first element
+		// last()		 --------> last element
+		// eq()			 --------> specified element
+		// filter()		 --------> limited or specified element
+		// not()		 --------> evrything expect this element
+		// Slice()		 --------> specified element
+
+
+
+
+
+
+
+		$(document).ready(function(){
+			// $('#c').parent().css('background','red')
+			// $('#c').parents().css('background','blue')
+			// $('#c').parents('.outer').css('background','blue')
+			// $('#c').parentsUntil('.main').css('background','gray')
+			// $('#c').offsetParent().css('background','skyblue')
+			// $('#c').closest('.main').css('background-color','skyblue')
+
+
+
+
+			// $('.inner').children('#c').css('background-color','skyblue')
+			// $('.outer').children().css('background-color','skyblue')
+			// $('.outer').find('#c').css('background-color','brown')
+
+
+
+
+			// $('#c').Sibling().css('background-color','brown')
+			// $('#c').next().css('background-color','brown')
+			// $('#c').nextAll().css('background-color','brown')
+			// $('#c').prev().css('background-color','brown')
+			// $('#c').prevAll().css('background-color','brown')
+			// $('#c').prevUntil('.e').css('background-color','brown')
+			// $('#c').nextUntil('.e').css('background-color','brown')
+
+
+
+
+			// $('#last p').first().css('background-color','brown')
+			// $('#first p').last().css('background-color','brown')
+			// $('ul li').eq(-1).css('background-color','brown')
+			// $('p').filter('.test').css('background-color','brown')
+			// $('p').not('.test').css('background-color','brown')
+			// $('ul li').slice(2).css('background-color','brown')
+			// $('ul li').slice(1,3).css('background-color','brown')
+
+
+
+
+
+
+
+
+		})
+
+	</script>
+
+</body>
+</html>

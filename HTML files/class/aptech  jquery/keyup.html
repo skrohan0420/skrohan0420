@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>keyup in jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('input[type="text"]').keypress(function(){
+				alert("your keypress event is working");
+			});
+		});
+	</script>
+</head>
+<body>
+Enter somethig into this:<input type="text">
+</body>
+</html>

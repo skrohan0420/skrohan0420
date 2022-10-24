@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="number" id="value">
+        <br>
+        <input type="radio" name="1"  id="hrs" checked="true">hour
+        <input type="radio" name="1"  id="min">minute
+        <input type="radio" name="1"  id="sec">second
+        <input type="radio" name="1"  id="mil">mili-second
+        <br>
+        <button onclick="calculate()">
+            Calculate
+        </button>
+        <br>
+        <h1 id="result"></h1>
+    </div>
+
+
+    <script>
+        function calculate()
+        {
+           let value = Number(document.getElementById("value").value);
+           let hrs = document.getElementById("hrs");
+           let min = document.getElementById("min");
+           let sec = document.getElementById("sec");
+           let mil = document.getElementById("mil");
+           let res = document.getElementById("result");
+
+           if (hrs.checked==true)
+           {
+               res.innerHTML=value+"-hour"+"<br>"+(value*60)+"-minute"+"<br>"+(value*3600)+"-second"+"<br>"+(value*3600000)+"-millisecond";
+           }
+           else if(min.checked==true)
+           {
+               res.innerHTML=(value/60)+"-hour"+"<br>"+value+"-minute"+"<br>"+(value*60)+"-second"+"<br>"+(value*60000)+"-milisecond";
+           }
+           else if(sec.checked==true)
+           {
+               res.innerHTML=(value/3600)+"-hour"+"<br>"+(value/60)+"-minute"+"<br>"+value+"-second"+"<br>"+(value*1000)+"-milisecond";
+           }
+           else
+           {
+               res.innerHTML=(value/3600000)+"-hour"+"<br>"+(value/60000)+"-minute"+"<br>"+(value/1000)+"-second"+"<br>"+value+"-milisecond";
+           }          
+        }
+    </script>
+</body>
+</html>

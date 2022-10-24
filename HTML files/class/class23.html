@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> js slide down</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		p{
+			padding: 30px;
+			background: blue;
+		}
+	</style>
+
+</head>
+<body>
+
+	<button class="up"> slide up </button>
+	<button class="down"> slide down </button>
+
+	<p> hmmmmm </p>
+	<p> hmmmmm </p>
+	<p> hmmmmm </p>
+	<p> hmmmmm </p>
+
+	<script type="text/javascript">
+			
+		$(document).ready(function(){
+			$('.up').click(function(){
+				$('p').slideUp();
+			})
+			$('.down').click(function(){
+				$('p').slideDown();
+			})
+		})
+
+	</script>
+
+</body>
+</html>

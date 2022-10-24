@@ -1,0 +1,62 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+main{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: white;
+}
+
+.circle{
+	height: 100px;
+	width: 100px;
+	/*background: rgba(255, 255, 255, 0.1);*/
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 20px;
+	border-radius: 100%;
+	color: #f86322;
+	border: 5px solid rgba(0, 0, 0, 0.1);
+	font-size: 2em;
+	animation-name: circle;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	transition: 2s ease-out;
+	box-shadow: 10px 20px 5px 1px inset lightgray;
+	z-index: 100;
+	overflow: hidden;
+}
+
+@keyframes circle{
+	25%{
+		transform: scale(0.5);
+	}
+	50%{
+		transform: scale(1.0);
+	}
+	75%{
+		transform: scale(0.5);
+	}
+}
+
+.circle-1{
+	animation-delay: 0.2s;
+}
+.circle-2{
+	animation-delay: 0.4s;
+}
+.circle-3{
+	animation-delay: 0.6s;
+}
+.circle-4{
+	animation-delay: 0.8s;
+}

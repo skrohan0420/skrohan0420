@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>slide revert</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+	<p id="a1">Lorem ipsum dolor sit amet, consectetur </p>
+	<p id="a2">Lorem ipsum dolor sit amet, consectetur </p>
+	<p id="a3">Lorem ipsum dolor sit amet, consectetur </p>
+	<p id="a4">Lorem ipsum dolor sit amet, consectetur </p>
+
+	<button>click</button>
+
+
+	<script type="text/javascript">
+		
+		$('document').ready(function(){
+			$('button').click(function(){
+				$('#a1').css('color','red').slideUp(500).slideDown(500);
+				$('#a2').css('color','black').slideUp(500).slideDown(500);
+				$('#a3').css('color','green').slideUp(500).slideDown(500);
+				$('#a4').css('color','blue').slideUp(500).slideDown(500);
+				$('#a4').css('color','blue').slideUp(500).slideDown(500);
+
+			})
+		})
+
+	</script>
+</body>
+</html>

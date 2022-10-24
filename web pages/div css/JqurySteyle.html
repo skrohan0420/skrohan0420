@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+	<script src="https://kit.fontawesome.com/ec06403605.js" crossorigin="anonymous"></script>
+</head>
+	
+ <style>
+	.box
+	 {
+		 width: 50px;
+		 height: 300px;
+		 background-color: #00CBB5;
+		 margin: 12px;
+		 display: flex;
+		 border-radius: 25px;
+		 transition: .9s;
+		 overflow: hidden;
+		 background: url("1 (30).jpg");
+		 background-size: cover;
+		  float: left;
+		 
+	 }
+	 
+	 .box1
+	 {
+		  width: 50px;
+		 height: 300px;
+		 background-color: #00CBB5;
+		  margin: 12px;
+		 display: flex;
+		 border-radius: 25px;
+		 transition: .9s;
+		 overflow: hidden;
+		 background: url("1 (28).jpg");
+		 background-size: cover;
+		 float: left;
+	 }
+	 
+	 .box2
+	 {
+		  width: 50px;
+		 height: 300px;
+		 background-color: #00CBB5;
+		 margin: 12px;
+		 display: flex;
+		 border-radius: 25px;
+		 transition: .9s;
+		 overflow: hidden;
+		 background: url("1 (29).jpg");
+		 background-size: cover;
+		 float: left;
+	 }
+	 
+	
+	 
+	 
+	 
+	 .box i,.box1 i , .box2 i
+	 {
+		 color: #FFF;
+		 font-size: 27px;
+		 padding: 5px;
+		 margin-top: 230px;
+		 margin-left: 7px;
+	 }
+	 .box p,.box1 p , .box2 p
+	 {
+		 margin-left: 40px;
+		 margin-right: 40px;
+		 margin-top: 230px;
+		 justify-content: center;
+		 color: #fff;
+	 }
+	 
+	
+</style>
+
+<body>
+	
+	<div class="box boss">
+		
+			
+		<i class="fas fa-heart"></i>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit possimus perferendis</p>
+		<i class="arrow fas fa-chevron-circle-left"></i>
+	</div>
+	
+	<div class="box1 boss" >
+		<i class="fas fa-heart"></i>
+		<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit possimus perferendis
+		</p>
+		<i class="arrow fas fa-chevron-circle-left"></i>
+	</div>
+	
+	<div class="box2 boss" >
+		<i class="fas fa-heart"></i> 
+		<i id='back'class="fas fa-chevron-circle-left"></i>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias reprehenderit possimus perferendis</p>
+		
+	</div>
+	<script>
+		
+		$(document).ready(function(){
+  			$(".boss").click(function(){
+    			$(this).css({
+					width:'600px',
+				})
+  			})
+  			$('#back').click(function(){
+  				$('.box2').animate({
+  					width:'50px',
+  					})
+  				})
+			})
+</script>
+
+</body>
+</html>

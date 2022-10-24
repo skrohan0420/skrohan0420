@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Prime numbers</title>
+</head>
+<body>
+
+
+
+
+	<script type="text/javascript">
+
+
+		for (var prime = 2; prime <= 100; prime++)
+		{
+    		var notPrime = false;
+
+    			for (var i = 2; i <= prime; i++)
+    			{
+        			if (prime % i === 0 && i !== prime)
+        			{
+            			notPrime = true;
+       				}
+   			 	}
+
+    		if (notPrime === false)
+    		{
+    		    console.log(prime);
+    		}
+		}
+	</script>
+</body>
+</html>

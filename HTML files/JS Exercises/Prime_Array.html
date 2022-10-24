@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+			
+		var p = [];
+
+		for (prime = 2; prime <= 100; prime++){
+    		var notPrime = false;
+
+    			for (i = 2; i <= prime; i++)
+    			{
+        			if (prime % i === 0 && i !== prime)
+        			{
+            			notPrime = true;
+       				}
+   			 	}
+
+    		if (notPrime === false)
+    		{
+    			p.push(prime);
+    		    
+    		}
+  
+		}
+		console.log(p);
+
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,47 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 101vh;
+}
+#cancel{
+    float: right;
+    height: 50px;
+    width: 50px;
+    margin: 50px;
+    display: none;
+    cursor: zoom-out;
+}
+#imgShow{
+    
+}
+.show{
+    position: relative;
+    /*top: 80px;*/
+    bottom: 80px;
+    left: 10%;
+    height: 75vh;
+    width: 80vw;
+    display: none;
+   /* border: 1px solid black;*/
+}
+
+.img{
+    cursor: zoom-in;
+    position: relative;
+    height: 20vh;
+    width: 20vw;
+    float: left;
+    top: 70px;
+    left: 20%;
+    padding: 20px;
+    border: 1px solid deeppink;
+}
+h1{
+    text-align: center;
+    margin-top: 20px;
+    text-decoration: underline;
+    color: burlywood;
+}

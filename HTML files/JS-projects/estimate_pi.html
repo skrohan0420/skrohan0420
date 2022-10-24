@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+
+	<script type="text/javascript">
+		
+		function estimate_pi(n){
+			let num_point_circle = 0 
+			let num_point_total = 0
+
+			for(i = 1; i <= n; i++){
+
+				let x = Math.random(0,1)
+				let y = Math.random(0,1)
+
+				let distance = x**2 + y**2
+
+				if (distance <= 1){
+					num_point_circle += 1
+				}
+				else{
+					num_point_total += 1
+				}
+			}	
+			return 4 * num_point_circle/num_point_total
+
+		}
+
+
+		console.log(estimate_pi(10000000000))
+		console.log(Math.PI)
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+      .content
+      {
+        position: relative;
+        margin: auto;
+        margin-top: 100px;
+       /* border: 1px solid black;*/
+        height: 200px;
+        width: 200px;
+        animation-name: rot;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+      @keyframes rot
+      {
+        0%
+        {
+          transform: rotate(0deg);
+        }
+        25%
+        {
+          transform: rotate(90deg);
+        }
+        50%
+        {
+          transform: rotate(180deg);
+        }
+        75%
+        {
+          transform: rotate(270deg);
+        }
+        100%
+        {
+          transform: rotate(360deg);
+        }
+      }
+      .box-1
+      {
+        position: relative;
+        height: 95px;
+        width: 95px; 
+        border: 1px solid rgba(0,0,0,0.1);
+        top: 1px;
+        left: 1px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border-top-left-radius: 100px;
+        background-color: rgba(66,133,244,0.8);
+      }
+      .box-2
+      {
+        position: relative;
+        height: 95px;
+        width: 95px; 
+        border: 1px solid  rgba(0,0,0,0.1);
+        bottom: 96px;
+        left: 102px;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        border-top-right-radius: 100px;
+        background-color: rgba(219,68,55,0.8);
+      }
+      .box-3
+      {
+        position: relative;
+        height: 95px;
+        width: 95px; 
+        border: 1px solid  rgba(0,0,0,0.1);
+        bottom: 92px;
+        left: 1px;
+        border-top-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        background-color: rgba(244,160,0,0.8);
+      }
+      .box-4
+      {
+        position: relative;
+        height: 95px;
+        width: 95px; 
+        border: 1px solid  rgba(0,0,0,0.1);
+        top: -189px;
+        left: 102px;
+        border-top-right-radius: 100px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        background-color: rgba(15,157,88,0.8);
+      }
+    </style>
+</head>
+<body bgcolor="#123">
+        <div class="content">
+          <div class="box box-1"></div>
+          <div class="box box-2"></div>
+          <div class="box box-3"></div>
+          <div class="box box-4"></div>
+        </div>
+        <div style="text-align: center; margin-top: 50px; color: gray;" >Loading....</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <style type="text/css">
+    .content
+    {
+      border:1px solid gray;
+      height: 400px;
+      width: 400px;
+      margin: auto;
+      margin-top: 50px;
+      border-bottom-left-radius: 50px;
+      border-top-right-radius: 50px;
+    }
+    .head
+    {
+     text-align: center;
+     text-decoration: underline;
+     color: gray;
+    }
+    .input
+    {
+     margin-left: 60px;
+    }
+    .label
+    {
+      margin-left: 60px;
+      color: gray;
+    }
+    .res
+    {
+      margin: 100px;
+      border: 1px solid gray;
+      height: 80px;
+      width: 200px;
+      text-align: center;
+      margin-top: 30px;
+      color: gray;
+    }
+    #val
+    {
+      outline: none;
+      width: 200px;
+      height: 40px;
+      font-size: 1.5em;
+      background-color: lightgray;
+    }
+    .get
+    {
+      outline: none;
+      width: 100px;
+      height: 40px;
+      font-size: 13px;
+      font-weight: bolder;
+      color: white;
+      background-color: #0099cc;
+      border-radius: 10px;
+      border: 1px solid gray;
+    }
+    .get:hover
+    {
+      color: gray;
+      cursor: pointer;
+      background-color: #ffffff;
+      box-shadow: 5px 5px 5px gray;
+    }
+    .get:focus
+    {
+      color: white;
+      background-color: #0099cc;
+      box-shadow: none;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+    <div class="content">
+      <div class="head">
+        <h1>Electricity Bill</h1>
+      </div>
+      <div class="label">
+        <label class="Power">Your Power Consumption:</label>
+      </div>
+      <div class="input">
+        <input id="val" placeholder="Total Units">
+         <button type="button" onclick="cal()" class="get">Get Amount</button>
+      </div>
+      
+       
+     
+      <div class="res">
+        <h2 id="res">Amount</h2>
+      </div>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+      function cal()
+      {
+        var val = Number(document.getElementById('val').value)
+        var res = document.getElementById('res')
+
+        var fi25 = 4.25;
+        var ne50 = 4.75;
+        var ne75 = 5.50;
+        var ne100 = 6.50;
+        var ab100 = 7.25;
+
+        if ( val <= 25 )
+        {
+          res.innerHTML = val * fi25 + " $";
+        }
+        else if ( val <= 75 )
+        {
+          res.innerHTML = 25 * fi25 + ( val - 25 ) * ne50 + " $";
+        }
+        else if ( val <= 125 )
+        {
+          res.innerHTML = 25 * fi25 + 50 * ne50 + ( val - 75 ) * ne75 + " $";
+        }
+        else if ( val <= 225 )
+        {
+          res.innerHTML = 25 * fi25 + 50 * ne50 + 75 * ne75 + (val - 100 ) * ne100 + " $";
+        }
+        else
+        {
+          res.innerHTML = 25 * fi25 + 50 * ne50 + 75 * ne75 + 100 * ne100 + (val - 250 ) * ab100 + " $";
+        }  
+      }
+    </script>
+</body>
+</html>

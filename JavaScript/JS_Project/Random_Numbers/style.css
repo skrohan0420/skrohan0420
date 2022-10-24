@@ -1,0 +1,61 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+
+section{
+	margin: auto;
+	margin-bottom: 500px;
+	width: 95%;
+	height: 100%;
+	border: 1px solid #ccc;
+}
+
+.randNums{
+	display: flex;
+	flex-direction: row;
+
+}
+
+.randNum{
+	width: 10%;
+	border:1px solid black ;
+	text-align: center;
+	padding: 5px;
+	text-decoration: underline;
+}
+
+#randVal{
+	display: flex;
+	flex-direction: row;
+}
+
+#randVal div{
+	width: 10%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	border: 1px solid gray;
+	position: relative;
+}
+
+#randVal div span{
+	width: 100%;
+	margin: 0;
+	color: red;
+}
+
+.input{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.input button{
+	margin-left: 30px;
+	cursor: pointer;
+}

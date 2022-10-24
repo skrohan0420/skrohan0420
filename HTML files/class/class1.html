@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	number1 :<input type="text" name="text" id="num1"><br>
+	number2 :<input type="text" name="text" id="num2"><br>
+	<button onclick="getval()">Get val</button>
+
+	<script type="text/javascript">
+		function getval()
+		{
+			var numb1 = Number(document.getElementById('num1').value);
+			var numb2 = Number(document.getElementById('num2').value);
+			(numb1 > numb2) ? alert("largest is " + numb1) : alert("largest is " + numb2);
+		}
+	</script>
+</body>
+</html>

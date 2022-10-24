@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script type="text/javascript">
+        // Cannot Print Symbols on DOM 
+
+
+
+        // let id1 = Symbol("hello");
+        // let id2 = Symbol("hello");
+
+        // console.log(id1)
+        // console.log(typeof id1)
+        // console.log(id1 == id2)
+        // alert(id1.toString())
+        // document.write(id1.description)
+
+
+
+        // let age = Symbol()
+
+        // let user = {
+        //     name : "Rohan",
+        //     class: 'Btech',
+        //     [age]: 25
+        // }
+
+        // console.log(user)
+
+
+
+        
+        let age = Symbol('age')
+
+        let user = {
+            name : "Rohan",
+            class: 'Btech'
+        }
+        user[age] = 25
+        user["gender"] = "male"
+        for(let key in user) {
+            // cannot use Symbols in for-in loops
+            console.log(key)
+        }
+
+
+
+        console.log(user)
+        console.log(user[age])
+        console.log(JSON.stringify(user))
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<style type="text/css">
+	h1{
+		color: gray;
+	}
+</style>
+<body>
+	<select>
+		<option>kolkata</option>
+		<option>mumbai</option>
+		<option>chenni</option>
+		<option>london</option>
+		<option>deradun</option>
+	</select>
+	<h1>chose your city</h1>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('select').change(function(){
+				var a = $(this).find(':selected').val();
+				$('h1').text('you selected '+ a)
+			});
+		});
+	</script>
+</body>
+</html>

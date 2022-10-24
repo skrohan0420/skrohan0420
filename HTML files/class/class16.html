@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>web storage-local</title>
+</head>
+<body>
+	<input type="text" name="txt" id="txt">
+	<button onclick="create()">Create/Update</button>
+	<button onclick="read()">Read</button>
+	<button onclick="delet()">Delete</button>
+
+
+
+	<script type="text/javascript">
+		function create()
+		{
+			var data = document.getElementById('txt').value;
+
+			if (typeof(Storage)!="undefined")
+			{
+				//localStroage.setItem("custName", data);
+				localStorage.custName = data;
+				alert('data Storage successfull....');
+			}
+			else
+			{
+				alert('Storage not avaliable');
+			}
+		}
+
+		function read()
+		{
+			if (typeof(Storage)!='undefined')
+			{
+				if (localStorage.getItem('custName') != null)
+				{
+					var name = localStorage.custName;
+					alert(name);
+				}
+				else
+				{
+					alert('no record found....');
+				}
+			}
+			else
+			{
+				alert('Storage not avaliable');
+			}
+		}
+
+		function delet()
+		{
+			if (typeof(Storage)!= 'undefined')
+			{
+				localStorage.removeItem('custName');
+				alert('data removed');
+			}
+			else
+			{
+				alert('no record found');
+
+			}
+		}
+	</script>
+</body>
+</html>

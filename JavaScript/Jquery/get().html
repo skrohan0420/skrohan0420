@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+</head>
+<body>
+
+<div class="test abc" id="box">
+	<h3>test box</h3>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		quis nostrud exercitation ullamco laboris nisi ut 
+	</p>
+</div>
+
+<input type="text" name="" id="name" value="Rohan">
+
+
+
+
+	<script type="text/javascript">
+
+			// text()
+			// html()
+			// attr()
+			// val()
+
+
+		$(document).ready(function(){
+
+			var a = $('#box').html()
+			var b = $('#box').text()
+			var c = $('#box').attr('class')
+			var d = $('#name').val()
+
+
+			console.log(a)
+			console.log(b)
+			console.log(c)
+			console.log(d)
+
+
+
+		})
+	</script>
+</body>
+</html>

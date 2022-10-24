@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>hover effect in jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		p{
+			padding: 30px;
+			font: 30px;
+		}
+		p.h{
+			background: red;
+		}
+	</style>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("p").hover(function(){
+             $(this).addClass("h");
+         },function(){
+            $(this).removeClass("h");
+			});
+		});
+	</script>
+</head>
+<body>
+<p>This is a hover effect in jquery</p>
+<p>This is a hover effect in jquery</p>
+<p>This is a hover effect in jquery</p>
+<p>This is a hover effect in jquery</p>
+<p>This is a hover effect in jquery</p>
+<p>This is a hover effect in jquery</p>
+</body>
+</html>

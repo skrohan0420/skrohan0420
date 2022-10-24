@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>js clock</title>
+	<style type="text/css">
+		body
+		{
+			background-color: rgb(155, 204, 189);
+		}
+		.clock
+		{
+			position: relative;
+			height: 460px;
+			width: 460px;
+			margin: auto;
+			margin-top: 5%;
+			/*border: 2px solid #000;*/
+		}
+		.dial
+		{
+			height: 400px;
+			width: 400px;
+			border: 30px groove brown;
+			border-radius: 50%;
+			position: absolute;
+			padding: 0;
+			background-color: rgb(181, 252, 167);
+		}
+		.center-point
+		{
+			background-color: brown;
+			height: 20px;
+			width: 20px;
+			border-radius: 50%;
+			position: absolute;
+			z-index: 10;
+			left: 225px; 
+			top: 225px;
+		}
+		.time
+		{
+			position: absolute;
+			z-index: 2;
+			font-size: 40px;
+			font-weight: bold;
+			color: rgb(31, 33, 5);
+		}
+		.time-12
+		{
+			top: 30px;
+			left: 210px;
+		}
+
+		.time-11
+		{
+			top: 60px;
+			left:130px;
+		}
+
+		.time-10
+		{
+			top: 120px;
+			left: 70px;
+		}
+
+		.time-9
+		{
+			top: 210px;
+			left: 45px;
+		}
+
+		.time-8
+		{
+			bottom: 120px;
+			left: 70px;
+		}
+
+		.time-7
+		{
+			bottom: 60px;
+			left:130px;
+		}
+
+		.time-6
+		{
+			bottom: 30px;
+			left: 220px;
+		}
+
+		.time-5
+		{
+			bottom: 60px;
+			right:130px;
+		}
+		.time-4
+		{
+			bottom: 120px;
+			right: 70px;
+		}
+
+		.time-3
+		{
+			top: 210px;
+			right: 45px;
+		}
+
+		.time-2
+		{
+			top: 120px;
+			right: 70px;
+		}
+
+		.time-1
+		{
+			top: 60px;
+			right:130px;
+		}
+		#sc-hand
+		{
+			height: 150px;
+			position: absolute;
+			border: 1px solid #000;
+			background-color: #000;
+			z-index: 3;
+			left: 233px;
+			top: 80px;
+			transform-origin: bottom;
+			transform: rotate(0deg);
+		}
+		#mi-hand
+		{
+			height: 120px;
+			position: absolute;
+			border: 2px solid #000;
+			background-color: #000;
+			z-index: 4;
+			left: 232px;
+			top: 110px;
+			transform-origin: bottom;
+			transform: rotate(0deg);
+		}
+		#hr-hand
+		{
+			height: 90px;
+			position: absolute;
+			border: 3px solid #000;
+			background-color: #000;
+			z-index: 5;
+			left: 231px;
+			top: 140px;
+			transform-origin: bottom;
+			transform: rotate(0deg);
+		}
+	</style>
+</head>
+<body onload="setClock()">
+	<div class="clock">
+		<div class="dial"></div>
+		<div class="center-point"></div>
+
+		<div class="time time-1">1</div>
+		<div class="time time-2">2</div>
+		<div class="time time-3">3</div>
+		<div class="time time-4">4</div>
+		<div class="time time-5">5</div>
+		<div class="time time-6">6</div>
+		<div class="time time-7">7</div>
+		<div class="time time-8">8</div> 
+		<div class="time time-9">9</div>
+		<div class="time time-10">10</div>
+		<div class="time time-11">11</div>
+		<div class="time time-12">12</div>
+		
+		<div id="hr-hand"></div>
+		<div id="mi-hand"></div>
+		<div id="sc-hand"></div>
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+		function setClock()
+		{
+			var d = new Date();
+			var hr = d.getHours();
+			var mi = d.getMinutes();
+			var se = d.getSeconds();
+
+			var s_angle = 6 * se;
+			document.getElementById("sc-hand").style.transform = "rotate("+	s_angle+"deg)";
+			var m_angle = 6 * mi;
+			document.getElementById("mi-hand").style.transform = "rotate("+ m_angle+"deg)";
+			hr = (hr>12)?hr-12:hr;
+			var h_angle = (30 * hr) + (0.5 * mi);
+			document.getElementById("hr-hand").style.transform = "rotate("+ h_angle+"deg)";
+
+
+
+			setTimeout(setClock, 1000);
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+	<style type="text/css">
+		.bg{
+			background: olivedrab;
+		}
+	</style>
+</head>
+<body>
+
+	<h1>On()</h1>
+	<div>
+		<h3>Test</h3>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore
+		</p>
+	</div>
+	<button>click</button>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			// $('div').on('mouseover mouseout',function(){
+			// 	$(this).toggleClass('bg')
+			// })
+
+			$('div').on({
+				'click' : function(){
+					$(this).css('background','orange')
+				},
+				'mouseover' : function(){
+					$(this).css('background','blue')
+
+				},
+				'mouseout' : function(){
+					$(this).css('background','gray')
+				}
+			})
+			$('button').click(function(){
+				$('div').off('mouseover mouseout')
+			})
+		})
+
+
+	</script>
+
+
+</body>
+</html>

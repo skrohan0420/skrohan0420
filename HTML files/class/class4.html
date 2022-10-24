@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Switch Statement</title>
+</head>
+<body>
+	<h1 align="center">Temparatue Converter</h1>
+	<label>Select any</label>
+
+	<input type="radio" name="temp" value="cel" onclick="showc()"> C to F
+	<input type="radio" name="temp" value="fer" onclick="showf()"> F to C
+
+	<br>
+	<br>
+	<br>
+
+	<div id="c-to-f" style="display:none ;">
+		<label>Celsius Value</label>
+		<input type="number" id="cel" value="0" onkeyup="calctof()">
+		<h1 id="f">0</h1>
+	</div>
+
+	<div id="f-to-c" style="display:none ;">
+		<label>Fahrnheit Value</label>
+		<input type="number" id="f" value="0" onkeyup="calftoc()">
+		<h1 id="c">0</h1>
+	</div>
+
+
+	<script type="text/javascript">
+		function showc()
+		{
+			document.getElementById('c-to-f').style.display = "block";
+			document.getElementById('f-to-c').style.display = "none";
+		}
+		function showf()
+		{
+			document.getElementById('f-to-c').style.display = "block";
+			document.getElementById('c-to-f').style.display = "none";
+		}
+		function calctof()
+		{
+			var c = document.getElementById('cel').value;
+			var f = ((9 * c) + 160) / 5;
+			document.getElementById('f').innerHTML = f;
+		}
+		function calftoc()
+		{
+			var f = document.getElementById('f').value;
+			var c = ((5 * f) - 160) / 9;
+			document.getElementById('c').innerHTML = c;
+		}
+	</script>
+</body>
+</html>

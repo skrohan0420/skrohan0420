@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shape-Convert-Animation</title>
+	<style type="text/css">
+		body
+		{
+			background-color: black;98jrhfcvgtsd 9i		}
+		.box1
+		{
+			width: 200px;
+			height: 200px;
+			border: 3px solid white;
+			animation-name: animate1;
+			position: relative;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		.box2
+		{
+			width: 200px;
+			height: 150px;
+			border: 3px solid white;
+			animation-name: animate2;
+			position: relative;
+			animation-duration: 10s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+		}
+		@keyframes animate1
+		{
+			0% { background: green; left: 0%; top:0px; border-radius: 0; }
+			25% { background: orange; left: 35%; top:0px; }
+			50% { background: yellow; left: 35%; top:200px; border-radius: 50% }
+			75% { background: red; left: 0%; top:200px; }
+			100% { background: blue; left: 0%; top:0px; border-radius: 0;}
+		}
+		@keyframes animate2
+		{
+			0% { background: green; left: 85%; top:280px; border-radius: 0; }
+			25% { background: orange; left: 50%; top:280px; }
+			50% { background: yellow; left: 50%; top:0px; border-radius: 50% }
+			75% { background: red; left: 85%; top:0px; }
+			100% { background: blue; left: 85%; top:280px; border-radius: 0;}
+		}
+	</style>
+</head>
+<body>
+	<div class="box1"></div>
+	<div class="box2"></div>
+</body>
+</html>

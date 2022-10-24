@@ -1,0 +1,13 @@
+Codeigniter Blog :
+
+
+	public =>
+		Artical List
+		Artical View
+
+	Admin =>
+		Login
+		Logout
+		Add artical
+		Edit Artical
+		Delete Artical

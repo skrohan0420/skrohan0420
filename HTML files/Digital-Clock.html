@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="clock()">
+    <h1 align="center" id="clock">00:00</h1>
+
+    <script>
+        function clock()
+        {
+            var d = new Date();
+            var hrs = d.getHours();
+            var min = d.getMinutes();
+            var secs = d.getSeconds();
+
+            var ampm =(hrs>12)? "pm":"am";
+            hrs = (hrs>12)? hrs-12:hrs;
+            document.getElementById("clock").innerHTML=hrs+":"+min+":"+secs+" "+ampm;
+            setInterval(clock,1000);
+        }
+    </script>
+</body>
+</html>

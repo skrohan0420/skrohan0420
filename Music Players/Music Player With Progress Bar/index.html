@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Music Player</title>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+	<audio id="player" src="./Ishq-Da-Sutta_(webmusic.in).mp3"></audio>
+
+	<div class="player" >
+		<div class="control">
+			<i class="fas fa-play" id="playbtn"></i>
+		</div>
+
+
+		<div class="info">
+			Ishq-Da-Sutta
+			<div class="bar">
+				<div id="progress"></div>
+			</div>
+		</div>
+
+
+		<div id="current">0:00</div>
+	</div>
+
+	<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>

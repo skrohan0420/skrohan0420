@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery input field effect </title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("input").focus(function(){
+				$(this).css("background-color","blue")
+			});
+			$("input").blur(function(){
+				$(this).css("background-color","red")
+			});
+		})
+	</script>
+</head>
+<body>
+  <p>Welcome to jquery blur event in jquery</p>
+  Enter your name:<input type="text" name="name"></br>
+  Enter your name:<input type="text" name="name"></br>
+</body>
+</html>

@@ -1,0 +1,6 @@
+1: Create a folder named SOMETHING
+2: Create a file named bio.txt and add data into it
+3: Add more data to the file at the end of existing data
+4: Read Data Without getting the buffer Data
+5: Rename the file to mybio.txt
+6: now delete both the file and the folder

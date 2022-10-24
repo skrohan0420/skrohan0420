@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+		JQUERY DEMO
+	</title>
+</head>
+<body>
+	<h1>This is Jquery sample</h1>
+	<input type="button" name="btn1" id="btn1" class="btn1" value="hide">
+	<input type="button" name="btn2" id="btn2" class="btn2" value="show">
+	<input type="button" name="btn3" id="btn3" class="btn3" value="toggle">
+
+
+
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous">
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#btn1').click(function(){
+				$('h1').hide(500);
+			});
+
+			$('.btn2').click(function(){
+				$('h1').show(500);
+			});
+
+			$('input[name="btn3"]').click(function(){
+				$('h1').toggle(500);
+			});
+		});
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,72 @@
+.Month
+{
+	width: 100%
+}
+
+.month
+{
+	text-align: center;
+	font-size: 50px;
+}
+
+.week
+{
+	font-size: 18px;
+	text-align: center;
+	height: 35px;
+}
+
+.days
+{
+	text-align: center;
+}
+
+#upper
+{
+	position: fixed;
+	width:;
+	border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#January
+{
+	border: 1px solid black;
+	float: left;
+	width: 24%;
+}
+
+#February
+{
+	border: 1px solid black;
+	float: left;
+	width: 24%;
+}
+
+#March
+{
+	border: 1px solid black;
+	float: left;
+	width: 24%;
+}
+
+#April
+{
+	border: 1px solid black;
+	float: left;
+	width: 24%;
+}

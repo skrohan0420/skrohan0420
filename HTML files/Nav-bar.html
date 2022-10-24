@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+    body{
+      background: black;
+    }
+		*{
+			box-sizing: border-box;
+			margin: 0px;
+			padding: 0px;
+			font-family: sans-serif;
+		}
+    ul{
+      width: 100%;
+      background: #333;
+      height: 100%;
+      overflow: hidden;
+    }
+    ul li:not(.logo){
+      float: right;
+      list-style-type: none;
+    }
+		.logo{
+      float: left;
+    }
+    li{
+      padding: 20px;
+      text-align: center;
+    }
+    a{
+     text-decoration: none;
+     color: white;
+     text-transform: uppercase;
+    }
+    li:hover:not(.logo){
+      background: black;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 768px) {
+      .logo,
+      ul li:not(.logo){
+        float: none;
+        padding: 10px;
+        border-bottom: 1px solid black;
+      }
+    }
+
+		
+			
+	</style>
+
+</head>
+<body>
+
+	
+		<nav>		
+			<ul>
+				<li class="logo">
+					<a href="#" >Company</a>
+				</li>
+				<li>
+					<a href="#">About Us</a>
+				</li>
+				<li>
+					<a href="#">Projects</a>
+				</li>
+				<li>
+					<a href="#">Contact Us</a>
+				</li>
+				<li>
+					<a href="#">home</a>
+				</li>
+			</ul>
+		</nav>
+
+
+</body>
+</html>

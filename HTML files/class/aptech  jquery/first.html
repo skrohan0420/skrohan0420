@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jquery padding disappear</title>
+	<script type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style type="text/css">
+	p{
+		padding: 10px;
+	}
+	.f1{
+		background: red;
+	}
+</style>
+<script type="text/javascript">
+	$(document).ready(function()
+	{
+		$("p").click(function()
+		{
+			$(this).toggleClass("f1")
+		});
+	});
+</script>
+</head>
+
+<body>
+   <p  class="f1">Click on me and i will disappeare</p>
+   <p class="f1">Click on me and i will disappeare</p>
+   <p class="f1">Click on me and i will disappeare</p>
+   <p class="f1">Click on me and i will disappeare</p>
+</body>
+</html>

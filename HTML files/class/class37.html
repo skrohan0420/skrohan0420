@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button>click me</button>
+    <p style="color: gary;">content</p>
+    <p style="color: #f99;">content</p>
+    <p style="color: #f44;" class="right">content</p>
+    <p style="color: #200;" class="right">content</p>
+    
+    <script>
+        $(document).ready(function(){
+			$('button').click(function(){
+                $('p').css({
+                    'text-transform': 'uppercase',
+                    'margin-left': '20px',
+                    'color': 'blue'
+                });
+                $('.right').css({
+                   'margin-left': '200px'
+                })
+            });
+		});
+    </script>
+</body>
+</html>

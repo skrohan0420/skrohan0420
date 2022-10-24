@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+
+
+	<form>
+		<input type="text" name="name">Name
+		<br>
+		<input type="text" name="email">Email
+	</form>
+	<button>click</button>
+	<h3></h3>
+
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('button').click(function(){
+				$('h3').text($('form').serialize())
+			})
+		})
+
+	</script>
+
+</body>
+</html>

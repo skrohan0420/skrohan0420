@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login Form</title>
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<link rel="stylesheet" type="text/css" href="css/ourDesign.css">
+	<style type="text/css">
+		body
+		{
+			background-image: url('https://images.unsplash.com/photo-1549740425-5e9ed4d8cd34?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MXwzOTU0NTB8fGVufDB8fHw%3D&w=1000&q=80');
+		}
+	</style>
+</head>
+<body>
+	<div class="form-main">
+		<div id="heading">Login Form</div>
+		<form method="post" action="" autocomplete="off">
+			<div class="form-element-group">
+				<label>Email / Phone <req>*</req></label>
+				<input type="text" name="userid" placeholder="Registered Email / Phone" required="true">
+			</div>
+			<div class="form-element-group">
+				<div>
+					<label>Password <req>*</req></label>
+				</div>
+				<div class="fl-left">
+					<input type="password" name="pwd" placeholder="***********" maxlength="36" required="true">
+				</div>
+				<div class="fl-right">
+					<button type="button" class="btn-pass" id="show">
+						 <!-- <center>
+							<img src="image/eye-open.png" width="30">
+						</center>  -->
+						<span class="fa fa-eye"></span>
+					</button>
+					<button type="button" class="btn-pass" id="hide" style="display: none;">
+						 <!-- <center>
+							<img src="image/eye-close.png" width="30">
+						</center>  -->
+						<span class="fa fa-eye-slash"></span>
+					</button>
+				</div>
+				<div class="fl-clear"></div>
+			</div>
+			<div class="form-element-group btn-align-center">
+				<input type="submit" class="btn btn-submit" name="sub" value="Login Now">
+				<input type="button" class="btn btn-back" value="Back">
+			</div>
+		</form>
+	</div>
+</body>
+</html>

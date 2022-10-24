@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+
+
+
+
+		// class hello{
+		// 	message(){
+		// 		console.log('hi')
+		// 	}
+		// 	hi(){
+		// 		console.log('hello')
+		// 	}
+		// }
+
+		// let a = new hello()
+		// a.message()
+		// a.hi()
+
+
+
+
+
+		// Types of Method
+		// constructor, prototype, static 
+
+
+
+
+
+
+
+
+		class student{
+			constructor(name, age){
+				this.studentName = name;
+				this.studentAge = age;
+			}
+			hello(){
+				console.log(`hello ${this.studentName} Your Age : ${this.studentAge}`)
+			}
+
+
+			static staticMethod(){
+				console.log(`Static Method`)
+			}
+
+		}
+
+		let a = new student('Rohan',20)
+		let b = new student('Sahil',19)
+
+		a.hello()
+		b.hello()
+
+
+		student.staticMethod()
+
+	</script>
+
+
+</body>
+</html>

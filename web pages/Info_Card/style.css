@@ -1,0 +1,40 @@
+body{
+	background: #181818/*#01b1f7*/;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+.content{
+	margin: auto;
+	margin-top: 50px;
+	width: 400px;
+	height: 600px;
+	border: 1px solid red;
+}
+
+.content .h1{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+}
+
+.content .p{
+	text-align: center;
+}
+
+.content .img{
+	height: 100px;
+	width: 100px;
+	overflow: hidden;
+}
+
+
+.content .img img{
+	height: 100px;
+	width: 100px;
+}

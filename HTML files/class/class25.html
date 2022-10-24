@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> show hide in jqauery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<style type="text/css">
+		p{
+			padding: 10px;
+			background: blue;
+		}
+	</style>
+</head>
+<body>
+	<button class="bt1"> hide </button>
+	<button class="bt2"> show </button>
+	<p> hmmmmmmmmmmmmmmm </p>
+	<p> hmmmmmmmmmmmmmmm </p>
+	<p> hmmmmmmmmmmmmmmm </p>
+	<p> hmmmmmmmmmmmmmmm </p>
+	<p> hmmmmmmmmmmmmmmm </p>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+
+			$('.bt1').click(function(){
+				$('p').hide(300);
+
+			});
+
+			$('.bt2').click(function(){
+				$('p').show(300);
+			});
+		});	
+
+
+	</script>
+</body>
+</html>

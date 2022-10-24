@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>JQuery Ajax</title>
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+		<h1>click on this button to call ajax request</h1>
+		<button>click</button>
+		<p id="p1"></p>
+		
+		
+
+	
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+  			$('button').click(function(){
+  				$.ajax({
+  					url: 'hello.html',
+  					type: 'GET',
+  					success: function(data){
+  						$('#p1').html(data);
+  					}
+  				});
+  			});
+		});
+	</script>
+
+</body>
+</html>

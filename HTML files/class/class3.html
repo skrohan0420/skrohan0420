@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	number1 :<input type="text" name="text" id="num1"><br>
+	number2 :<input type="text" name="text" id="num2"><br>
+	operation :
+	<input type="radio" name="ope" id="op1" checked="true">add
+	<input type="radio" name="ope" id="op2">sub
+	<input type="radio" name="ope" id="op3">mul
+	<input type="radio" name="ope" id="op4">div
+	<br>
+	
+	<button onclick="cal()">Get val</button>
+
+	<h1>output</h1>
+	<label id="msg"></label>
+	<input type="text" id="res" value="0" disabled="true">
+	<h3 id="ans"> res </h3>
+
+	<script type="text/javascript">
+		function cal()
+		{
+			var numb1 = Number(document.getElementById('num1').value);
+			var numb2 = Number(document.getElementById('num2').value);
+			var op1   = document.getElementById('op1');
+			var op2   = document.getElementById('op2');
+			var op3   = document.getElementById('op3');
+			var op4   = document.getElementById('op4');
+
+			var text  = document.getElementById('res');
+			var res   = document.getElementById('ans');
+			var msgl  = document.getElementById('msg');
+			
+			if (op1.checked == true) 
+			{
+				var num3 = numb1 + numb2;
+				msgl.innerHTML = "add";
+				text.value = num3;
+				res.innerHTML = num3;
+				alert(num3);
+			}
+			else if(op2.checked == true)
+			{
+				var num3 = numb1 - numb2;
+				msgl.innerHTML = "sub";
+				text.value = num3;
+				res.innerHTML =  num3;
+				alert(num3);
+			}
+			else if(op3.checked == true)
+			{
+				var num3 = numb1 * numb2;
+				msgl.innerHTML = "mul";
+				text.value = num3;
+				res.innerHTML = num3;
+				alert(num3);
+			}
+			else
+			{
+				var num3 = numb1 / numb2;
+				msgl.innerHTML = "div";
+				text.value = num3;
+				res.innerHTML = num3;
+				alert(num3);
+			}
+		}
+	</script>
+</body>
+</html>

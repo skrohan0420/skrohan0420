@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<style type="text/css">
+		p{
+			width: 100%;
+			padding: 80px;
+			text-align: center;
+			background-color: aqua;
+			position: fixed;
+			top: 60px;
+			display: none;
+		}
+		.p1{
+			height: 600px;
+			text-align: center;
+			font-size: 60px;
+		}
+	</style>
+</head>
+<body>
+	<p>Scroll Efect Is Occurring In JQuery</p>
+	<div class="p1" style="background-color:blue;">
+		This Is a JQuery Scroll Efect
+	</div>
+	<div class="p1" style="background-color:green;">
+		This Is a JQuery Scroll Efect
+	</div>
+	<div class="p1" style="background-color:purple;">
+		This Is a JQuery Scroll Efect
+	</div>
+	<div class="p1" style="background-color:yellow;">
+		This Is a JQuery Scroll Efect
+	</div>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(window).scroll(function(){
+				$("p").show().fadeOut(200);
+			});
+		});
+	</script>
+</body>
+</html>

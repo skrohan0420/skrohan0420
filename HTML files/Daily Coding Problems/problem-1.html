@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+			function sqrAndSort(arr) {	
+			var newArr = []
+			for(i=0; i<arr.length;){
+				var newElem = Math.pow(arr[i],2)
+				newArr.push(newElem)
+				newArr.sort(function(a, b){return a-b})
+				i++
+			}
+			return newArr
+		}
+		var arr =  [-9, -2, 0, 2, 3]
+		console.log(sqrAndSort(arr))
+	</script>
+
+
+</body>
+</html>

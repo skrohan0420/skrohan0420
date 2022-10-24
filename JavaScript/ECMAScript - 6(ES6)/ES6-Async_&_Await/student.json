@@ -1,0 +1,17 @@
+[
+    {
+        "name": "kumar samu",
+        "age":"21",
+        "city": "Goa"
+    },
+    {
+        "name": "Rohan ali",
+        "age":"22",
+        "city": "Kolakata"
+    },
+    {
+        "name": "Raja Das",
+        "age":"25",
+        "city": "Mumbai"
+    }
+]

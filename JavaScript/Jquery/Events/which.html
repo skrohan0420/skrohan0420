@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="text/javascript" src="../jquery-3.6.0.js"></script>
+	<title></title>
+	<style type="text/css">
+		body{
+			
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+		}
+	
+		#box{
+			height: 400px;
+			width: 600px;
+			background: lavender;
+			border: 1px solid lawngreen;
+		}
+	</style>
+</head>
+<body>
+
+
+	<h1>Jquery Event.type </h1>
+
+	<div id="box"></div>
+
+	<input type="text" name="" id="input">
+
+	<h2></h2>
+
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#box").on("mouseover mouseout mousedown mouseover" , function(e){
+				
+				$('h2').html(e.type + ' : ' + e.which)
+
+			})
+
+			$('input').on('keydown', function(e){
+				$('h2').html(e.type + ' : ' + e.which)
+
+			})
+		})
+	</script>
+</body>
+</html>

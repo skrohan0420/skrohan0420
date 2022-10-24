@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<h1 id="line1">1st Line</h1>
+	<h1 id="line2">2nd Line</h1>
+	<h1 id="line3">3rd Line</h1>
+
+	<button id="btn1"> btn-1</button>
+	<button id="btn2"> btn-2</button>
+	<button id="btn3"> btn-3</button>
+
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+    			$("#line1").text("NEW TEXT1");
+    			$("#line2").text("NEW TEXT2");
+    			$("#line3").text("NEW TEXT3");
+  			});
+  			$("#btn2").click(function(){
+    			$("#line2").text("new text");
+  			});
+  			$("#btn3").click(function(){
+    			$("#line3").text("new text2");
+  			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation Clock</title>
+	<style type="text/css">
+		.clock {
+			position: relative;
+			height: 460px;
+			width: 460px;
+			margin: auto;
+			margin-top: 5%;
+			
+		}
+
+		.dial {
+			height: 400px;
+			width: 400px;
+			border: 30px groove brown;
+			border-radius: 50%;
+			position: absolute;
+			padding: 0;
+			background-color: antiquewhite;
+		}
+
+		.center-point {
+			background-color: brown;
+			height: 40px;
+			width: 40px;
+			border-radius: 50%;
+			position: absolute;z-index: 10;
+			left: 210px;
+			top: 210px;
+		}
+
+		.time {
+			position: absolute;
+			z-index: 2;
+			font-size: 40px;
+			font-weight: bold;
+		}
+
+		.time-12 {
+			top: 30px;
+			left: 210px;
+		}
+
+		.time-1 {
+			top: 50px;
+			left: 310px;
+		}
+
+		.time-2 {
+			top: 122px;
+			left: 380px;
+		}
+
+		.time-4 {
+			top: 300px;
+			left: 377px;
+		}
+
+		.time-5 {
+			top: 360px;
+			left: 317px;
+		}
+
+		.time-9 {
+			top: 210px;
+			left: 45px;
+		}
+
+		.time-7 {
+			bottom: 50px;
+			right: 310px;
+		}
+
+		.time-8 {
+			bottom: 120px;
+			right: 377px;
+		}
+
+		.time-6 {
+			bottom: 30px;
+			left: 210px;
+		}
+
+		.time-10 {
+			bottom: 290px;
+			right: 359px;
+		}
+
+		.time-11 {
+			top: 50px;
+			right: 300px;
+		}
+
+		.time-3 {
+			top: 210px;
+			right: 45px;
+		}
+
+		#sc-hand {
+			height: 150px;
+			position: absolute;
+			border: 1px solid #000;
+			background-color: #000;
+			z-index: 3;
+			left: 230px;
+			top: 80px;
+			transform-origin: bottom;
+			transform: rotate(120deg);
+
+		}
+
+		#mi-hand {
+			height: 120px;
+			position: absolute;
+			border: 2px solid #000;
+			background-color: #000;
+			z-index: 4;
+			left: 230px;
+			top: 110px;
+			transform-origin: bottom;
+			transform: rotate(90deg);
+
+		}
+
+		#hr-hand {
+			height: 90px;
+			position: absolute;
+			border: 3px solid #000;
+			background-color: #000;
+			z-index: 5;
+			left: 230px;
+			top: 140px;
+			transform-origin: bottom;
+			transform: rotate(40deg);
+
+		}
+	</style>
+</head>
+<body>
+	<div class="clock">
+		<div class="dial"></div>
+
+		<div class="center-point"></div>
+
+		<div class="time time-12">12</div>
+
+		<div class="time time-1">1</div>
+
+		<div class="time time-2">2</div>
+
+		<div class="time time-3">3</div>
+
+		<div class="time time-4">4</div>
+
+		<div class="time time-5">5</div>
+
+		<div class="time time-6">6</div>
+
+		<div class="time time-7">7</div>
+
+		<div class="time time-8">8</div>
+
+		<div class="time time-9">9</div>
+
+		<div class="time time-10">10</div>
+
+		<div class="time time-11">11</div>
+
+		<div id="hr-hand"></div>
+
+		<div id="mi-hand"></div>
+
+		<div id="sc-hand"></div>
+		
+	</div>
+</body>
+</html>

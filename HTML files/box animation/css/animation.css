@@ -1,0 +1,93 @@
+.box
+{
+	text-align: center;
+	font-size: 70px;
+	animation-name: box;
+	animation-duration: 15s;
+	animation-iteration-count: infinite;
+	text-decoration: underline;
+}
+
+
+.content
+{
+	border:1px solid #008080;
+	margin:auto;
+	height: 400px;
+	width: 400px;
+	position: relative;
+	margin-top: 50px;
+
+}
+
+.A
+{
+	position: absolute;
+	border: 1px solid #008080;
+	width: 98px;
+	height: 98px;
+	top: 150px;
+	left: 150px;
+	animation-name: A;
+	animation-duration: 15s;
+	animation-iteration-count: infinite; 
+	
+
+}
+
+.a
+{
+	position: absolute;
+	border: 1px solid #008080;
+	width: 40px;
+	height: 40px;
+	top: 110px;
+	left: 110px;
+	animation-name: a;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	
+}
+
+.b
+{
+	position: absolute;
+	border: 1px solid #008080;
+	width: 40px;
+	height: 40px;
+	bottom: 110px;
+	left: 110px;
+	animation-name: b;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	
+}
+
+.c
+{
+	position: absolute;
+	border: 1px solid #008080;
+	width: 40px;
+	height: 40px;
+	bottom: 110px;
+	right: 110px;
+	animation-name: c;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+	
+}
+
+.d
+{
+	position: absolute;
+	border: 1px solid #008080;
+	width: 40px;
+	height: 40px;
+	top: 110px;
+	right: 110px;
+	animation-name: d;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+
+}
+

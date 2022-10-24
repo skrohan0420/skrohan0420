@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>slide down event</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <style type="text/css">
+  	p{
+  	padding: 30px;
+  	background: blue;
+  }
+  </style>
+  <script type="text/javascript">
+  	 $(document).ready(function(){
+  	 	$(".upbtn").click(function(){
+  	 		$("p").slideUp();
+  	 	});
+  	 	$(".dwnbtn").click(function(){
+  	 		$("p").slideDown();
+  	 	});
+  	 });
+  </script>
+</head>
+<body>
+	<button class="upbtn">Slide up my paragraph</button>
+	<button class="dwnbtn">Slide down my paragraph</button>
+   <p>This is my jquery slide event</p>
+   <p>This is my jquery slide event</p>
+   <p>This is my jquery slide event</p>
+   <p>This is my jquery slide event</p>
+   <p>This is my jquery slide event</p>
+   <p>This is my jquery slide event</p>
+   <p>This is my jquery slide event</p>
+</body>
+</html>

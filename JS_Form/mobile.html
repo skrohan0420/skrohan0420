@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Form</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+
+	<style type="text/css">
+		body{
+	margin: 0;
+	padding: 0;
+	background-color: white;
+
+}
+*{
+	box-sizing: border-box;
+	/*border: 1px solid gray;*/
+	font-family: 'PT Serif', serif;
+}
+a{
+	text-decoration: none;
+}
+label{
+	font-size: 1.2em;
+}
+input{
+	border: 1px solid rgb(30,134,196);
+	padding-left: 20px;
+
+}
+input:focus{
+	transition: ease 0.2s;
+	outline: none;
+	padding-left: 30px;
+	font-size: 1.1em;
+
+}
+select{
+	border: 1px solid rgb(30,134,196);
+	padding-left: 20px;
+	outline: none;
+	width: 30%;
+	margin-left: 10px;
+	height: 30px;
+	margin-top: px;
+	font-size: 1em;
+
+}
+#mainForm{
+	margin: auto;
+	margin-top: 30px;
+	height: fit-content;
+	width: 470px;
+	border: 1px solid rgb(30,134,196);
+	box-shadow: 0px 20px 50px dimgray;
+	background-color: white;
+}
+#mainHeading{
+	margin: auto;
+	margin-top: 20px;
+	height: fit-content;
+	width: fit-content;
+	font-size: 2em;
+	border-bottom: 1px solid rgb(30,134,196);
+}
+#nameAndNumber{
+	width: 100%;
+}
+#leftSide{
+	float: left;
+	margin-left: 15px;
+}
+#rightSide{
+	float: right;
+	margin-right: 15px;
+}
+#password{
+	/*border: 1px solid black;*/
+	height: fit-content;
+	margin: 15px;
+}
+.pass{
+	width: 437px;
+	height: 35px;
+	margin-bottom: 15px;
+}
+#birthDay{
+	margin: 15px;
+}
+#gender{
+	margin: 15px;
+	width: 435px;
+}
+#terms{
+	margin: 15px;
+	margin-bottom: 10px;
+}
+#login{
+	margin: 15px;
+	margin-top: 0px;
+	float: right;
+}
+#radioGender{
+	border: 1px solid rgb(30,134,196);;
+	width: 437px;
+	height: 35px;
+}
+.radioGender{
+	margin-top: 10px;
+	padding-left: none;
+}
+.name-email-phone{
+	height: 35px;
+	width: 210px;
+	margin-bottom: 15px;
+}
+#showPassword{
+	margin-top: 0px;
+	float: right;
+}
+#crtBtn{
+	background-color: rgb(30,134,196);
+	outline: none;
+	width: 437px;
+	font-size: 1.5em;
+	border: none;
+	margin: 15px;
+	margin-bottom: 15px;
+	margin-top: 0px;
+	color: white;
+	border-radius: 10px;
+	height: 35px;
+	transition: ease 0.5s;
+	display: grid;
+	text-align: center;
+}
+span{
+	color: blue;
+	cursor: pointer;
+}
+#crtBtn:active{
+	transform: scale(0.91);
+	cursor: pointer;
+}
+#crtBtn:hover{
+	color: rgb(30,134,196);
+	background-color: white;
+	border: 1px solid rgb(30,134,196);
+	cursor: pointer;
+}
+::placeholder{
+	font-size: 0.9em;
+	text-align: left;
+}
+.tick{
+	color: red;
+	font-size: .6em;
+	float: right;
+	cursor: default;
+	font-family: sans-serif;
+}
+#inCPass{
+	font-size: 1em;
+}
+#after-submit{
+	z-index: 1;
+	height: 450px;
+	width: 700px;
+	margin: auto;
+	margin-top: 100px;
+}
+.res{
+	height: 100px;
+	width: 500px;
+	/*border: 1px solid rgb(30,134,196);*/
+	margin: 10px 20px 10px 14% ;
+	text-align: left;
+	font-size: 1.5em;
+	padding-top: 40px;
+	box-shadow: 0px 25px 50px dimgray;
+	border-radius: 5px;
+	color:rgb(30,134,196) ;
+	padding-left: 8%;
+}
+#Name{
+	border: none;
+}
+.ress{
+	color: dimgray;
+}
+	</style>
+</head>
+<body>
+
+
+
+
+	
+
+
+	<div id="mainForm">
+
+		<div id="mainHeading">
+			Create Account
+		</div>
+	<form autocomplete="off" method="post">
+		<div id="nameAndNumber">
+			<div id="rightSide">
+				<div>
+					<label>
+						Last Name <span class="tick" id="alertLastName"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="text" name="userLastName" placeholder="Last Name"
+					 onblur="lastName(this.value)" id="inLastName" onclick="lastNameO(this.value)">
+				</div>
+
+				<div>
+					<label>
+						Email <span class="tick" id="alertEmail"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="email" name="userEmail" placeholder="Email"
+					 onblur="email(this.value)" id="inEmail" onclick="emailO(this.value)">
+				</div>
+			</div>
+
+			<div id="leftSide">
+				<div>
+					<label>
+						First Name <span class="tick" id="alertFirstName"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="text" name="userFirstName" placeholder="First Name"
+					 onblur="firstName(this.value)" id="inFirstName" onclick="firstNameO(this.value)">
+				</div>
+	
+				<div>
+					<label>
+						Phone Number <span class="tick" id="alertPhone"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="number" name="userPhoneNumber" placeholder="Phone Number"
+					 onblur="phone(this.value)" id="inPhone" onclick="phoneO(this.value)" maxlength="10">
+				</div>
+			</div>	
+		</div>	
+
+
+		<div id="password">
+			<div>
+				<label>
+					Password <span class="tick" id="alertPass"></span>
+				</label>
+				<br>
+				<input type="password" name="userPassword" placeholder="Password" class="pass"
+				 onblur="pass(this.value)" onclick="passO()" id="inPass">
+			</div>
+
+			<div>
+				<label>
+					Confirm Password <span class="tick" id="alertCPass"></span>
+				</label>
+				<br>
+				<input type="password" name="usercPassword" placeholder="Confirm Password" class="pass" style="margin-bottom: 5px;"
+				 onblur="cpass(this.value, document.getElementById('inPass').value)" onclick="cpassO()" id="inCPass">
+			</div>
+
+			<div id="showPassword">
+				<input type="checkbox" name="showPassword" id="showpassword" onclick="show()"> Show Password
+			</div>
+		</div>	
+
+
+			<div id="birthDay">
+				<label>
+					Birthday <span class="tick" id="alertBirthday"></span>
+				</label>
+				<div onclick="optbirth()">
+					<select id="birthday" onchange="getBirthDay(this.value)">
+							<option>Day</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
+							<option>19</option>
+							<option>20</option>
+							<option>21</option>
+							<option>22</option>
+							<option>23</option>
+							<option>24</option>
+							<option>25</option>
+							<option>26</option>
+							<option>27</option>
+							<option>28</option>
+							<option>29</option>
+							<option>30</option>
+							<option>31</option>
+					</select>
+
+					<select  id="birthmonth" onchange="getBirthMonth(this.value)">
+							<option>Month</option>
+							<option>January</option>
+							<option>February</option>
+							<option>March</option>
+							<option>April</option>
+							<option>May</option>
+							<option>June</option>
+							<option>July</option>
+							<option>August</option>
+							<option>September</option>
+							<option>October</option>
+							<option>November</option>
+							<option>December</option>
+					</select>
+
+					<select  id="birthyear" onchange="getBirthYear(this.value)">
+							<option>Year</option>
+							<option>2010</option>
+							<option>2009</option>
+							<option>2008</option>
+							<option>2007</option>
+							<option>2006</option>
+							<option>2005</option>
+							<option>2004</option>
+							<option>2003</option>
+							<option>2002</option>
+							<option>2001</option>
+							<option>2000</option>
+							<option>1999</option>
+							<option>1998</option>
+							<option>1997</option>
+							<option>1996</option>
+							<option>1995</option>
+							<option>1994</option>
+							<option>1993</option>
+							<option>1992</option>
+							<option>1991</option>
+							<option>1990</option>
+							<option>1989</option>
+							<option>1988</option>
+							<option>1987</option>
+							<option>1986</option>
+							<option>1985</option>
+					</select>
+				</div>
+			</div>
+
+
+			<div id="gender">
+				<label>
+					Gender <span class="tick" id="alertGender"></span>
+				</label>
+				<div id="radioGender">
+					<input type="radio" name="Gender" class="radioGender" onclick="gender()" value="Male" checked="true"> Male
+					<input type="radio" name="Gender" class="radioGender" onclick="gender()" value="Female"> Female
+					<input type="radio" name="Gender" class="radioGender" onclick="gender()" value="Others"> Others
+				</div>
+			</div>
+
+			<div id="terms">
+				<input type="checkbox" name="terms" style="margin: auto; margin-bottom: 20px;" id="inTerms" checked="true">
+				<label style="font-size: 1em;">
+					i agree the terms of <span>privacy</span> and <span>policy</span>
+				</label> 
+				<span id="alertTerms"></span>
+			</div>
+
+			<div>
+				<a href="value.html">
+				<input type="button" name="submit" value="Create an Account" id="crtBtn" disabled="true">
+				</a>
+			</div>
+
+			<div id="login">
+				Alredy have an Account? <span>Login now</span>
+			</div>
+		</div>
+	</form>	
+	</div>
+
+
+
+
+
+	<script type="text/javascript">
+		function firstName(name)
+{
+	let format1 = /[A-Za-z][ ][A-Za-z]/;
+	let format2 = /[0-9]/;
+
+	let firstName = document.getElementById('inFirstName').value;
+	let alertFirstName = document.getElementById('alertFirstName');
+
+	if (firstName.length == 0)
+	{
+		alertFirstName.innerHTML = ' *enter your first name';
+	}
+	else if (format2.test(name)) 
+	{
+		alertFirstName.innerHTML = " *numbers not allowed";
+	}	
+
+	validate();
+}
+	function firstNameO()
+	{
+		//This is to hide alerts on click
+
+		alertFirstName.innerHTML = '';
+
+		 validate();
+	}
+
+
+
+
+
+
+function lastName(name)
+{
+	let format1 = /[A-Za-z][ ][A-Za-z]/;
+	let format2 = /[0-9]/;
+
+	let lastName = document.getElementById('inLastName').value;
+	let alertLastName = document.getElementById('alertLastName');
+
+	if (lastName.length == 0)
+	{
+		alertLastName.innerHTML = ' *enter your last name';
+	}
+	else if (format2.test(name)) 
+	{
+		alertLastName.innerHTML = " *numbers not allowed";
+	}
+
+	validate();
+}
+	function lastNameO()
+	{
+		//This is to hide alerts on click
+
+			alertLastName.innerHTML = '';
+			 validate();
+
+	}
+
+
+
+
+
+
+
+function email(email)
+{
+	let format = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+	let Email = document.getElementById('inEmail').value;
+	let alertEmail = document.getElementById('alertEmail');
+
+	if (email.length == 0)
+	{
+		alertEmail.innerHTML = ' *enter your email';
+	}
+	else if (format.test(email))
+	{
+		alertEmail.innerHTML = '';
+	}
+	else
+	{
+		alertEmail.innerHTML = ' *enter a valid email';
+	}
+
+	validate();
+
+}
+	function emailO()
+	{
+		//This is to hide alerts on click
+
+		alertEmail.innerHTML = '';
+		 validate();
+
+	}
+
+
+
+
+
+
+
+function phone(phone)
+{
+	let Phone = document.getElementById('inPhone').value;
+	let alertPhone = document.getElementById('alertPhone');
+
+	if ((phone.length < 10 || phone.length > 10) && (phone.length > 0))
+	{
+		alertPhone.innerHTML = ' *not a valid number';
+	}
+	else if (phone.length == 0)
+	{
+		alertPhone.innerHTML = ' *enter a number';
+	}
+	else if (phone[0] == 6 || phone[0] == 7 || phone[0] == 8 || phone[0] == 9)
+	{
+		alertPhone.innerHTML = '';
+	}
+	else if (phone[0] == 1 || phone[0] == 2 || phone[0] == 3 || phone[0] == 4 || phone[0] == 5 || phone[0] == 0) 
+	{
+		alertPhone.innerHTML = ' *not a valid number';
+	}
+
+	validate();
+}
+	function phoneO()
+	{
+		//This is to hide alerts on click
+		
+		alertPhone.innerHTML = '';
+		 validate();
+
+	}
+
+
+
+
+
+
+function cpass(cpass, pass)
+{
+	let alertPass = document.getElementById('alertPass');
+	let Pass = document.getElementById('inPass').value;
+
+	let alertcPass = document.getElementById('alertCPass');
+	let cPass = document.getElementById('inCPass').value;
+
+	if (pass.length == 0) 
+	{
+		alertPass.innerHTML = ' *enter a password';
+	}
+	else if (cpass.length == 0)
+	{
+		alertcPass.innerHTML = ' *re-enter password';
+	}	
+	else if (pass == cpass)
+	{
+		alertcPass.innerHTML = '';
+	}
+	else
+	{
+		alertcPass.innerHTML = ' *password not matched';
+	}
+
+	validate();
+}
+	function cpassO()
+	{
+		//This is to hide alerts on click
+		let alertPass = document.getElementById('alertPass');
+		let Pass = document.getElementById('inPass').value;
+
+		let alertcPass = document.getElementById('alertCPass');
+		let cPass = document.getElementById('inCPass').value;
+
+
+		alertcPass.innerHTML = '';
+		 validate();
+
+
+	}	
+
+
+
+
+
+function pass(pass)
+{
+	let alertPass = document.getElementById('alertPass');
+	let Pass = document.getElementById('inPass').value;
+
+	let alertcPass = document.getElementById('alertCPass');
+	let cPass = document.getElementById('inCPass').value;
+
+	if (pass.length == 0)
+	{
+		alertPass.innerHTML = ' *enter a password';
+	}
+	else
+	{
+		if (pass.length >= 8)
+		{
+			alertPass.innerHTML = '';
+		}
+		else
+		{
+			alertPass.innerHTML = ' *mininun 8 chareters';
+		}	
+	}	
+
+	cpass(cpass, pass)
+	validate();
+
+}
+	function passO()
+	{
+		//This is to hide alerts on click
+
+		let alertPass = document.getElementById('alertPass');
+		alertPass.innerHTML = '';
+		 validate();
+
+	}
+
+
+
+
+
+function show()
+{
+	let cPass = document.getElementById('inCPass');
+
+
+	if (cPass.type === 'password') 
+	{
+		cPass.type = 'text';
+	}
+	else
+	{
+		cPass.type = 'password';
+	}	
+
+}	
+
+
+
+
+
+
+function getBirthDay()
+{
+	let days = document.getElementById('birthday').value;
+	console.log(days);
+}
+
+function getBirthMonth()
+{
+	let months = document.getElementById('birthmonth').value;
+	console.log(months);
+}
+
+function getBirthYear()
+{
+	let years = document.getElementById('birthyear').value;
+	console.log(years);
+}
+
+
+
+
+
+
+
+
+function gender()
+{
+    let gen = document.getElementsByName('Gender');
+              
+    for(i = 0; i < gen.length; i++)
+    {
+        if(gen[i].checked === true)
+        {
+
+        	console.log(gen[i].value)
+
+    	}
+    }
+}
+
+
+
+
+
+
+
+function optbirth()
+{
+	document.getElementById('alertBirthday').innerHTML =  '*optional';
+	document.getElementById('alertBirthday').style.position = 'fixed';
+	document.getElementById('alertBirthday').style.color = 'green';
+}
+
+
+
+
+
+
+
+function validate()
+{
+	let efname = document.getElementById('alertFirstName').innerHTML.length;
+	let elname = document.getElementById('alertLastName').innerHTML.length;
+	let eemail = document.getElementById('alertEmail').innerHTML.length;
+	let ephone = document.getElementById('alertPhone').innerHTML.length;
+	let epass  = document.getElementById('alertPass').innerHTML.length;
+	let ecpass = document.getElementById('alertCPass').innerHTML.length;
+
+	let infname = document.getElementById('inFirstName').value.length;
+	let inlname = document.getElementById('inLastName').value.length;
+	let inemail = document.getElementById('inEmail').value.length;
+	let inphone = document.getElementById('inPhone').value.length;
+	let inpass  = document.getElementById('inPass').value.length;
+	let incpass = document.getElementById('inCPass').value.length;
+
+	//let terms = document.getElementById('inTerms')
+
+
+	if (efname == 0 && infname > 0 && elname == 0 && inlname > 0 && eemail == 0 && inemail > 0 && ephone == 0 && inphone > 0 && epass == 0 && inpass > 0 && ecpass == 0 && incpass > 0)
+	{
+		document.getElementById('crtBtn').disabled = false;
+	}
+	else
+	{
+		document.getElementById('crtBtn').disabled = true;
+	}	
+	
+	
+	
+}
+
+
+
+
+
+
+
+// function valueac()
+// {
+
+
+
+// 	let infnamev = document.getElementsByName('userFirstName').value;
+// 	let inlnamev = document.getElementsByName('userLastName').value;
+// 	let inemailv = document.getElementsByName('userEmail').value;
+// 	let inphonev = document.getElementsByName('userPhoneNumber').value;	
+// 	let inpassv  = document.getElementsByName('userPassword').value;
+// 	let incpassv = document.getElementsByName('usercPassword').value;
+// 	let checkBox = document.getElementById('inTerms');
+
+
+// 		// document.getElementById('after-submit').style.display = 'block';
+// 		// document.getElementById('mainForm').style.display = 'none';
+
+// 		document.getElementById('Name').innerHTML  = infnamev + ' ' + inlnamev;
+// 		document.getElementById('Email').innerHTML = inemailv;
+// 		document.getElementById('Phone').innerHTML = inphonev;
+// 		//document.getElementById('password').innerHTML = Inpassv;
+	
+// }
+
+	</script>
+</body>
+</html>

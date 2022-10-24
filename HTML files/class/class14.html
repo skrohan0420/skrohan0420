@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Press+Start+2P&family=Roboto+Mono:wght@100&display=swap" rel="stylesheet">
+    <style>
+        body{
+            font-family: 'Londrina Shadow', cursive;
+            font-family: 'Press Start 2P', cursive;
+            font-family: 'Roboto Mono', monospace;
+        }
+        #time{
+            border: 2px solid #000;
+            width: 100%;
+            text-align: center;
+            margin-top: 250px;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body onload="getClock()">
+    <h1 id="time">
+            00:00:00
+    </h1>
+
+
+    <script>
+        function getClock()
+        {
+            var d = new Date();
+            var hrs = d.getHours();
+            var min = d.getMinutes();
+            //var sec = d.getSeconds();
+
+            var ampm = (hrs>12) ? "PM":"AM";
+
+            hrs = (hrs>12) ? hrs - 12 : hrs;
+
+            document.getElementById("time").innerHTML = hrs+":"+min+" "+ampm;         
+            setTimeout(getClock);
+        }   
+    </script>
+</body>
+</html>

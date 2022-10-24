@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+
+</head>
+<body>	
+
+
+
+	<ul>
+		<li>A</li>
+		<li>B</li>
+		<li>C</li>
+		<li>D</li>
+		<li>E</li>
+		<li>F</li>
+	</ul>
+
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+			$('li').each(function(){
+				// console.log($(this).text())
+				$(this).text('Hello')
+			})
+		})
+
+	</script>
+</body>
+</html>

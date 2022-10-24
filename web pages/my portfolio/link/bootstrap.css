@@ -1,0 +1,913 @@
+body{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+a{
+	color: #FFFFFF;
+}
+
+i
+{
+	color: #FFFFFF;
+}
+/*======================================================================================	NAVBAR  	================================================================================================*/
+.fa-color{
+	color: #FFFFFF;
+}
+
+	.navbar
+{
+	color:#000000;
+	background-color:black;
+}
+
+
+.navtext{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	color: #000000;
+}
+
+
+
+/*======================================================================================	NAVBAR end  	============================================================================================*/
+
+
+
+
+/*=====================================================================================		home img css 	============================================================================================*/
+.main-img img
+{
+	filter: blur(1px);
+}
+
+.h1-text{
+	position: absolute;
+	top: 20%;
+	animation-direction: 1s;
+}
+.h1-text-style{
+	font-size: 6vw;
+}
+.p-text-style{
+	font-size: 1vw;
+}
+
+	/* home img search box */
+input[type="text-main"]
+		{
+			width: 45%;
+			color: #000000;
+			height: 45px;
+			border-radius: 10px;
+			border: none;
+			background-color: #FFFFFF;
+			border-color: transparent;
+			outline: none;
+			outline-color: transparent;
+			
+		}
+input[placeholder="Search"]
+{
+	text-align: center;
+	font-size: 1.7vw;
+	color: #000000;
+	transform-origin: center;
+}
+.Search
+{
+	width: 160px;
+	height: 40px;
+	background-color:  transparent;
+	border-color: white;
+	border: 2px solid;
+	outline: none;
+	outline-color: transparent;
+	border-radius: 10px;
+	font-size: 1.2vw;
+	color: #FFFFFF;
+}
+.Search:hover
+{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+}
+
+/* fast-hading-text*/
+.fast-heading{
+	color: black;
+	font-size: 4vw;
+}
+.fast-hr{
+	background-color: #00D999;
+	width: 200px;
+	padding: 2px;
+	border-radius: 10px;
+	align-items: center;
+}
+
+
+/*=====================================================================================		home img css end	====================================================================================*/
+
+
+
+
+/*----------------------------------------------------------------------------------- portfolio ----------------------------------------------------------------------------------------------------*/
+
+.row-setting
+{
+	/*background-color: #00D999;*/
+	margin: 50px 0px 5px;
+	padding-top: 10px;
+		
+}
+.img-setting
+{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+	margin-top: 20px;
+	background: #0e9599;
+
+}
+.fa-mountain
+{
+	margin: 20px;
+}
+
+.fa-umbrella-beach
+{
+	margin: 20px;
+}
+
+.fa-city
+{
+	margin: 20px;
+}
+/*----------------------------------------------------------------------------------------- portfolio end -----------------------------------------------------------------------------------------*/
+
+
+
+
+/*======================================================================== Make the image fully responsive  ========================================================================================*/
+
+
+  .carousel-inner img 
+  {
+    width: 100%;
+  }
+
+/*======================================================================== Make the image fully responsive End =====================================================================================*/
+
+
+
+
+/************************************************************************************ 	About Us	*************************************************************************************************/
+
+.card-title
+{
+	color: #36d4a1;
+	font-weight: bold;
+	font-size: 5vw;
+}
+
+
+
+.hover-hr
+{
+	width: 200px;
+	padding: 1px;
+	background: #000000;
+}
+
+.button-card{
+
+	background-color: #000000;
+	color: #FFFFFF;
+	height: 50px;
+	width: 150px;
+	outline: none;
+	border: 2px solid #000000;
+	border-radius: 20px;
+}
+
+.button-card:hover
+{
+	background:#00C9C0;
+	color: #FFFFFF;
+	font-size: 1vw;
+}
+
+
+
+/************************************************************************************ 	About Us end	*********************************************************************************************/
+
+
+
+
+
+
+/*/==========================================================================/		Travel Tips Hover     \========================================================================================\ */
+
+
+.in-box
+{
+	background: #000;
+	margin-top:2px;
+	float: left;
+	height: auto;
+	width: 100%;
+	
+}
+
+.img-setting-hover
+{
+	margin: 100px;
+}
+
+.hover-box1
+{
+	position: absolute;
+	top: 65%;
+	width: 400px;
+	height: auto;
+	border-width: 100%;
+	color: #FFFFFF;
+	opacity: 0;
+	
+}
+
+.hover-box1 h2{font-size: 2rem;}
+
+.hover-box1 p
+
+{
+	font-size: 1rem;
+	align-content: center;
+	justify-content: center;	
+	
+}
+
+.hover-box1:hover
+{
+	opacity: 1;
+	background: rgba(0,0,0,0.5);
+	transition: 1s;
+}
+.hover-box2{color: #FFFFFF;}
+.hover-box2 h2{color: #FFFFFF; font-size: 4rem;}
+
+
+/*/=====================================================================================/  	Travel Tips Hover End 	\===============================================================================/*/
+
+
+
+/*/===================================================================================/ 	Parallax    \==============================================================================================/*/
+
+
+#parallax
+{
+	background: url("../img/slide (12).jpg");
+	width: 99.1vw;
+	height: 100vh;
+	float: left;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+#parallax h1{
+  color:#777777;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Noto Serif', serif;
+  letter-spacing: 7px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+	top: 43.9%;
+	left: 43.8%;
+}
+	
+#parallax h1 span{
+  transition: .5s linear;
+}
+#parallax h1:hover span:nth-child(1){
+  margin-right: 1px;
+}
+#parallax h1:hover span:nth-child(1):after{
+  content: "'";
+}
+#parallax h1:hover span:nth-child(2){
+  margin-left: 10px;
+}
+#parallax h1:hover span{
+  color: #fff;
+  text-shadow: 0 0 10px #fff,
+               0 0 20px #fff, 
+               0 0 40px #fff;
+}
+
+.Discover-text
+{
+	color: #FFFFFF;
+	font-size: 7em;
+	align-items: center;
+	justify-content: center;
+	text-justify: auto;
+	font-family:'Dosis', sans-serif;
+	float: left;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.dis-btn
+{
+	width: 150px;
+	height: 50px;
+	border: none;
+	background: #0da1a1;
+	color: #FFFFFF;
+	border-radius: 5px;
+	float: left;
+	position: absolute;
+	top: 59%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+
+}
+
+.dis-btn:hover
+{
+	background-color:  #0da1a1;
+	box-shadow: 0 0 10px #0da1a1,
+               0 0 20px #0da1a1, 
+               0 0 40px #0da1a1;
+	
+}
+
+	
+
+
+
+/*/================================================================================/ 	Parallax-end   \===============================================================================================/*/
+
+
+/*/================================================================================/ 	Register From   \==============================================================================================/*/
+
+
+
+.register-body
+{
+	background-image: linear-gradient(#36d4a1,#17a4ab);
+	float: left;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.register-box
+{
+	width: 1200px;
+	float: left;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+	background: #FFFFFF;
+}
+
+.register-from
+{
+	float: left;
+	width: 50%;
+	margin-left: 80px;
+	height: 700px;
+	
+}
+
+.register-from h1
+{
+	color: #17a4ab;
+}
+
+.register-img
+{
+	background: url("../img/1 (96).jpg");
+	float: left;
+	width: 40%;
+	height: 700px;
+	border-top-left-radius:30px;
+	border-bottom-left-radius:30px; 
+}
+input[type="text"]
+{
+	margin-left: 60px;
+	width: 400px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="password"]
+{
+	margin-left: 30px;
+	width: 400px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="date"]
+{
+	margin-left: 40px;
+	width: 400px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+
+.one1
+{
+	width: 150px;
+	height: 50px;
+	border: none;
+	background: #322b57;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+.two2
+{
+	width: 150px;
+	height: 50px;
+	border: none;
+	background: #0da1a1;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+/*/================================================================================/----Register-From-end----\=========================================================================================/*/
+
+
+
+/*/==================================================================================/----Login-from----\============================================================================================/*/
+/*/================================================================================/----Login-from-end----\=========================================================================================/*/
+
+
+
+
+
+
+/*/========================================================================================/----Footer----\===========================================================================================/*/
+
+.footer
+{
+	background-color: #0e9599;
+	height: auto;
+	width: 100%;
+	float: left;
+}
+
+.footer h1
+{
+	color: #000000;
+	text-align: center;
+	font-size: 20px;
+}
+.fottertext
+{
+    color: #FFFFFF;
+}
+
+.icon-back-color
+{
+	background: #36d4a1;
+}
+
+.a-color a
+{
+	color: #FFFFFF;
+	text-decoration: none;
+	text-decoration-line: none;
+}
+
+/*/========================================================================================/----Footer-end----\========================================================================================/*/
+
+@media screen and (max-width:1200px) 
+{
+/*/==============================================================================/ 	Register From   \==================================================================================================/*/
+
+
+
+.register-body
+{
+	background-image: linear-gradient(#36d4a1,#17a4ab);
+	float: left;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.register-box
+{
+	width: 800px;
+	float: left;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+	background: #FFFFFF;
+}
+
+.register-from
+{
+	float: left;
+	width: 50%;
+	margin-left: 80px;
+	height: 700px;
+	
+}
+
+.register-from h1
+{
+	color: #17a4ab;
+	font-size: 2vw;
+	
+}
+
+.register-img
+{
+	background: url("../img/1 (96).jpg");
+	float: left;
+	width: 40%;
+	height: 700px;
+	border-top-left-radius:30px;
+	border-bottom-left-radius:30px; 
+}
+input[type="text"]
+{
+	margin-left: 60px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="password"]
+{
+	margin-left: 33px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="date"]
+{
+	margin-left: 33px;
+	width: 200px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+
+.one1
+{
+	width: auto;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #322b57;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+.two2
+{
+	width: auto;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #0da1a1;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+/*/================================================================================/----Register-From-end----\=========================================================================================/*/
+
+}
+
+@media screen  and (min-width:900px) and (max-width:769px)  {
+	
+/*/==============================================================================/ 	Register From   \==================================================================================================/*/
+
+
+
+.register-body
+{
+	background-image: linear-gradient(#36d4a1,#17a4ab);
+	float: left;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.register-box
+{
+	width: 900px;
+	float: left;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+	background: #FFFFFF;
+}
+
+.register-from
+{
+	float: left;
+	width: 50%;
+	margin-left: 80px;
+	height: 700px;
+	
+}
+
+.register-from h1
+{
+	color: #17a4ab;
+	font-size: 2vw;
+	
+}
+
+.register-img
+{
+	background: url("../img/1 (96).jpg");
+	float: left;
+	width: 40%;
+	height: 700px;
+	border-top-left-radius:30px;
+	border-bottom-left-radius:30px; 
+}
+input[type="text"]
+{
+	margin-left: 60px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="password"]
+{
+	margin-left: 33px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="date"]
+{
+	margin-left: 33px;
+	width: 200px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+
+.one1
+{
+	width: auto;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #322b57;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+.two2
+{
+	width: auto;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #0da1a1;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+/*/================================================================================/----Register-From-end----\=========================================================================================/*/
+
+}
+
+@media screen  and (min-width:768px)    {
+	
+/*/==============================================================================/ 	Register From   \==================================================================================================/*/
+
+
+
+.register-body
+{
+	background-image: linear-gradient(#36d4a1,#17a4ab);
+	float: left;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.register-box
+{
+	width: 700px;
+	float: left;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+	background: #fff;
+}
+
+.register-from
+{
+	float: left;
+	width: 50%;
+	margin-left: 40px;
+	height: 700px;
+
+	
+}
+
+.register-from h1
+{
+	color: #17a4ab;
+	font-size: 4vw;
+	
+}
+
+
+input[type="text"]
+{
+	margin-left: 40px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="password"]
+{
+	margin-left: 40px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="date"]
+{
+	margin-left: 40px;
+	width: 200px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+
+.one1
+{
+	width: auto;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #322b57;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+.two2
+{
+	width: auto;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #0da1a1;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+/*/================================================================================/----Register-From-end----\=========================================================================================/*/
+
+}
+
+
+@media (min-width: 576px) {
+/*/==============================================================================/ 	Register From   \==================================================================================================/*/
+
+
+
+.register-body
+{
+	background-image: linear-gradient(#36d4a1,#17a4ab);
+	float: left;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.register-box
+{
+	width: 600px;
+	float: left;
+	height: 700px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-radius: 30px;
+	background: #fff;
+}
+
+.register-from
+{
+	float: left;
+	width: 50%;
+	margin-left: 40px;
+	height: 700px;
+
+	
+}
+
+.register-from h1
+{
+	color: #17a4ab;
+	font-size: 2vw;
+	
+}
+
+
+input[type="text"]
+{
+	margin-left: 10px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="password"]
+{
+	margin-left: 10px;
+	width: auto;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+input[type="date"]
+{
+	margin-left: 10px;
+	width: 200px;
+	background: #F4F4F4;
+	color: #000000;
+	border: none;
+}
+
+.one1
+{
+	width: auto;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #322b57;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+.two2
+{
+	width: auto;
+	padding-top: 5px;
+	padding-left: 50px;
+	padding-right: 50px;
+	height: 50px;
+	border: none;
+	background: #0da1a1;
+	color: #FFFFFF;
+	border-radius: 5px;
+}
+/*/================================================================================/----Register-From-end----\=========================================================================================/*/
+ }

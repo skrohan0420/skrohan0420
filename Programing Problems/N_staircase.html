@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+
+
+		// A Javascript program to count
+		// number of ways to reach
+		// n'th stair when a person
+		// can climb 1, 2, ..m stairs
+		// at a time.
+
+		// A simple recursive
+		// function to find n'th
+		// fibonacci number
+		function fib(n){
+			if (n <= 1){
+				return n
+			}
+			else{
+				return fib(n - 1) + fib(n - 2)
+			}
+		}
+
+		// Returns number of
+		// ways to reach s'th stair
+		function staircase(l){
+			return fib(l + 1)
+		}
+
+		//Output
+		let l = 8;
+		// console.log("Number of ways = " + staircase(l))
+		console.log(fib(l))
+
+	
+
+
+
+	</script>
+
+</body>
+</html>

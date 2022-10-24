@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		// let p1 = new Promise((resolve,reject) => {
+		// 	setTimeout(()=>{
+		// 		console.log('p1 has resolved')
+		// 		resolve(10)
+		// 	}, 1 * 1000)
+		// })
+
+
+		// let p2 = new Promise((resolve,reject) => {
+		// 	setTimeout(()=>{
+		// 		// console.log('p2 has faild')
+		// 		console.log('p2 has resolved')
+		// 		// reject("fail")
+		// 		resolve(30)
+		// 	}, 2 * 1000)
+		// })
+
+
+		// let p3 = new Promise((resolve,reject) => {
+		// 	setTimeout(()=>{
+		// 		console.log('p3 has resolved')
+		// 		resolve(30)
+		// 	}, 3 * 1000)
+		// })
+
+
+
+
+
+		// var total = 0
+		// Promise.all([p1,p2,p3])
+		// .then((result)=>{
+		// 	for(var i in result){ 
+		// 		total += result[i] 
+		// 	}
+
+		// 	console.log(`Results : ${result}`)
+		// 	console.log(`Total : ${total}`)
+
+		// })
+		// .catch((error)=>{
+		// 	console.log(`Results : ${error}`)
+		// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		let PromiseCall = function(returnData,msg){
+		
+
+			return function(resolve,reject){
+				setTimeout(()=>{
+					console.log(`The ${msg} has resolve`)
+					resolve(returnData)
+				}, returnData * 100)
+			}
+		}
+
+
+
+
+
+		let p1 = new Promise(PromiseCall(10,'first'))
+		let p2 = new Promise(PromiseCall(20,'second'))
+		let p3 = new Promise(PromiseCall(30,'third'))
+		let p4 = new Promise(function(resolve, reject){
+			reject("fourth rejected")
+		})
+
+
+
+
+		var total = 0
+
+		Promise.all([p1,p2,p3,p4])
+		.then((result)=>{
+			for(var i in result){ 
+				total += result[i] 
+			}
+
+			console.log(`Results : ${result}`)
+			console.log(`Total : ${total}`)
+
+		})
+		.catch((error)=>{
+			console.log(`error : ${error}`)
+		})
+	</script>
+
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'custom';
+	src: url(digital-7.ttf);
+	font-style: normal;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+main{
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0, 0, 0, .855);
+}
+section{
+	width: fit-content;
+	height: fit-content;
+}
+div{
+	color:  brown;
+	font-size: 200px;
+	font-family: 'custom';
+	display: flex;
+	width: fit-content;
+	width: 100%;
+	/*outline: 1px solid gray;*/
+}
+p{
+	display: flex;
+	justify-content: center;
+	width: 200px;
+	color: white;
+	/*outline: 1px solid gray;*/
+	font-size: 200px;
+	margin: 0px 60px 0p 10px;
+	transition: 0.1s;
+}
+.a{
+	animation-name: self;
+	animation-duration: 1s;
+	animation-iteration-count: 1;
+}
+@keyframes self{
+	from{
+		transform: rotateX(0deg);
+	}
+	to{
+		transform: rotateX(360deg);
+	}
+}

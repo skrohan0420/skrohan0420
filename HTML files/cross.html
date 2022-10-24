@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+
+	<style type="text/css">
+		*{
+			margin: 0px;
+			padding: 0px;
+			box-sizing: border-box;
+		}
+		body{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			width: 100vw;
+			background-color: black;
+		}
+		section{
+			
+			background-color: white;
+			height: 400px;
+			width: 400px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		.main{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 40px;
+			width: 40px;
+			outline: 1px solid gray;
+			border-radius: 50%;
+			transition: 0.4s;
+			cursor: pointer;
+		}
+		.main div{
+			position: absolute;
+			height: 10px;
+			width: 30px;
+			background-color: gray;
+		}
+		.main .a{
+			transform: rotate(90deg);
+		}
+		.main .b{
+			transform: rotate(0deg);
+		}
+		.main:hover .a {
+			background-color: rgba(255, 0, 0, 1.7);
+		}
+		.main:hover .b {
+			background-color: rgba(255, 0, 0, 1.7);
+		}
+		.main:hover{
+			transform: rotate(45deg) scale(8.0);
+			outline: 1px solid  rgba(255, 0, 0, 1.7);
+		}
+	</style>
+
+</head>
+<body>
+
+
+	<section>
+
+		<div class="main">
+			<div class="a"></div>
+			<div class="b"></div>
+		</div>
+
+	</section>
+
+
+</body>
+</html>

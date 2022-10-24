@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>calculator</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Antonio:wght@396&display=swap" rel="stylesheet">
+	<style type="text/css">
+	
+	.content{
+		width:300px;
+		border-radius: 30px;
+		margin-top:50px;
+		margin-left: 35%; 
+		border:1px solid #fff;
+		background-color:#fff;
+	}
+
+	#Ans
+	{
+		width: 280px;
+		border-radius: 30px;
+		margin: 5px;
+		height: 80px;
+		border-color:#FFFFFF;
+		
+
+		
+	}
+		.HR
+		{
+			width: 200px;
+			border-radius: 20px;
+		}
+
+	#clear_all{
+		width: 120px;
+		height: 45px;
+		
+		border-radius: 50px;
+		margin-left: 10px;
+		background-color: #454545;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 20px;
+	}
+
+	#EL
+		{
+		width: 120px;
+		height: 45px;
+		border-color:#FF6124 ;
+		border-radius: 50px;
+		margin-left: 10px;
+		background-color: #FF6124;
+		color: #FFFFFF;
+		text-align: center;
+		font-size: 20px;
+		outline-color: hidden;
+			
+		}
+	
+	input[type="button"]
+		{
+			width: 50px;
+			height: 50px;
+			color: #000000;
+			border-radius: 50%;
+			margin: 10px;
+			background-color: #ADADAD;
+			padding: 10px;
+			border-color: #FFFFFF;
+			font-family: 'Antonio', sans-serif;
+			font-size: 27px;
+			text-align:center;
+			outline: none;
+			border:none;
+			
+			
+		}
+		
+		#color-box
+		{
+			background-color: #FF264F;
+			color: #FFFFFF;
+		}
+	
+	</style>
+	
+
+</head>
+<body bgcolor="#ffu">
+  
+	<div class="content">
+		<form name="myfrom">
+			<input type="text" name="ans" id="Ans"><br><br><hr class="HR">
+			
+			
+			<input name="clear_btn" type="button" value="C" id="clear_all"  onclick="myfrom.ans.value =''">
+			<input type="button" value="/" onclick="myfrom.ans.value+='/'">
+			<input type="button" value="%" id="colors-box" onclick="myfrom.ans.value+='%'">
+			<br><br>
+
+			
+			<input type="button" value="1" onclick="myfrom.ans.value+='1'">
+			<input type="button" value="2" onclick="myfrom.ans.value+='2'">
+			<input type="button" value="3" onclick="myfrom.ans.value+='3'">
+			<input type="button" value="*" id="color-box" onclick="myfrom.ans.value+='*'">
+			
+			<br><br>
+
+			<input type="button" value="4" onclick="myfrom.ans.value+='4'">
+			<input type="button" value="5" onclick="myfrom.ans.value+='5'">
+			<input type="button" value="6" onclick="myfrom.ans.value+='6'">
+			<input type="button" value="+" id="color-box" onclick="myfrom.ans.value+='+'">
+
+		
+			<br><br>
+			
+
+		
+
+			<input type="button" value="7" onclick="myfrom.ans.value+='7'">
+			<input type="button" value="8" onclick="myfrom.ans.value+='8'">
+			<input type="button" value="9" onclick="myfrom.ans.value+='9'">
+			<input type="button" value="-" id="color-box" onclick="myfrom.ans.value+='-'">
+
+
+			<br><br>
+
+			<input type="button" value="." onclick="myfrom.ans.value+='.'">
+			<input type="button" value="0" onclick="myfrom.ans.value+='0'">
+			<input type="button" value="=" id="EL" onclick="myfrom.ans.value = eval(myfrom.ans.value)">
+			
+			<br><br>
+
+			
+
+		</form>
+	</div>
+
+</body>
+</html>

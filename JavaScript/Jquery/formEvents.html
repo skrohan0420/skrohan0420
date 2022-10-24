@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript" src="jquery-3.6.0.js"></script>
+</head>
+<body>
+
+
+	<form action="" id="sform">	
+
+		<label>name</label>
+		<input type="text" name="" id="name">
+		<br>
+
+		<label>class</label>
+		<input type="text" name="" id="class">
+		<br>
+
+		<label>scountry</label>
+		<select id="scountry">
+			<option value="india">india</option>
+			<option value="uk">uk</option>
+			<option value="us">us</option>
+			<option value="canada">canada</option>
+			<option value="russia">russia</option>
+		</select>
+		<br>
+
+		<input type="submit" name="" id="sumbit" value="submit">
+	</form>
+
+	<h4 id="test"></h4>
+
+
+
+
+
+
+
+	<script type="text/javascript">
+		
+
+		$(document).ready(function(){
+
+
+			$('#name,#class,#scountry').focus(function(){
+				$(this).css('background','red')
+			})
+
+
+
+			$('#name,#class,#scountry').blur(function(){
+				$(this).css('background','')
+			})
+
+
+
+			$('#scountry').change(function(){
+				$(this).css('background','blue')
+
+				var a = $(this).val()
+				$('#test').html(a)
+			})	
+
+			$('#name,#class').select(function(){
+				$(this).css('background','yellow')
+			})
+
+
+
+			$('#sform').submit(function(){
+				alert('form submitted')
+			})	
+		})
+
+
+	</script>
+
+</body>
+</html>

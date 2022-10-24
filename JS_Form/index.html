@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Form</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+	
+
+
+	<div id="mainForm">
+
+		<div id="mainHeading">
+			Create Account
+		</div>
+	<form autocomplete="off" method="post">
+		<div id="nameAndNumber">
+			<div id="rightSide">
+				<div>
+					<label>
+						Last Name <span class="tick" id="alertLastName"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="text" name="userLastName" placeholder="Last Name"
+					 onblur="lastName(this.value)" id="inLastName" onclick="lastNameO(this.value)">
+				</div>
+
+				<div>
+					<label>
+						Email <span class="tick" id="alertEmail"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="email" name="userEmail" placeholder="Email"
+					 onblur="email(this.value)" id="inEmail" onclick="emailO(this.value)">
+				</div>
+			</div>
+
+			<div id="leftSide">
+				<div>
+					<label>
+						First Name <span class="tick" id="alertFirstName"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="text" name="userFirstName" placeholder="First Name"
+					 onblur="firstName(this.value)" id="inFirstName" onclick="firstNameO(this.value)">
+				</div>
+	
+				<div>
+					<label>
+						Phone Number <span class="tick" id="alertPhone"></span>
+					</label>
+					<br>
+					<input class="name-email-phone" type="number" name="userPhoneNumber" placeholder="Phone Number"
+					 onblur="phone(this.value)" id="inPhone" onclick="phoneO(this.value)" maxlength="10">
+				</div>
+			</div>	
+		</div>	
+
+
+		<div id="password">
+			<div>
+				<label>
+					Password <span class="tick" id="alertPass"></span>
+				</label>
+				<br>
+				<input type="password" name="userPassword" placeholder="Password" class="pass"
+				 onblur="pass(this.value)" onclick="passO()" id="inPass">
+			</div>
+
+			<div>
+				<label>
+					Confirm Password <span class="tick" id="alertCPass"></span>
+				</label>
+				<br>
+				<input type="password" name="usercPassword" placeholder="Confirm Password" class="pass" style="margin-bottom: 5px;"
+				 onblur="cpass(this.value, document.getElementById('inPass').value)" onclick="cpassO()" id="inCPass">
+			</div>
+
+			<div id="showPassword">
+				<input type="checkbox" name="showPassword" id="showpassword" onclick="show()"> Show Password
+			</div>
+		</div>	
+
+
+			<div id="birthDay">
+				<label>
+					Birthday <span class="tick" id="alertBirthday"></span>
+				</label>
+				<div onclick="optbirth()">
+					<select id="birthday" onchange="getBirthDay(this.value)">
+							<option>Day</option>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+							<option>6</option>
+							<option>7</option>
+							<option>8</option>
+							<option>9</option>
+							<option>10</option>
+							<option>11</option>
+							<option>12</option>
+							<option>13</option>
+							<option>14</option>
+							<option>15</option>
+							<option>16</option>
+							<option>17</option>
+							<option>18</option>
+							<option>19</option>
+							<option>20</option>
+							<option>21</option>
+							<option>22</option>
+							<option>23</option>
+							<option>24</option>
+							<option>25</option>
+							<option>26</option>
+							<option>27</option>
+							<option>28</option>
+							<option>29</option>
+							<option>30</option>
+							<option>31</option>
+					</select>
+
+					<select  id="birthmonth" onchange="getBirthMonth(this.value)">
+							<option>Month</option>
+							<option>January</option>
+							<option>February</option>
+							<option>March</option>
+							<option>April</option>
+							<option>May</option>
+							<option>June</option>
+							<option>July</option>
+							<option>August</option>
+							<option>September</option>
+							<option>October</option>
+							<option>November</option>
+							<option>December</option>
+					</select>
+
+					<select  id="birthyear" onchange="getBirthYear(this.value)">
+							<option>Year</option>
+							<option>2010</option>
+							<option>2009</option>
+							<option>2008</option>
+							<option>2007</option>
+							<option>2006</option>
+							<option>2005</option>
+							<option>2004</option>
+							<option>2003</option>
+							<option>2002</option>
+							<option>2001</option>
+							<option>2000</option>
+							<option>1999</option>
+							<option>1998</option>
+							<option>1997</option>
+							<option>1996</option>
+							<option>1995</option>
+							<option>1994</option>
+							<option>1993</option>
+							<option>1992</option>
+							<option>1991</option>
+							<option>1990</option>
+							<option>1989</option>
+							<option>1988</option>
+							<option>1987</option>
+							<option>1986</option>
+							<option>1985</option>
+					</select>
+				</div>
+			</div>
+
+
+			<div id="gender">
+				<label>
+					Gender <span class="tick" id="alertGender"></span>
+				</label>
+				<div id="radioGender">
+					<input type="radio" name="Gender" class="radioGender" onclick="gender()" value="Male" checked="true"> Male
+					<input type="radio" name="Gender" class="radioGender" onclick="gender()" value="Female"> Female
+					<input type="radio" name="Gender" class="radioGender" onclick="gender()" value="Others"> Others
+				</div>
+			</div>
+
+			<div id="terms">
+				<input type="checkbox" name="terms" style="margin: auto; margin-bottom: 20px;" id="inTerms" checked="true">
+				<label style="font-size: 1em;">
+					i agree the terms of <l>privacy</l> and <l>policy</l>
+				</label> 
+				<span id="alertTerms"></span>
+			</div>
+
+			<div>
+				<a href="value.html">
+				<input type="submit" name="submit" value="Create an Account" id="crtBtn" disabled="true">
+				</a>
+			</div>
+
+			<div id="login">
+				Alredy have an Account? <l>Login now</l>
+			</div>
+		</div>
+	</form>	
+	</div>
+
+
+
+
+
+	<script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>

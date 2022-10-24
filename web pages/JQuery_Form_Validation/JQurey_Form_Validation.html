@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="mainForm">
+        <h1>JQuery Sign-Up Form</h1>
+
+       <form class="container" method="get" action="" autocomplete="off" id="signUpForm">
+
+            <div class="lableGroup">
+                <p>First Name :</p>
+                <p>Last Name :</p>
+                <p>Phone Number :</p>
+                <p>E-mail :</p>
+                <p>Password :</p>
+                <p>Confirm Password :</p>
+
+               <div class="terms">
+                    <span>terms and conditions</span><input type="checkbox">
+               </div>
+            </div>
+
+            <div class="formGroup">
+                <div class="inputGroup">
+                    <input type="text" id="firstName">
+                </div>
+                <div class="inputGroup" id="lastName">
+                    <input type="text">
+                </div>
+                <div class="inputGroup">
+                    <input type="text">
+                </div>
+                <div class="inputGroup">
+                    <input type="email">
+                </div>
+                <div class="inputGroup">
+                    <input type="password">
+                </div>
+                <div class="inputGroup">
+                    <input type="password">
+                </div>
+
+
+                <div class="btn">
+                    <button>Sign-Up</button>
+                </div>
+            </div>
+
+            <div class="alertGroup">
+                <p id="alertFirstName">  </p>
+                <p id="alertLastName"> </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+                <p>  </p>
+            </div>
+
+        </form>
+    </div>
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $('signUpForm').validate({
+               rules: {
+                   firstName:'required'
+               }
+           })
+        })
+    </script>
+
+</body>
+</html>

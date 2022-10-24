@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<title></title>
+
+	<style type="text/css">
+		body{
+			display: flex;
+		}
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.sidebar{
+			height: 100vh;
+			width: 200px;
+			background-color: skyblue;
+			display: none;
+		}
+		#show, #hide{
+			height: 30px;
+			width: 60px;
+			margin-top: 20px;
+			margin-left: 20px;
+		}
+		#hide{
+			display: none;
+		}
+		li{
+			width: 100%;
+			text-align: center;
+			padding: 10px;
+			border: 1px solid blue;
+			font-size: 1.3em;
+			margin-top: 10px;
+		}
+		li:nth-child(1){
+			margin: 0;
+		}
+	</style>
+
+</head>
+<body>
+
+
+	<div class="sidebar">
+		<ul>
+			<li>content</li>
+			<li>content</li>
+			<li>content</li>
+			<li>content</li>
+			<li>content</li>
+			<li>content</li>
+			<li>content</li>
+			<li>content</li>
+		</ul>
+	</div>
+	<button id="show">show</button>
+	<button id="hide">hide</button>
+
+
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			$('#show').click(function(){
+				$('#hide').show();
+				$(this).hide();
+				$('.sidebar').animate({
+					width: '200px',
+				},'500');
+			});
+
+			$('#hide').click(function(){
+				$('#show').show();
+				$(this).hide();
+				$('.sidebar').animate({
+					width: '200px'
+				},'500');
+			});
+		});
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>onchange event in  jquery</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("select").change(function(){
+				var a= $(this).val();
+				alert("you have selected - "+ a);
+			});
+		});
+	</script>
+</head>
+<body>
+<form>
+	<label>City</label>
+	<select>
+		<option>Kolkata</option>
+		<option>banglore</option>
+		<option>mumbai</option>
+		<option>delhi</option>
+	</select>
+</form>
+</body>
+</html>

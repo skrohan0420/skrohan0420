@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Media in CSS</title>
+	<style type="text/css">
+		.box
+		{
+			height: 300px;
+			width: 300px;
+			border: 10px solid #000;
+			background-color: red;
+		}
+		body
+		{
+			background-color: blue;
+		}
+
+
+		@media screen and (max-width: 1500px)
+		{
+			body
+			{
+				background-color: red;
+			}
+
+			.box
+			{
+				background-color: blue;
+				height: 300px;
+				width: 300px;
+				border-radius: 50%;
+			}
+		}
+		@media screen and (max-width: 1200px)
+		{
+			body
+			{
+				background-color: yellow;
+			}
+
+			.box
+			{
+				background-color: green;
+				height: 300px;
+				width: 500px;
+				border-radius: 0;
+			}
+		} 
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

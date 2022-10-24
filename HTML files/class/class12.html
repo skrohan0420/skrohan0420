@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+		var person = {
+			name : "avijit",
+			email : "avijit@gmail.com",
+			phone : ["896354333","2999990"],
+			address : "kolkata";
+		};
+
+		document.write("<h1 align= 'center'>" + person.name + "</h1>");
+		document.write("<h1 align= 'center'>" + person.email + "</h1>");
+		document.write("<h1 align= 'center'>" + person.phone + "</h1>");
+		document.write("<h1 align= 'center'>" + person.address + "</h1>");
+
+		for (var v in person)
+		{
+		document.write("<h1 align= 'center'>" + person[v] + "</h1>");
+
+		}
+	</script>
+</body>
+</html>

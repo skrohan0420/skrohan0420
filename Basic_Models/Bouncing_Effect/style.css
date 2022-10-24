@@ -1,0 +1,108 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
+	background: #666;
+}
+.content{
+	border: 1px solid blue;
+	height: 115px;
+	width: 180px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	position: absolute;
+	background: #616161;
+}
+.line{
+	background: cornflowerblue;
+	border: 1px solid blue;
+	height: 15px;
+	width: 15px;
+	margin: 0px 5px;
+	border-radius: 50%;
+	animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: cubic-bezier(1,.12,0,0);
+	position: relative;
+}
+.line1{
+	animation-name: line1;
+}
+.line2{
+	animation-name: line2;
+	animation-delay: 0.2s;
+}
+.line3{
+	animation-name: line3;
+	animation-delay: 0.4s;
+}
+.line4{
+	animation-name: line4;
+	animation-delay: 0.6s;
+}
+.line5{
+	animation-name: line5;
+	animation-delay: 0.8s;
+}
+
+@keyframes line1{
+	0%{
+		bottom: 0px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}
+@keyframes line2{
+	0%{
+		bottom: 0px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}
+@keyframes line3{
+	0%{
+		bottom: 0px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}
+@keyframes line4{
+	0%{
+		bottom: 0px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}
+@keyframes line5{
+	0%{
+		bottom: 0px;
+	}
+	50%{
+		bottom: 100px;
+	}
+	100%{
+		bottom: 0px;
+	}
+}

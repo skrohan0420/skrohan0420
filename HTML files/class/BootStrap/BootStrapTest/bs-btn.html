@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>btn</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="link/animate.css">
+  <script src="Js.js"></script>
+  
+  <script src="https://kit.fontawesome.com/ec06403605.js" crossorigin="anonymous"></script>
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+ <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+  
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<style type="text/css">
+/*  .alert
+  {
+    height: 200px;
+  }
+  .container
+  {
+    margin-top: 20%;
+  }
+
+  .progress
+  {
+    border-radius: 20px;
+  }
+
+.dropdown-menu a
+{
+  list-style: none;
+}*/
+
+
+/*  .fa-color.navbar-brand a{
+  color: #FFFFFF;
+}
+
+  .navbar 
+{
+  color:#FFF;
+  background-color:rgba(0,0,0,0.8)  ;
+  border-radius: 30px;
+  margin-top: 20px;
+  margin: 10px;
+  
+}
+.navbar-nav a
+{
+  color: white;
+}
+
+.navbar-nav a:hover
+{
+  background: #FFFFFF;
+  border-radius: 12px;
+  color: black;
+}
+
+.navtext{
+  
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #fff;
+}
+  */
+
+ /* .container th
+
+  {
+    font-size: 29px;
+  } 
+
+  .container td 
+  {
+    font-size: 25px;
+  }*/
+
+  .footer_body
+{
+    height: auto;
+    width: 100%;
+    background-color: #34495E;
+    margin-top: 5%;
+}
+
+.services-card
+{
+	width: 100%;
+	height: auto;
+	justify-content: space-between;
+	margin-left: 20px;
+	background:transparent;
+/*	background:rgba(0,0,0,0.7);*/
+	margin: 30px;
+	background:#85929E ;
+			 
+}
+
+.services-card i
+{
+	font-size:50px;
+	margin: 10px;
+	color:red ;
+	display: flex;
+	justify-content: center;
+}
+.services-card h6
+{
+	font-size: 25px;
+	/* color: rgba(213, 219, 219,0.5); */
+	display: flex;
+	justify-content: center;
+}
+.services-card p
+{
+	font-size: 17px;
+	margin: 3px;
+	margin-top: 15px;;
+	align-items: center;
+	padding: 8px;
+	/* color: rgba(213, 219, 219,0.5);*/
+} 
+
+
+.My-text h6
+{
+  color: white;
+  font-size: 20px;
+
+}
+.My-text p
+{
+  color: #b8b8b8 ;
+  font-size: 18px;
+}
+
+.btn
+{
+  color: white;
+}
+
+.search_bar h6
+{
+  color: white;
+  font-size: 20px;
+}
+
+.bar_text
+{
+  color: white;
+  font-size: 9.5px;
+}
+
+</style>
+<body>
+
+  
+
+<!-- <section>
+  <div class="container">
+    
+    <div class="row">
+      <div class="col-md-6 text-center  alert alert-primary">Lorem ipsum dolor sit amet, consectetur </div>
+
+       <div class="col-md-6 text-center alert alert-info">Lorem ipsum dolor sit amet, consectetur </div>
+
+        <div class="col-md-6 text-center alert alert-success">Lorem ipsum dolor sit amet, consectetur </div>
+
+         <div class="col-md-6 text-center alert alert-danger">Lorem ipsum dolor sit amet, consectetur </div>
+
+          <div class=" col-md-12 text-center alert alert-secondary">Lorem ipsum dolor sit amet, consectetur </div>
+    </div>
+
+      <div class="well text-center">welcom</div>
+  </div>
+
+</section> -->
+
+
+<!-- <div class="container">
+          
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  class="bg-info">
+        <td>John</td>
+        <td>Doe</td>
+        <td>john@example.com</td>
+      </tr>
+      <tr class="bg-success">
+        <td>Mary</td>
+        <td>Moe</td>
+        <td>mary@example.com</td>
+      </tr>
+      <tr class="bg-danger">
+        <td>July</td>
+        <td>Dooley</td>
+        <td>july@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+ -->
+
+
+
+
+<!-- <div class="container">
+  <div class="progress" style="height:20px">
+    <div class="progress-bar bg-success" style="width:10%;">10%</div>
+  </div>
+  <br>
+
+   <div class="progress" style="height:20px">
+    <div class="progress-bar bg-info" style="width:25%;">25%</div>
+  </div>
+  <br>
+
+   <div class="progress" style="height:20px">
+    <div class="progress-bar bg-warning" style="width:50%;">50%</div>
+  </div>
+  <br>
+
+   <div class="progress" style="height:20px">
+    <div class="progress-bar bg-secondary" style="width:75%;">75%</div>
+  </div><br>
+
+  <div class="progress" style="height:20px">
+    <div class="progress-bar bg-danger" style="width:100%;">100%</div>
+  </div><br>
+
+   <div class="progress" style="height:40px">
+    <div class="progress-bar bg-secondary progress-bar-striped progress-bar-animated" style="width:19%;">19%</div>
+    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width:30%;">30%</div>
+    <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" style="width:20%;">20%</div>
+    <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width:25%;">25%</div>
+  </div><br>
+</div>
+ -->
+
+
+
+<!--  <section>
+    <div class="container">
+      <nav class="navbar fixed-top navbar-expand-sm text-center "><i class="fas fa-user-circle fa-2x fa-color pl-2"></i>
+        <a href="#" class="navbar-brand  text-white">Protfolio</a>
+          <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#mymenu">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars fa-color-toggler align-content-center"></i></span></button>
+        
+        <div class="collapse navbar-collapse"id="mymenu">
+          <div class="container-md">
+            <div class="navtext">
+              <ul class="navbar-nav text-center">
+                <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Service</a></li>
+                  <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Help</a></li>
+    
+              </ul>
+            </div>
+          </div>
+        </div>
+        </nav>
+    </div>
+</section> 
+ -->
+
+
+<!-- <div class="container">
+                                           
+  <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+          Dropdown button
+        </button>
+    <div class="dropdown-menu">
+
+      <ol>
+        <li> <a class="dropdown-item" href="#">Link 1</a></li>
+         <li> <a class="dropdown-item" href="#">Link 2</a></li>
+          <li> <a class="dropdown-item" href="#">Link 3</a></li>
+           <li> <a class="dropdown-item" href="#">Link 4</a></li>
+      </ol>
+    </div>
+  </div>
+</div>
+ -->
+
+<!-- <div class="container">
+  <h3>Popover Example</h3>
+  <a href="#" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover">Toggle popover</a>
+</div>
+
+<script>
+$(document).ready(function(){
+  $('[data-toggle="popover"]').popover();   
+});
+</script> -->
+
+<!-- <div class="container mt-4 mr-4">                
+  <ul class="pagination">
+    <li><a href="#1">1</a></li>
+    <li><a href="#2">2</a></li>
+    <li><a href="#3">3</a></li>
+    <li><a href="#4">4</a></li>
+    <li><a href="#5">5</a></li>
+  </ul>
+</div>
+
+
+<div class="container">
+  
+  <div class="panel panel-default">
+
+    <div class="panel-heading  text-center">
+
+        <div class="panel-title">Lorem ipsum dolor sit amet,</div>
+
+    <div class="panel-body text-center"><h3>Panel Content</h3> </div>
+
+    <div class="panel-title text-center"><h4>Panel Title</h4> </div>
+
+    <div class="panel-footer text-center"><h2>Panel footer</h2> </div>
+  </div>
+</div> -->
+
+
+<div class="footer_body">
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-10 col-md-4 col-lg-4 m-auto d-flex justify-content-around">
+										<div class="container-fluid services-card card-1">
+											<i class="fas fa-desktop"></i>
+												<h6 class="pl-2"> portfolio </h6>
+													<p class="text-center ">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+														Laborum ut a repellendusitaque vitae unde corrupti.</p>
+										</div>
+									</div> 
+									
+									<div class="col-sm-10 col-md-4 col-lg-4 m-auto d-flex justify-content-around">
+										<div class="container-fluid services-card card-2">
+											<i class="fas fa-award"></i>
+												<h6 class="pl-2"> portfolio </h6>
+													<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+														Laborum ut a repellendusitaque vitae unde corrupti.</p>
+										</div>
+									</div>
+
+									<div class="col-sm-10 col-md-4 col-lg-4 m-auto d-flex justify-content-around">
+										<div class="container-fluid services-card card-3">
+										<i class="fas fa-comment-alt"></i>
+											<h6 class="pl-2"> Messaging</h6>
+												<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+													Laborum ut a repellendusitaque vitae unde corrupti.</p>
+
+										</div>
+									</div>
+
+            <div class="container-fluid">
+              <div class="row">
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                 <div class="My-text text-center">
+                  <h6 class="text-uppercase fw-bold mb-4">
+                    About
+                  </h6>
+                  <p>
+                    <a href="#!" class="text-reset">Angular</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">React</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Vue</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Laravel</a>
+                  </p>
+                  </div>
+                </div>
+
+                <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <div class="My-text text-center">
+                   <h6 class="text-uppercase fw-bold mb-4">
+                     Company
+                   </h6>
+                   <p>
+                    <a href="#!" class="text-reset">Pricing</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Settings</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Orders</a>
+                  </p>
+                  <p>
+                    <a href="#!" class="text-reset">Help</a>
+                  </p>
+                   </div>
+                 </div>
+
+                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <div class="My-text text-center">
+                   <h6 class="text-uppercase fw-bold mb-4">
+                     Contact
+                   </h6>
+                   <p>
+                     <a href="#!" class="text-reset">788487225</a>
+                   </p>
+                   <p>
+                     <a href="#!" class="text-reset">mddanisg0363@gmail.com</a>
+                   </p>
+                   <p>
+                     <a href="#!" class="text-reset">Kollkata,Hoogli,Chandannagar</a>
+                   </p>
+                   <p>
+                     <a href="#!" class="text-reset">Laravel</a>
+                   </p>
+                   </div>
+                 </div>
+
+                 <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <div class="search_bar text-center">
+                   <h6 class="text-uppercase fw-bold mb-4">
+                     Products
+                   </h6>
+                   <div class="input-group">
+                   <input type="text" class="form-control" placeholder="Search" name="search">
+                   <div class="input-group-btn">
+                     <button class="btn btn-info" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                     </div>
+                   </div>
+                   <p class="bar_text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
+                 </div>
+
+
+              </div> 
+            </div>      
+
+             
+
+    </div>
+  </div>
+</div>
+</body>
+</html>

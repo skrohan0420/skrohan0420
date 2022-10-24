@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Animation</title>
+	<style type="text/css">
+		.box
+		{
+			height: 300px;
+			width: 300px;
+			border: 10px solid #000;
+			background-color: red;
+			animation-name: animate;
+			animation-duration: 20s;
+			animation-iteration-count: infinite;
+			animation-delay: 5s;
+		}
+
+		/*@keyframes animate
+		{
+			from { background-color: red; }
+			to{ background-color: green; }
+		}*/
+
+		@keyframes animate
+		{
+			0% /* At Begining */
+			{
+				background-color: red;
+				border-radius: 0;
+			}
+			25% /*After 5s if duration is 20s*/
+			{
+				background-color: blue;
+			}
+			50% /*After 10s if duration is 20s*/
+			{
+				background-color: green;
+				border-radius: 50%;
+			}
+			75% /*After 15s if duration is 20s*/
+			{
+				background-color: yellow;
+			}	
+			100% /* at End of duration */
+			{
+				background-color: red;
+				border-radius: 0;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+</body>
+</html>

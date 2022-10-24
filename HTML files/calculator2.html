@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Demo Calculator</title>
+</head>
+<body>
+  <form method="post">
+    <p>
+      First Number <input type="text" id="num1">
+    </p>
+    <p>
+      Second Number <input type="text" id="num2">
+    </p>
+    <p>
+      <input type="radio" name="cat" id="cat1" checked="true" value="add"> Addition
+      <input type="radio" name="cat" id="cat2" value="sub"> Substraction
+      <input type="radio" name="cat" id="cat3" value="mul"> Multiplicaton
+      <input type="radio" name="cat" id="cat4" value="divi"> Division
+    </p>
+    <p>
+      <button type="button" onclick="calculate()">
+        Calculate
+      </button>
+    </p>
+    <h1 id="result">0</h1>
+  </form>
+
+  <script type="text/javascript">
+    function calculate() 
+    {
+      var num1 = Number(document.getElementById('num1').value);
+      var num2 = Number(document.getElementById('num2').value);
+
+      if (document.getElementById('cat1').checked == true) 
+      {
+        var res = num1 + num2;
+        document.getElementById('result').innerText = "Addition Result is : " + res;
+      }
+      else if (document.getElementById('cat2').checked == true) 
+      {
+        var res = num1 - num2;
+        document.getElementById('result').innerText = "Substraction Result is : " + res;
+      }
+      else if (document.getElementById('cat3').checked == true) 
+      {
+        var res = num1 * num2;
+        document.getElementById('result').innerText = "Multiplicaton Result is : " + res;
+      }
+      else
+      {
+        var res = num1 / num2;
+        document.getElementById('result').innerText = "Division Result is : " + res;
+      }
+    }
+  </script>
+</body>
+</html>
