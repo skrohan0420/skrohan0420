@@ -1,6 +1,6 @@
 // code for ball
 
-const INITIAL_VELOCITY = 0.065
+const INITIAL_VELOCITY = 0.085
 const VELOCITY_CHANGE_RATE = 0
 
 class Ball {
@@ -55,7 +55,8 @@ class Ball {
 
 
 
-update(delta) {
+update(delta,index) {
+console.log(delta,index)
     this.x += this.direction.x * this.velocity * delta
     this.y += this.direction.y * this.velocity * delta
 
@@ -120,7 +121,10 @@ function updateTime(time) {
   if (lastTime != null) {
     const delta = time -  lastTime
     
-   ballarr.map(val => val.update(delta))
+   ballarr.map((val, index) => {
+   val.update(delta, index)
+   
+   })
 
    
   }
