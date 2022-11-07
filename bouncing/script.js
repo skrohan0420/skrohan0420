@@ -1,6 +1,8 @@
 
 const INITIAL_VELOCITY = 0.085
 const VELOCITY_CHANGE_RATE = 0
+const NUMBER_OF_BALLS = 2
+
 
 class Ball {
 	constructor(ballElem) {
@@ -60,7 +62,7 @@ function randomNumberBetween(min, max) {
 }
 
 var ballarr = []
-for (var i = 0; i <= 5; i++) {
+for (var i = 0; i < NUMBER_OF_BALLS; i++) {
 	const ballEl = document.createElement('div');
 	ballEl.classList.add('ball');
 	document.body.appendChild(ballEl);
