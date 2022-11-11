@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *,
+        *::after,
+        *::before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+        }
+        button{
+            background-color: #661;
+            outline: none;
+            border: none;
+            text-transform:  uppercase;
+            font-size: 15px;
+            font-weight: 600;
+            height: 40px;
+            width: 120px;
+            overflow: hidden;
+            transition: 500ms;
+            color: #fff;
+        }
+        #btnBack{
+            background-color: #333 ;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            height: 0px;
+            width: 0px;
+            border-radius: 100px;
+            transition: 200ms;
+        }
+        #btnTxt{
+            transition: 200ms;
+            letter-spacing: 2.5px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        button:hover #btnBack{
+            height: 45px;
+            width: 125px;
+        }
+        button:hover #btnTxt{
+            color: #fff;
+        }
+        button:hover{
+            cursor: pointer;
+            border-radius: 100px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <button>
+        <p id="btnBack">
+        </p>
+        <p id="btnTxt">
+            Button
+        </p>
+    </button>
+</body>
+</html>
