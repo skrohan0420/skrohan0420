@@ -1,7 +1,7 @@
 
 const INITIAL_VELOCITY = 0.085
 const VELOCITY_CHANGE_RATE = 0
-const NUMBER_OF_BALLS = 2
+const NUMBER_OF_BALLS = 10
 
 
 class Ball {
