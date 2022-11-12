@@ -1,7 +1,7 @@
 
 const INITIAL_VELOCITY = 0.085
 const VELOCITY_CHANGE_RATE = 0
-const NUMBER_OF_BALLS = 10
+const NUMBER_OF_BALLS = 1
 
 
 class Ball {
@@ -71,11 +71,14 @@ for (var i = 0; i < NUMBER_OF_BALLS; i++) {
 }
 
 let lastTime
-
+console.log(ballarr[0].direction)
 function updateTime(time) {
 	if (lastTime != null) {
 		const delta = time - lastTime
-		ballarr.forEach(ball => ball.update(delta));
+		ballarr.forEach(ball =>{
+			ball.update(delta)
+			
+		});
 	}
 	lastTime = time
 	window.requestAnimationFrame(updateTime)
