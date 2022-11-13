@@ -1,7 +1,7 @@
 
 const INITIAL_VELOCITY = 0.055
 const VELOCITY_CHANGE_RATE = 0
-const NUMBER_OF_BALLS = 30
+const NUMBER_OF_BALLS = 10
 
 
 class Ball {
@@ -90,7 +90,6 @@ function updateTime(time) {
 	if (lastTime != null) {
 		const delta = time - lastTime
 		ballarr.forEach(ball1 => {
-			ball1.update(delta)
             let x1 = ball1.x
             let y1 = ball1.y
             ballarr.forEach(ball2 => {
@@ -114,6 +113,8 @@ function updateTime(time) {
                 
 
             })
+			ball1.update(delta)
+
 		});
 	}
 	lastTime = time
