@@ -1,7 +1,7 @@
 
-const INITIAL_VELOCITY = 0.085
+const INITIAL_VELOCITY = 0.055
 const VELOCITY_CHANGE_RATE = 0
-const NUMBER_OF_BALLS = 1
+const NUMBER_OF_BALLS = 30
 
 
 class Ball {
@@ -25,10 +25,10 @@ class Ball {
 		return this.ballElem.getBoundingClientRect()
 	}
 	reset() {
-		this.x = 50
-		this.y = 50
+		
 		this.direction = {
-			x: 0
+			x: 0,
+            y: 0
 		}
 		while (Math.abs(this.direction.x) <= 0.1 || Math.abs(this.direction.x) >= 0.9) {
 			const heading = randomNumberBetween(0, 2 * Math.PI)
@@ -50,6 +50,7 @@ class Ball {
 		if (rect.right >= window.innerWidth || rect.left <= 0) {
 			this.direction.x *= -1
 		}
+        
 
 		//background color
 		// const hue = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--hue"));
@@ -61,6 +62,19 @@ function randomNumberBetween(min, max) {
 	return Math.random() * (max - min) + min
 }
 
+function sub(a,b) {
+    if(a > b){
+        return a - b
+    }else{
+        return b - a
+    }
+}
+
+function pythagorean(a, b){
+  return Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2))
+}
+
+
 var ballarr = []
 for (var i = 0; i < NUMBER_OF_BALLS; i++) {
 	const ballEl = document.createElement('div');
@@ -71,13 +85,35 @@ for (var i = 0; i < NUMBER_OF_BALLS; i++) {
 }
 
 let lastTime
-console.log(ballarr[0].direction)
+
 function updateTime(time) {
 	if (lastTime != null) {
 		const delta = time - lastTime
-		ballarr.forEach(ball =>{
-			ball.update(delta)
-			
+		ballarr.forEach(ball1 => {
+			ball1.update(delta)
+            let x1 = ball1.x
+            let y1 = ball1.y
+            ballarr.forEach(ball2 => {
+                
+                let x2 = ball2.x
+                let y2 = ball2.y
+
+                // console.log('x','==>', x1,'-', x2 ,'==', sub(x1,x2),
+                //             '|~~~~~~~~~~~~|',
+                //             'y','==>', y1,'-', y2 ,'==', sub(y1,y2))
+
+                let distance = Math.round(pythagorean(sub(x1,x2), sub(y1,y2)))
+
+                // console.log(distance)
+                if(distance < 2){
+                    ball1.direction.x *= -1
+                    ball1.direction.y *= -1
+                    ball2.direction.x *= -1
+                    ball2.direction.y *= -1
+                }
+                
+
+            })
 		});
 	}
 	lastTime = time
