@@ -1,3 +1,12 @@
-*{
-	background: #000;
+*, ::before,::after{
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+/*	background: red;*/
+}
+
+.mainCon{
+	height: 100%;
+	width: 100%;
+	background-color: red;
 }
