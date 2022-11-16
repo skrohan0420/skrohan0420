@@ -93,16 +93,12 @@ function updateTime(time) {
             let x1 = ball1.x
             let y1 = ball1.y
             ballarr.forEach(ball2 => {
-                
                 let x2 = ball2.x
                 let y2 = ball2.y
-
                 // console.log('x','==>', x1,'-', x2 ,'==', sub(x1,x2),
                 //             '|~~~~~~~~~~~~|',
                 //             'y','==>', y1,'-', y2 ,'==', sub(y1,y2))
-
                 let distance = Math.round(pythagorean(sub(x1,x2), sub(y1,y2)))
-
                 // console.log(distance)
                 if(distance < 2){
                     ball1.direction.x *= -1
@@ -110,11 +106,8 @@ function updateTime(time) {
                     ball2.direction.x *= -1
                     ball2.direction.y *= -1
                 }
-                
-
             })
 			ball1.update(delta)
-
 		});
 	}
 	lastTime = time
