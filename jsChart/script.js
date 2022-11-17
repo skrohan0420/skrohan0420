@@ -19,14 +19,30 @@ const data = [
 	{
 		name : 'E',
 		value : 140
+	},
+	{
+		name : 'F',
+		value : 130
+	},
+	{
+		name : 'G',
+		value : 220
+	},
+	{
+		name : 'H',
+		value : 170
+	},
+	{
+		name : 'I',
+		value : 240
 	}
 ]
 
 
 
 
-const maxVal = 400
-const betweenVal = 20 
+const maxVal = 300
+const betweenVal = 50 
 
 
 const dataInt = document.querySelector('.dataInt')
