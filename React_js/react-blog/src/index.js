@@ -6,6 +6,7 @@ import DynamicValues from './App/DynamicValues';
 import ClickEvents from './App/ClickEvents';
 import reportWebVitals from './reportWebVitals';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
