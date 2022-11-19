@@ -4,6 +4,8 @@ import Home from "./Component/Home";
 import UseState from "./Component/UseState";
 import OutputtingList from "./Component/OutputtingList";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Create from "./Component/Create";
+import BlogDetails from "./Component/BlogDetails";
 
 function MultipleComps() {
 	return (
@@ -12,8 +14,14 @@ function MultipleComps() {
 				<Navbar />
 				<div className="content">
 					<Switch>
-						<Route path="/">
+						<Route exact path="/">
 							<OutputtingList />
+						</Route>
+						<Route path="/create">
+							<Create />
+						</Route>
+						<Route path="/blogs/:id">
+							<BlogDetails />
 						</Route>
 					</Switch>
 				</div>
