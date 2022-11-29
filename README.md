@@ -1,5 +1,4 @@
 - 👋 Hi, I’m @skrohan0420
-- 👀 I’m interested in Web Dev...
-- 🌱 I’m currently learning Web Dev....
+
 
 my Email --> skrohan0420@gmail.com
