@@ -27,7 +27,53 @@
 .App-link {
   color: #61dafb;
 }
+/*  */
 
+
+.btn-wrapper button {
+  background-color: red;
+  border: 0px;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  box-shadow: #333 0px 1px 5px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+.img-wrapper img {
+  height: 140px;
+}
+.con{
+  padding: 120px 20px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cart-wrapper{
+    padding: 20px;
+    height: fit-content;
+    width: fit-content;
+    border: 1px solid #ccc;
+}
+.add-to-cart img{
+    width: 80px;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+.cart-count{
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    z-index: 1;
+    background-color: red;
+    padding: 7px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #fff;
+}
+/*  */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
