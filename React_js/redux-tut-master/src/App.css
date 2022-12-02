@@ -28,8 +28,6 @@
   color: #61dafb;
 }
 /*  */
-
-
 .btn-wrapper button {
   background-color: red;
   border: 0px;
@@ -37,31 +35,31 @@
   border-radius: 4px;
   color: #fff;
   box-shadow: #333 0px 1px 5px;
-  margin-top: 10px;
-  cursor: pointer;
 }
 .img-wrapper img {
-  height: 140px;
-}
-.con{
-  padding: 120px 20px 20px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  width: 100px;
 }
 .cart-wrapper{
-    padding: 20px;
-    height: fit-content;
-    width: fit-content;
+    height: 170px;
+    width: 500px;
     border: 1px solid #ccc;
+    margin-left: 10%;
+}
+.item {
+  float: left;
+  display: inline-block;
+  width: 120px;
+  padding: 20px;
+  height: 70px;
 }
 .add-to-cart img{
-    width: 80px;
+  width: 80px;
     position: absolute;
     right: 1%;
     top: 1%;
 }
 .cart-count{
+  
     position: absolute;
     right: 10px;
     top: 12px;
