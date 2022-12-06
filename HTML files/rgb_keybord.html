@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0p;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
+        }
+        .cls{
+            animation: anim 2s ease-in-out;
+            animation-iteration-count: infinite;
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        @keyframes anim {
+            0% {
+                border-radius: 100%;
+                width: 10px;
+                height: 10px;
+            }
+            50%{
+                border-radius: 0%;
+                width: 100px;
+                height: 100px;
+            }
+            100%{
+                border-radius: 100%;
+                width: 10px;
+                height: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cls"></div>
+</body>
+</html>
