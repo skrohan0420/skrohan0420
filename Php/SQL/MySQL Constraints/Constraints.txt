@@ -1,7 +1,0 @@
-list of MySQL Constraints
-.NOT NULL
-.UNIQUE
-.DEFAULT
-.CEHECK
-.FOREIGN KEY
-.PRIMARY KEY
