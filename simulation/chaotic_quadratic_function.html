@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chaotic Quadratic Function Example</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      // Define the canvas
+      const canvas = document.getElementById('canvas');
+      const ctx = canvas.getContext('2d');
+      
+      // Set the canvas dimensions
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // Define the chaotic quadratic function
+      function chaoticQuadratic(x, r) {
+        return r * x * (1 - x);
+      }
+
+      // Define the range of parameter values to explore
+      const rMin = 2.4;
+      const rMax = 4;
+      const rStep = 0.00001;
+
+      // Loop through the parameter values
+      for (let r = rMin; r < rMax; r += rStep) {
+        // Set the initial value of x
+        let x = Math.random();
+
+        // Loop through some iterations of the function
+        for (let i = 0; i < 10000; i++) {
+          x = chaoticQuadratic(x, r);
+        }
+
+        // Draw a point on the canvas for the current parameter value
+        const xPos = (r - rMin) * canvas.width / (rMax - rMin);
+        const yPos = (1 - x) * canvas.height;
+        ctx.fillRect(xPos, yPos, 1, 1);
+      }
+    </script>
+  </body>
+</html>

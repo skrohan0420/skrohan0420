@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Chaotic Balls Dropping Simulation Example</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+</head>
+
+<body>
+	<script>
+		// Define some constants
+		const numBalls = 50;
+		const ballRadius = 10;
+		const gravity = 0.5;
+		const restitution = 0.8;
+		const chaosFactor = 0.5;
+
+		// Define the Ball class
+		class Ball {
+			constructor(x, y, vx, vy) {
+				this.x = x;
+				this.y = y;
+				this.vx = vx;
+				this.vy = vy;
+				this.color = color(random(255), random(255), random(255));
+			}
+
+			// Update the ball's position and velocity
+			update() {
+				this.vy += gravity;
+				this.x += this.vx;
+				this.y += this.vy;
+
+				// Handle collisions with walls
+				if (this.x - ballRadius < 0) {
+					this.x = ballRadius;
+					this.vx = -this.vx;
+				}
+				if (this.x + ballRadius > width) {
+					this.x = width - ballRadius;
+					this.vx = -this.vx;
+				}
+				if (this.y - ballRadius < 0) {
+					this.y = ballRadius;
+					this.vy = -this.vy * restitution;
+				}
+				if (this.y + ballRadius > height) {
+					this.y = height - ballRadius;
+					this.vy = -this.vy * restitution;
+				}
+			}
+
+			// Draw the ball on the canvas
+			draw() {
+				fill(this.color);
+				noStroke();
+				ellipse(this.x, this.y, ballRadius * 2, ballRadius * 2);
+			}
+		}
+
+		// Define an array to hold the balls
+		let balls = [];
+
+		function setup() {
+			// Create the canvas
+			createCanvas(windowWidth, windowHeight);
+
+			// Create the balls and add them to the array
+			for (let i = 0; i < numBalls; i++) {
+				let x = random(ballRadius, width - ballRadius);
+				let y = random(ballRadius, height - ballRadius);
+				let vx = random(-5, 5);
+				let vy = random(-5, 5);
+				balls.push(new Ball(x, y, vx, vy));
+			}
+		}
+
+		function draw() {
+			// Clear the canvas
+			background(255);
+
+			// Loop through the balls and update/draw them
+			for (let ball of balls) {
+				ball.update();
+				ball.draw();
+			}
+
+			// Add some chaos to the balls' velocities
+			for (let ball of balls) {
+				ball.vx += random(-chaosFactor, chaosFactor);
+				ball.vy += random(-chaosFactor, chaosFactor);
+			}
+		}
+	</script>
+</body>
+
+</html>
