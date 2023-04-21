@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Object Trajectory Simulation</title>
+    <style>
+      #canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+
+      let x = 50;
+      let y = 50;
+      let vx = 10;
+      let vy = 0;
+      let t = 0;
+      const g = 9.81;
+      const dt = 0.1;
+
+      function clearCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+
+      function drawObject() {
+        ctx.beginPath();
+        ctx.arc(x, y, 10, 0, 2 * Math.PI);
+        ctx.fillStyle = "#0095DD";
+        ctx.fill();
+        ctx.closePath();
+      }
+
+      function moveObject() {
+        clearCanvas();
+
+        drawObject();
+
+        x += vx * dt;
+        y += vy * dt;
+
+        vy += g * dt;
+
+        t += dt;
+
+        if (y > canvas.height - 10) {
+          vy = -vy * 0.8;
+          y = canvas.height - 10;
+        }
+
+        if (x > canvas.width) {
+          x = 0;
+          y = 50;
+          vy = 0;
+          t = 0;
+        }
+      }
+
+      setInterval(moveObject, 10);
+    </script>
+  </body>
+</html>
