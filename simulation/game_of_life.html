@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Conway's Game of Life</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const width = 1200;
+      const height = 1000;
+      const cellSize = 10;
+      const rows = height / cellSize;
+      const cols = width / cellSize;
+      let gameBoard = new Array(rows).fill(null).map(() => new Array(cols).fill(false));
+
+      // Initialize the game board with random cells
+      for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+          gameBoard[i][j] = Math.random() >= 0.5;
+        }
+      }
+
+      // Define the function to draw the game board
+      function drawGameBoard() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < cols; j++) {
+            if (gameBoard[i][j]) {
+              ctx.fillRect(j * cellSize, i * cellSize, cellSize, cellSize);
+            }
+          }
+        }
+      }
+
+      // Define the function to get the number of live neighbors
+      function getLiveNeighborCount(row, col) {
+        let liveNeighborCount = 0;
+        for (let i = row - 1; i <= row + 1; i++) {
+          for (let j = col - 1; j <= col + 1; j++) {
+            // Skip the current cell
+            if (i === row && j === col) {
+              continue;
+            }
+            // Wrap around the edges of the board
+            const wrappedI = (i + rows) % rows;
+            const wrappedJ = (j + cols) % cols;
+            if (gameBoard[wrappedI][wrappedJ]) {
+              liveNeighborCount++;
+            }
+          }
+        }
+        return liveNeighborCount;
+      }
+
+      // Define the function to update the game board
+      function updateGameBoard() {
+        let newGameBoard = new Array(rows).fill(null).map(() => new Array(cols).fill(false));
+        for (let i = 0; i < rows; i++) {
+          for (let j = 0; j < cols; j++) {
+            const liveNeighborCount = getLiveNeighborCount(i, j);
+            if (gameBoard[i][j]) {
+              if (liveNeighborCount < 2 || liveNeighborCount > 3) {
+                newGameBoard[i][j] = false;
+              } else {
+                newGameBoard[i][j] = true;
+              }
+            } else {
+              if (liveNeighborCount === 3) {
+                newGameBoard[i][j] = true;
+              } else {
+                newGameBoard[i][j] = false;
+              }
+            }
+          }
+        }
+        gameBoard = newGameBoard;
+      }
+
+      // Run the simulation
+      setInterval(() => {
+        updateGameBoard();
+        drawGameBoard();
+      }, 100);
+    </script>
+  </body>
+</html>
