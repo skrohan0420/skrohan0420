@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Image Upload Preview</title>
+    <style>
+        #imagePreview {
+            max-width: 100%;
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="file" id="fileInput">
+    <img id="imagePreview" src="#" alt="Preview" style="max-width: 100%; display: none;">
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fileInput = document.getElementById("fileInput");
+            const imagePreview = document.getElementById("imagePreview");
+
+            fileInput.addEventListener("change", function () {
+                const file = fileInput.files[0];
+
+                if (file) {
+                    const reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        imagePreview.src = e.target.result;
+                        imagePreview.style.display = "block";
+                    };
+
+                    reader.readAsDataURL(file);
+                } else {
+                    imagePreview.src = "#";
+                    imagePreview.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
