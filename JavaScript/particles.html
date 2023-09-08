@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Particle Transformation Visualization</title>
+    <style>
+        canvas {
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        const particles = [];
+        const numParticles = 100;
+
+        // Initialize particles
+        for (let i = 0; i < numParticles; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 20 + 5, // Random radius between 5 and 25
+                color: `rgb(${Math.random() * 255},${Math.random() * 255},${Math.random() * 255})`, // Random color
+                speedX: Math.random() * 4 - 2, // Random horizontal speed between -2 and 2
+                speedY: Math.random() * 4 - 2, // Random vertical speed between -2 and 2
+                rotationSpeed: Math.random() * 0.2 - 0.1, // Random rotation speed between -0.1 and 0.1
+            });
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            particles.forEach((particle) => {
+                // Update particle position
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+
+                // Apply rotation transformation
+                ctx.save();
+                ctx.translate(particle.x, particle.y);
+                ctx.rotate(particle.rotationSpeed);
+
+                // Draw the particle
+                ctx.beginPath();
+                ctx.arc(0, 0, particle.radius, 0, Math.PI * 2);
+                ctx.fillStyle = particle.color;
+                ctx.fill();
+                ctx.closePath();
+
+                // Restore the canvas state
+                ctx.restore();
+
+                // Wrap particles around the canvas edges
+                if (particle.x < 0) particle.x = canvas.width;
+                if (particle.x > canvas.width) particle.x = 0;
+                if (particle.y < 0) particle.y = canvas.height;
+                if (particle.y > canvas.height) particle.y = 0;
+            });
+        }
+
+        animate();
+    </script>
+</body>
+</html>
