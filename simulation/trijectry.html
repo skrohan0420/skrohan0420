@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Simulation</title>
+    <style>
+        *{
+            box-sizing: border-box;
+            padding: 0px;
+            margin: 0px;
+        }
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="trajectoryCanvas"></canvas>
+    <script>
+        const canvas = document.getElementById('trajectoryCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Define projectile properties
+        const projectile = {
+            x: 50,
+            y: canvas.height - 50,
+            velocity: 20,
+            angle: Math.PI / 3, // 45 degrees
+            gravity: .5,
+            time: 2,
+            path: [],
+        };
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Update projectile position
+            const x = projectile.x + Math.cos(projectile.angle) * projectile.velocity * projectile.time;
+            const y = projectile.y - Math.sin(projectile.angle) * projectile.velocity * projectile.time + 0.5 * projectile.gravity * Math.pow(projectile.time, 2);
+
+            // Store the current position in the path
+            projectile.path.push({ x, y });
+
+            // Draw the trajectory path
+            ctx.beginPath();
+            ctx.moveTo(projectile.x, projectile.y);
+            ctx.strokeStyle = 'blue';
+            ctx.lineWidth = 1;
+
+            for (const point of projectile.path) {
+                ctx.lineTo(point.x, point.y);
+            }
+
+            ctx.stroke();
+
+            // Draw the projectile
+            ctx.beginPath();
+            ctx.arc(x, y, 5, 0, Math.PI * 2);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+
+            // Draw the ground
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height);
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.strokeStyle = 'black';
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            // Request animation frame
+            if (y <= canvas.height) {
+                // Continue animation until the projectile hits the ground
+                projectile.time += 0.5;
+                requestAnimationFrame(draw);
+            }
+        }
+
+        draw();
+
+        // Resize canvas with window
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+    </script>
+</body>
+</html>
