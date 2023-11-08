@@ -1,0 +1,147 @@
+[18-Jun-2023 16:11:48 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Instamojo" not found in /home3/orkajvib/public_html/payment/instamojo/index.php:3
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 3
+[18-Jun-2023 16:12:43 UTC] PHP Warning:  require(instamojo.php): Failed to open stream: No such file or directory in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:12:43 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'instamojo.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/orkajvib/public_html/payment/instamojo/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:12:44 UTC] PHP Warning:  require(instamojo.php): Failed to open stream: No such file or directory in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:12:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'instamojo.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/orkajvib/public_html/payment/instamojo/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:17:12 UTC] PHP Warning:  require(instamojo.php): Failed to open stream: No such file or directory in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:17:12 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'instamojo.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/orkajvib/public_html/payment/instamojo/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:17:41 UTC] PHP Warning:  require(./instamojo.php): Failed to open stream: No such file or directory in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:17:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required './instamojo.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/orkajvib/public_html/payment/instamojo/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:17:49 UTC] PHP Warning:  require(./instamojo.php): Failed to open stream: No such file or directory in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:17:49 UTC] PHP Fatal error:  Uncaught Error: Failed opening required './instamojo.php' (include_path='.:/opt/cpanel/ea-php80/root/usr/share/pear') in /home3/orkajvib/public_html/payment/instamojo/index.php:2
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 2
+[18-Jun-2023 16:18:59 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:18:59 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:18:59 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:18:59 UTC] PHP Warning:  Undefined variable $authType in /home3/orkajvib/public_html/payment/instamojo/index.php on line 3
+[18-Jun-2023 16:18:59 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams(NULL, Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(4): Instamojo\Instamojo::init(NULL, Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:19:00 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:19:00 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:19:00 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:19:00 UTC] PHP Warning:  Undefined variable $authType in /home3/orkajvib/public_html/payment/instamojo/index.php on line 3
+[18-Jun-2023 16:19:00 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams(NULL, Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(4): Instamojo\Instamojo::init(NULL, Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:19:40 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:19:40 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:19:40 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:19:40 UTC] PHP Warning:  Undefined variable $authType in /home3/orkajvib/public_html/payment/instamojo/index.php on line 3
+[18-Jun-2023 16:19:40 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams(NULL, Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(4): Instamojo\Instamojo::init(NULL, Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:20:33 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:20:33 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:20:33 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:20:33 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams('app/user', Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(5): Instamojo\Instamojo::init('app/user', Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:20:34 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:20:34 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:20:34 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:20:34 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams('app/user', Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(5): Instamojo\Instamojo::init('app/user', Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:20:35 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:20:35 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:20:35 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:20:35 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams('app/user', Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(5): Instamojo\Instamojo::init('app/user', Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:21:39 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:21:39 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:21:39 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:21:39 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams('app/user', Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(9): Instamojo\Instamojo::init('app/user', Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:23:57 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:23:57 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:23:57 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:23:57 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams('app/user', Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(9): Instamojo\Instamojo::init('app/user', Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:24:49 UTC] PHP Deprecated:  Required parameter $params follows optional parameter $type in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 193
+[18-Jun-2023 16:24:49 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__wakeup() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 619
+[18-Jun-2023 16:24:49 UTC] PHP Warning:  The magic method Instamojo\Instamojo::__sleep() must have public visibility in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 625
+[18-Jun-2023 16:24:49 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Exceptions\InvalidRequestException" not found in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php:234
+Stack trace:
+#0 /home3/orkajvib/public_html/payment/instamojo/Instamojo.php(195): Instamojo\Instamojo::validateTypeParams('app/user', Array)
+#1 /home3/orkajvib/public_html/payment/instamojo/index.php(11): Instamojo\Instamojo::init('app/user', Array)
+#2 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/Instamojo.php on line 234
+[18-Jun-2023 16:34:13 UTC] PHP Fatal error:  Uncaught Error: Class "Instamojo\Instamojo" not found in /home3/orkajvib/public_html/payment/instamojo/index.php:9
+Stack trace:
+#0 {main}
+  thrown in /home3/orkajvib/public_html/payment/instamojo/index.php on line 9
+[18-Jun-2023 16:34:41 UTC] PHP Warning:  Undefined array key "purpose" in /home3/orkajvib/public_html/payment/instamojo/index.php on line 13
+[18-Jun-2023 16:34:41 UTC] PHP Warning:  Undefined array key "name" in /home3/orkajvib/public_html/payment/instamojo/index.php on line 14
+[19-Jun-2023 15:36:54 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 10
+[19-Jun-2023 15:36:54 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 11
+[19-Jun-2023 15:37:09 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 11
+[19-Jun-2023 15:37:09 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 12
+[19-Jun-2023 15:38:54 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 12
+[19-Jun-2023 15:38:54 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 13
+[19-Jun-2023 15:39:15 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 13
+[19-Jun-2023 15:39:15 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 14
+[19-Jun-2023 15:39:16 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 13
+[19-Jun-2023 15:39:16 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 14
+[19-Jun-2023 15:41:05 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 13
+[19-Jun-2023 15:41:05 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 14
+[19-Jun-2023 15:42:30 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 13
+[19-Jun-2023 15:42:30 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 14
+[19-Jun-2023 15:43:49 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:43:49 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17
+[19-Jun-2023 15:44:24 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:44:24 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17
+[19-Jun-2023 15:47:45 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:47:45 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17
+[19-Jun-2023 15:47:47 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:47:47 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17
+[19-Jun-2023 15:48:09 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:48:09 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17
+[19-Jun-2023 15:48:15 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:48:15 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17
+[19-Jun-2023 15:48:18 UTC] PHP Warning:  Undefined array key "payment_id" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 16
+[19-Jun-2023 15:48:18 UTC] PHP Warning:  Undefined array key "payment_status" in /home3/orkajvib/public_html/payment/instamojo/status.php on line 17

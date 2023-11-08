@@ -1,0 +1,4 @@
+[28-Aug-2023 10:01:04 UTC] PHP Parse error:  syntax error, unexpected ''csr' (T_ENCAPSED_AND_WHITESPACE), expecting ']' in /home/customer/www/v-xplore.com/public_html/dev/rohan/mail/application/config/config.php on line 460
+[28-Aug-2023 10:01:04 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
+[28-Aug-2023 10:01:04 UTC] PHP Parse error:  syntax error, unexpected ''csr' (T_ENCAPSED_AND_WHITESPACE), expecting ']' in /home/customer/www/v-xplore.com/public_html/dev/rohan/mail/application/config/config.php on line 460
+[28-Aug-2023 10:01:04 UTC] PHP Fatal error:  Exception thrown without a stack frame in Unknown on line 0
