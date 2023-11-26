@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+  
+        canvas {
+          display: block;
+          border: 1px solid black;
+        }
+      </style>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+
+
+    <script>
+        // Constants
+        const GRAVITY = 9.81; // m/s^2 a gravitational constant
+
+        const LENGTH_1 = 150; // Length of pendulum 1 (in pixels)
+        const LENGTH_2 = 100; // Length of pendulum 2 (in pixels)
+        const MASS_1 = 100; // Mass of pendulum 1 (in kilograms)
+        const MASS_2 = 120; // Mass of pendulum 2 (in kilograms)
+        const TIME_STEP = 0.05; // Time step (in seconds)
+
+        // Variables
+        let theta1 = Math.PI / 2; // Initial angle of pendulum 1 (in radians)
+        let theta2 = Math.PI / 2; // Initial angle of pendulum 2 (in radians)
+        let omega1 = 0; // Initial angular velocity of pendulum 1 (in radians per second)
+        let omega2 = 0; // Initial angular velocity of pendulum 2 (in radians per second)
+
+        // Get canvas element and context
+        const canvas = document.getElementById("canvas");
+        const ctx = canvas.getContext("2d");
+
+        // Set canvas size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Main loop
+        function loop() {
+            // Clear canvas
+            // ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Calculate angles and angular velocities
+            const alpha1 = (-GRAVITY * (2 * MASS_1 + MASS_2) * Math.sin(theta1) - MASS_2 * GRAVITY * Math.sin(theta1 - 2 * theta2) - 2 * Math.sin(theta1 - theta2) * MASS_2 * (omega2 * omega2 * LENGTH_2 + omega1 * omega1 * LENGTH_1 * Math.cos(theta1 - theta2))) / (LENGTH_1 * (2 * MASS_1 + MASS_2 - MASS_2 * Math.cos(2 * theta1 - 2 * theta2)));
+            const alpha2 = (2 * Math.sin(theta1 - theta2) * (omega1 * omega1 * LENGTH_1 * (MASS_1 + MASS_2) + GRAVITY * (MASS_1 + MASS_2) * Math.cos(theta1) + omega2 * omega2 * LENGTH_2 * MASS_2 * Math.cos(theta1 - theta2))) / (LENGTH_2 * (2 * MASS_1 + MASS_2 - MASS_2 * Math.cos(2 * theta1 - 2 * theta2)));
+
+            omega1 += alpha1 * TIME_STEP;
+            omega2 += alpha2 * TIME_STEP;
+            theta1 += omega1 * TIME_STEP;
+            theta2 += omega2 * TIME_STEP;
+
+            // Draw pendulums
+            const x1 = canvas.width / 2 + LENGTH_1 * Math.sin(theta1);
+            const y1 = canvas.height / 2 + LENGTH_1 * Math.cos(theta1);
+
+            const x2 = x1 + LENGTH_2 * Math.sin(theta2);
+            const y2 = y1 + LENGTH_2 * Math.cos(theta2);
+
+            ctx.beginPath();
+            ctx.moveTo(canvas.width / 2, canvas.height / 2);
+            ctx.lineTo(x1, y1);
+            ctx.stroke();
+
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.stroke();
+
+            drawPoint(ctx, x1, y1, 'red', 1.5);
+            drawPoint(ctx, x2, y2, 'red', 1.5);
+
+            // Request animation frame
+            requestAnimationFrame(loop);
+        }
+
+        function drawPoint(context, x, y, color, size) {
+            if (color == null) {
+                color = '#000';
+            }
+            if (size == null) {
+                size = 5;
+            }
+            var radius = 0.5 * size;
+            // to increase smoothing for numbers with decimal part
+            var pointX = Math.round(x - radius);
+            var pointY = Math.round(y - radius);
+            context.beginPath();
+            context.fillStyle = color;
+            context.fillRect(pointX, pointY, size, size);
+            context.fill();
+        }
+
+
+
+
+
+
+       
+
+
+        // Start the loop
+        loop();
+        // This code uses the equations of motion to simulate the motion of a double pendulum.The angles and angular velocities
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
+
