@@ -11,7 +11,7 @@
 
 - 📫 How to reach me **skrohan0420@gmail.com**
 
-- ⚡ Fun fact **I think i am nihilist**
+- ⚡ Fun fact **i am a nihilist**
 
 ### Blogs posts
 <!-- BLOG-POST-LIST:START -->
