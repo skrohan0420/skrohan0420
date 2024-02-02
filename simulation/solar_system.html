@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+    <title>Accurate Solar System Simulation</title>
+</head>
+<body>
+    <canvas id="solarSystemCanvas" width="800" height="800"></canvas>
+    <script>
+        const canvas = document.getElementById('solarSystemCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const G = 6.67430e-11;
+
+        class CelestialBody {
+            constructor(name, mass, radius, color, distance, angle, angularVelocity) {
+                this.name = name;
+                this.mass = mass;
+                this.radius = radius;
+                this.color = color;
+                this.distance = distance;
+                this.angle = angle;
+                this.angularVelocity = angularVelocity;
+                this.x = 0;
+                this.y = 0;
+                this.vx = 0;
+                this.vy = 0;
+            }
+
+            updatePositionVelocity(celestialBodies, dt) {
+                const k1 = this.calculateForces(celestialBodies);
+                const k2 = this.calculateForces(celestialBodies.map(body => body.cloneWithK1(k1, dt / 2)));
+                const k3 = this.calculateForces(celestialBodies.map(body => body.cloneWithK2(k2, dt / 2)));
+                const k4 = this.calculateForces(celestialBodies.map(body => body.cloneWithK3(k3, dt)));
+
+                this.applyK1K2K3K4(k1, k2, k3, k4, dt);
+            }
+
+            calculateForces(celestialBodies) {
+                const forces = celestialBodies.map(body => {
+                    if (body !== this) {
+                        const dx = body.x - this.x;
+                        const dy = body.y - this.y;
+                        const distance = Math.sqrt(dx**2 + dy**2);
+
+                        const fx = G * this.mass * body.mass * dx / distance**3;
+                        const fy = G * this.mass * body.mass * dy / distance**3;
+
+                        return { fx, fy };
+                    }
+                    return { fx: 0, fy: 0 };
+                });
+
+                return forces;
+            }
+
+            applyK1K2K3K4(k1, k2, k3, k4, dt) {
+                for (let i = 0; i < k1.length; i++) {
+                    this.vx += (k1[i].fx + 2 * k2[i].fx + 2 * k3[i].fx + k4[i].fx) * dt / 6 / this.mass;
+                    this.vy += (k1[i].fy + 2 * k2[i].fy + 2 * k3[i].fy + k4[i].fy) * dt / 6 / this.mass;
+                }
+
+                this.x += this.vx * dt;
+                this.y += this.vy * dt;
+
+                this.angle = Math.atan2(this.y, this.x);
+            }
+
+            cloneWithK1(k1, dt) {
+                const clone = new CelestialBody(this.name, this.mass, this.radius, this.color, this.distance, this.angle, this.angularVelocity);
+                clone.x = this.x + this.vx * dt / 2;
+                clone.y = this.y + this.vy * dt / 2;
+                clone.vx = this.vx + k1[0].fx * dt / 2 / this.mass;
+                clone.vy = this.vy + k1[0].fy * dt / 2 / this.mass;
+                return clone;
+            }
+
+            cloneWithK2(k2, dt) {
+                const clone = new CelestialBody(this.name, this.mass, this.radius, this.color, this.distance, this.angle, this.angularVelocity);
+                clone.x = this.x + this.vx * dt / 2;
+                clone.y = this.y + this.vy * dt / 2;
+                clone.vx = this.vx + k2[0].fx * dt / 2 / this.mass;
+                clone.vy = this.vy + k2[0].fy * dt / 2 / this.mass;
+                return clone;
+            }
+
+            cloneWithK3(k3, dt) {
+                const clone = new CelestialBody(this.name, this.mass, this.radius, this.color, this.distance, this.angle, this.angularVelocity);
+                clone.x = this.x + this.vx * dt;
+                clone.y = this.y + this.vy * dt;
+                clone.vx = this.vx + k3[0].fx * dt / this.mass;
+                clone.vy = this.vy + k3[0].fy * dt / this.mass;
+                return clone;
+            }
+
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x + canvas.width / 2, this.y + canvas.height / 2, this.radius, 0, 2 * Math.PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+                ctx.strokeStyle = 'black';
+                ctx.stroke();
+            }
+        }
+
+        const sun = new CelestialBody('Sun', 1.989e30, 50, 'yellow', 0, 0, 0);
+        const earth = new CelestialBody('Earth', 5.972e24, 10, 'blue', 300, Math.PI / 4, 0.01);
+        const moon = new CelestialBody('Moon', 7.342e22, 5, 'gray', 70, Math.PI / 2, 0.1);
+
+        const celestialBodies = [sun, earth, moon];
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            celestialBodies.forEach(body => {
+                body.updatePositionVelocity(celestialBodies, 0.1);
+            });
+
+            celestialBodies.forEach(body => {
+                body.draw();
+            });
+
+            // Draw connecting lines for orbits
+            for (let i = 1; i < celestialBodies.length; i++) {
+                ctx.beginPath();
+                ctx.moveTo(celestialBodies[i].x + canvas.width / 2, celestialBodies[i].y + canvas.height / 2);
+                ctx.lineTo(celestialBodies[i - 1].x + canvas.width / 2, celestialBodies[i - 1].y + canvas.height / 2);
+                ctx.strokeStyle = 'gray';
+                ctx.stroke();
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>

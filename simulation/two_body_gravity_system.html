@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+    <title>Two-Body Gravity Simulation</title>
+</head>
+<body>
+    <canvas id="gravityCanvas" width="500" height="500"></canvas>
+    <script>
+        const canvas = document.getElementById('gravityCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const G = 6.67430e-11;
+        const m1 = 1.0;
+        const m2 = 1.0;
+
+        let x1 = 200;
+        let y1 = 250;
+        let vx1 = 0;
+        let vy1 = 2;
+
+        let x2 = 300;
+        let y2 = 250;
+        let vx2 = 0;
+        let vy2 = -2;
+
+        const dt = 0.1;
+
+        function gravitationalForce(x1, y1, x2, y2) {
+            const rSquared = Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2);
+            const force = G * m1 * m2 / rSquared;
+            const angle = Math.atan2(y2 - y1, x2 - x1);
+            const fx = force * Math.cos(angle);
+            const fy = force * Math.sin(angle);
+            return [fx, fy];
+        }
+
+        function updatePositionVelocity(x, y, vx, vy, fx, fy) {
+            const ax = fx / m1;
+            const ay = fy / m1;
+            vx += ax * dt;
+            vy += ay * dt;
+            x += vx * dt;
+            y += vy * dt;
+            return [x, y, vx, vy];
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            const [fx1, fy1] = gravitationalForce(x1, y1, x2, y2);
+            const [fx2, fy2] = gravitationalForce(x2, y2, x1, y1);
+
+            const [nx1, ny1, nvx1, nvy1] = updatePositionVelocity(x1, y1, vx1, vy1, fx1, fy1);
+            const [nx2, ny2, nvx2, nvy2] = updatePositionVelocity(x2, y2, vx2, vy2, fx2, fy2);
+
+            x1 = nx1;
+            y1 = ny1;
+            vx1 = nvx1;
+            vy1 = nvy1;
+
+            x2 = nx2;
+            y2 = ny2;
+            vx2 = nvx2;
+            vy2 = nvy2;
+
+            // Draw the objects
+            ctx.beginPath();
+            ctx.arc(x1, y1, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = 'blue';
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(x2, y2, 10, 0, 2 * Math.PI);
+            ctx.fillStyle = 'red';
+            ctx.fill();
+
+            // Draw the connecting line
+            ctx.beginPath();
+            ctx.moveTo(x1, y1);
+            ctx.lineTo(x2, y2);
+            ctx.strokeStyle = 'black';
+            ctx.stroke();
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+</html>

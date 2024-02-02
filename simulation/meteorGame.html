@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+    <title>Meteor Game</title>
+</head>
+<body>
+    <canvas id="meteorGameCanvas" width="600" height="400"></canvas>
+    <script>
+        const canvas = document.getElementById('meteorGameCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const spaceship = {
+            x: canvas.width / 2,
+            y: canvas.height - 50,
+            width: 5,
+            height: 5,
+            speed: 5,
+        };
+
+        const meteors = [];
+        const meteorSpeed = 2;
+
+        function drawSpaceship() {
+            ctx.fillStyle = 'blue';
+            ctx.fillRect(spaceship.x - spaceship.width / 2, spaceship.y - spaceship.height / 2, spaceship.width, spaceship.height);
+        }
+
+        function drawMeteors() {
+            ctx.fillStyle = 'red';
+            for (const meteor of meteors) {
+                ctx.beginPath();
+                ctx.arc(meteor.x, meteor.y, meteor.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        function updateSpaceship() {
+            if (isKeyPressed('ArrowLeft') && spaceship.x - spaceship.width / 2 > 0) {
+                spaceship.x -= spaceship.speed;
+            }
+            if (isKeyPressed('ArrowRight') && spaceship.x + spaceship.width / 2 < canvas.width) {
+                spaceship.x += spaceship.speed;
+            }
+        }
+
+        function updateMeteors() {
+            for (const meteor of meteors) {
+                meteor.y += meteorSpeed;
+
+                // Check collision with spaceship
+                if (
+                    meteor.x + meteor.radius > spaceship.x - spaceship.width / 2 &&
+                    meteor.x - meteor.radius < spaceship.x + spaceship.width / 2 &&
+                    meteor.y + meteor.radius > spaceship.y - spaceship.height / 2 &&
+                    meteor.y - meteor.radius < spaceship.y + spaceship.height / 2
+                ) {
+                    alert('Game Over!'); // You can replace this with your game over logic
+                    resetGame();
+                }
+
+                // Remove meteors that are out of the canvas
+                if (meteor.y - meteor.radius > canvas.height) {
+                    const index = meteors.indexOf(meteor);
+                    meteors.splice(index, 1);
+                }
+            }
+        }
+
+        function resetGame() {
+            spaceship.x = canvas.width / 2;
+            meteors.length = 0; // Clear the array
+        }
+
+        function isKeyPressed(key) {
+            return keyState[key] === true;
+        }
+
+        const keyState = {};
+
+        window.addEventListener('keydown', (event) => {
+            keyState[event.key] = true;
+        });
+
+        window.addEventListener('keyup', (event) => {
+            keyState[event.key] = false;
+        });
+
+        function spawnMeteor() {
+            const radius = Math.random() * 2 + 1; // Random radius between 10 and 30
+            const x = Math.random() * (canvas.width - 2 * radius) + radius; // Random x-coordinate
+            const y = -radius; // Start above the canvas
+            meteors.push({ x, y, radius });
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            updateSpaceship();
+            updateMeteors();
+            drawSpaceship();
+            drawMeteors();
+            const randomNumber = Math.floor(Math.random() * (9999 - 1000 + 1)) + 1000;
+
+            if(randomNumber%11 == 0){
+                spawnMeteor(); // Spawn a new meteor in each frame
+            }
+            
+            requestAnimationFrame(draw);
+        }
+
+        draw(); // Start the game loop
+    </script>
+</body>
+</html>

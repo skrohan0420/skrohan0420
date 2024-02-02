@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        canvas {
+            border: 1px solid #fff;
+            display: block;
+            margin: 20px auto;
+            background-color: #000;
+        }
+    </style>
+    <title>Space Simulator</title>
+</head>
+<body>
+    <canvas id="spaceSimulatorCanvas" width="800" height="600"></canvas>
+    <script>
+        const canvas = document.getElementById('spaceSimulatorCanvas');
+        const ctx = canvas.getContext('2d');
+
+        const G = 6.674e-11; // Gravitational constant
+        const deltaTime = 0.1; // Time step for simulation
+
+        const bodies = [
+            { mass: 5.97e24, x: 400, y: 300, vx: 0, vy: 0, radius: 10, color: 'blue' }, // Earth
+            { mass: 7.35e22, x: 550, y: 300, vx: 0, vy: -350, radius: 5, color: 'gray' }, // Moon
+        ];
+
+        function update() {
+            updateForces();
+            updatePositions();
+        }
+
+        function updateForces() {
+            for (const body of bodies) {
+                body.fx = 0;
+                body.fy = 0;
+
+                for (const otherBody of bodies) {
+                    if (body !== otherBody) {
+                        const dx = otherBody.x - body.x;
+                        const dy = otherBody.y - body.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        const force = (G * body.mass * otherBody.mass) / (distance * distance);
+
+                        body.fx += force * (dx / distance);
+                        body.fy += force * (dy / distance);
+                    }
+                }
+            }
+        }
+
+        function updatePositions() {
+            for (const body of bodies) {
+                body.vx += body.fx / body.mass * deltaTime;
+                body.vy += body.fy / body.mass * deltaTime;
+
+                body.x += body.vx * deltaTime;
+                body.y += body.vy * deltaTime;
+            }
+        }
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (const body of bodies) {
+                ctx.fillStyle = body.color;
+                ctx.beginPath();
+                ctx.arc(body.x, body.y, body.radius, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            requestAnimationFrame(draw);
+        }
+
+        function simulate() {
+            update();
+            draw();
+            setTimeout(simulate, 16); // Simulate at approximately 60 frames per second
+        }
+
+        simulate();
+    </script>
+</body>
+</html>
