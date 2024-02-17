@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Rohan</h1>
-<h3 align="center">A passionate fullstack web developer from India skilled in PHP, CodeIgniter, MERN stack (MongoDB, Express.js, React.js, Node.js), SQL, jQuery, and Bootstrap. 🚀 Specialized in crafting scalable and efficient web solutions with attention to detail. 🎨 Experienced in both front-end and back-end development, ensuring seamless user experiences. 💡 Committed to staying updated on industry trends and using the latest technologies. 💻 Open to collaboration on innovative projects. 🌐 Let's connect and explore possibilities in the world of web development !</h3>
+<h3 align="justify">A passionate fullstack web developer from India skilled in PHP, CodeIgniter, MERN stack (MongoDB, Express.js, React.js, Node.js), SQL, jQuery, and Bootstrap. 🚀 Specialized in crafting scalable and efficient web solutions with attention to detail. 🎨 Experienced in both front-end and back-end development, ensuring seamless user experiences. 💡 Committed to staying updated on industry trends and using the latest technologies. 💻 Open to collaboration on innovative projects. 🌐 Let's connect and explore possibilities in the world of web development !</h3>
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=skrohan0420&label=Profile%20views&color=0e75b6&style=flat" alt="skrohan0420" /> </p>
 
