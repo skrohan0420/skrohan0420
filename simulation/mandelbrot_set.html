@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandelbrot Set Visualization</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="mandelbrotCanvas" width="800" height="800"></canvas>
+    <script>
+        const canvas = document.getElementById('mandelbrotCanvas');
+        const ctx = canvas.getContext('2d');
+        const width = canvas.width;
+        const height = canvas.height;
+
+        function mandelbrot(c_real, c_imaginary) {
+            let z_real = 0;
+            let z_imaginary = 0;
+            let iteration = 0;
+            const maxIterations = 100;
+
+            while (z_real * z_real + z_imaginary * z_imaginary <= 4 && iteration < maxIterations) {
+                const temp = z_real * z_real - z_imaginary * z_imaginary + c_real;
+                z_imaginary = 2 * z_real * z_imaginary + c_imaginary;
+                z_real = temp;
+                iteration++;
+            }
+
+            if (iteration === maxIterations) {
+                return maxIterations;
+            }
+
+            return iteration + 1 - Math.log(Math.log(Math.sqrt(z_real * z_real + z_imaginary * z_imaginary))) / Math.log(2);
+        }
+
+        function drawMandelbrot() {
+            const minX = -2;
+            const maxX = 2;
+            const minY = -2;
+            const maxY = 2;
+            const maxIterations = 100;
+            const imageData = ctx.createImageData(width, height);
+
+            for (let x = 0; x < width; x++) {
+                for (let y = 0; y < height; y++) {
+                    const c_real = minX + (x / width) * (maxX - minX);
+                    const c_imaginary = minY + (y / height) * (maxY - minY);
+
+                    const value = mandelbrot(c_real, c_imaginary);
+                    const color = value === maxIterations ? 0 : value / maxIterations * 255;
+
+                    const index = (y * width + x) * 4;
+                    imageData.data[index] = color;        // Red channel
+                    imageData.data[index + 1] = color;    // Green channel
+                    imageData.data[index + 2] = color;    // Blue channel
+                    imageData.data[index + 3] = 255;      // Alpha channel
+                }
+            }
+
+            ctx.putImageData(imageData, 0, 0);
+        }
+
+        drawMandelbrot();
+    </script>
+</body>
+</html>
