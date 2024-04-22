@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+		*{
+			box-sizing: border-box;
+			margin: 0px;
+			padding: 0px;
+		}
+      #content {
+        height: 100vh;
+        width: 100vw;
+      }
+
+      .trail {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        background-color: blue;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(document).on("mousemove", function (e) {
+          // Create a new element for the trail
+          var trail = $("<div>").addClass("trail");
+
+          // Set the position of the trail element
+          trail.css({
+            top: e.pageY,
+            left: e.pageX,
+          });
+
+          // Append the trail element to the document
+          $("body").append(trail);
+
+          // Remove the trail element after a certain duration (optional)
+          setTimeout(function () {
+            trail.remove();
+          }, 2000);
+        });
+      });
+    </script>
+  </body>
+</html>
