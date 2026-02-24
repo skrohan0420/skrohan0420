@@ -49,6 +49,10 @@
 		function start(){	
 			
 			setInterval(function(){
+				if(i > 60){
+					i = 1
+				}
+				console.log(i)
 				console.time('a')
 				var attVal = 'img/N'+ i +'.jpeg'
 
@@ -58,7 +62,7 @@
 				
 				i++
 					console.timeEnd('a')
-			},150)
+			},50)
 		
 		}
 	

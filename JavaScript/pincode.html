@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>West Bengal Pincode Extractor</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      padding: 24px;
+      background: #f9fafb;
+      color: #111827;
+    }
+    h1 {
+      margin-bottom: 8px;
+    }
+    p {
+      color: #4b5563;
+    }
+    input {
+      margin-top: 16px;
+    }
+    button {
+      margin-top: 16px;
+      padding: 10px 16px;
+      background: #2563eb;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:disabled {
+      background: #9ca3af;
+      cursor: not-allowed;
+    }
+    .log {
+      margin-top: 16px;
+      white-space: pre-wrap;
+      background: #111827;
+      color: #e5e7eb;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      max-height: 300px;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>West Bengal Pincode → JSON</h1>
+  <p>
+    Upload the GeoNames postal code <code>.txt</code> file.  
+    Only <strong>West Bengal</strong> pincodes will be extracted.
+  </p>
+
+  <input type="file" id="fileInput" accept=".txt" />
+  <br />
+  <button id="processBtn" disabled>Process & Download JSON</button>
+
+  <div class="log" id="log"></div>
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const processBtn = document.getElementById("processBtn");
+    const logEl = document.getElementById("log");
+
+    let fileContent = "";
+
+    fileInput.addEventListener("change", () => {
+      const file = fileInput.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = () => {
+        fileContent = reader.result;
+        processBtn.disabled = false;
+        log("File loaded. Ready to process.");
+      };
+      reader.readAsText(file, "utf-8");
+    });
+
+    processBtn.addEventListener("click", () => {
+      if (!fileContent) return;
+
+      const lines = fileContent.split("\n");
+      const seenPincodes = new Set();
+      const result = [];
+
+      let total = 0;
+      let wbCount = 0;
+
+      for (const line of lines) {
+        if (!line.trim()) continue;
+
+        total++;
+        const cols = line.split("\t");
+
+        // GeoNames columns
+        // 0 country code
+        // 1 postal code
+        // 3 admin name1 (state)
+        // 9 latitude
+        // 10 longitude
+        
+        // const state = cols[3];
+        // if (state !== "West Bengal") continue;
+
+        const pincode = cols[1];
+        const latitude = parseFloat(cols[9]);
+        const longitude = parseFloat(cols[10]);
+
+        if (!pincode || isNaN(latitude) || isNaN(longitude)) continue;
+        if (seenPincodes.has(pincode)) continue;
+
+        seenPincodes.add(pincode);
+        wbCount++;
+
+        result.push({
+          pincode: pincode,
+          latitude: latitude,
+          longitude: longitude
+        });
+      }
+
+      log(
+        `Total lines read: ${total}\n` +
+        `West Bengal pincodes extracted: ${wbCount}\n` +
+        `JSON objects generated: ${result.length}`
+      );
+
+      downloadJSON(result);
+    });
+
+    function downloadJSON(data) {
+      const blob = new Blob(
+        [JSON.stringify(data, null, 2)],
+        { type: "application/json" }
+      );
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "west_bengal_pincodes.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function log(msg) {
+      logEl.textContent += msg + "\n";
+    }
+  </script>
+</body>
+</html>

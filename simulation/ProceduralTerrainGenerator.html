@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Seeded Voxel Terrain</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #87ceeb;
+    }
+  </style>
+</head>
+
+<body>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script>
+    /* ========================= */
+    /*        SCENE SETUP        */
+    /* ========================= */
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0x87ceeb);
+
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true
+    });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    camera.position.set(8, 40, 30);
+
+    /* Lighting */
+    const sun = new THREE.DirectionalLight(0xffffff, 1);
+    sun.position.set(100, 200, 100);
+    scene.add(sun);
+    scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+
+    /* ========================= */
+    /*        WORLD CONFIG       */
+    /* ========================= */
+
+    const CHUNK_SIZE = 16;
+    const WORLD_HEIGHT = 64;
+    const BLOCK_SIZE = 1;
+    const SEED = 420;
+
+    /* ========================= */
+    /*       SEEDED PERLIN       */
+    /* ========================= */
+
+    function mulberry32(seed) {
+      return function() {
+        let t = seed += 0x6D2B79F5;
+        t = Math.imul(t ^ t >>> 15, t | 1);
+        t ^= t + Math.imul(t ^ t >>> 7, t | 61);
+        return ((t ^ t >>> 14) >>> 0) / 4294967296;
+      };
+    }
+
+    const rand = mulberry32(SEED);
+    const perm = new Uint8Array(512);
+    const p = new Uint8Array(256);
+
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [p[i], p[j]] = [p[j], p[i]];
+    }
+    for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
+
+    function fade(t) {
+      return t * t * t * (t * (t * 6 - 15) + 10);
+    }
+
+    function lerp(a, b, t) {
+      return a + t * (b - a);
+    }
+
+    function grad(hash, x, z) {
+      const h = hash & 3;
+      const u = h < 2 ? x : z;
+      const v = h < 2 ? z : x;
+      return ((h & 1) === 0 ? u : -u) +
+        ((h & 2) === 0 ? v : -v);
+    }
+
+    function perlin(x, z) {
+      const X = Math.floor(x) & 255;
+      const Z = Math.floor(z) & 255;
+
+      x -= Math.floor(x);
+      z -= Math.floor(z);
+
+      const u = fade(x);
+      const v = fade(z);
+
+      const aa = perm[perm[X] + Z];
+      const ab = perm[perm[X] + Z + 1];
+      const ba = perm[perm[X + 1] + Z];
+      const bb = perm[perm[X + 1] + Z + 1];
+
+      return lerp(
+        lerp(grad(aa, x, z), grad(ba, x - 1, z), u),
+        lerp(grad(ab, x, z - 1), grad(bb, x - 1, z - 1), u),
+        v
+      );
+    }
+
+    /* ========================= */
+    /*       TERRAIN HEIGHT      */
+    /* ========================= */
+
+    function getHeight(x, z) {
+      let total = 0;
+      let frequency = 0.05;
+      let amplitude = 15;
+      let persistence = 0.5;
+      let octaves = 4;
+
+      for (let i = 0; i < octaves; i++) {
+        total += perlin(x * frequency, z * frequency) * amplitude;
+        amplitude *= persistence;
+        frequency *= 2;
+      }
+
+      return Math.floor(total + 20);
+    }
+
+    /* ========================= */
+    /*       GENERATE CHUNK      */
+    /* ========================= */
+
+    const geometry = new THREE.BoxGeometry(BLOCK_SIZE, BLOCK_SIZE, BLOCK_SIZE);
+
+    function generateChunk(chunkX, chunkZ) {
+
+      const offsetX = chunkX * CHUNK_SIZE;
+      const offsetZ = chunkZ * CHUNK_SIZE;
+
+      for (let x = 0; x < CHUNK_SIZE; x++) {
+        for (let z = 0; z < CHUNK_SIZE; z++) {
+
+          const worldX = x + offsetX;
+          const worldZ = z + offsetZ;
+
+          const height = getHeight(worldX, worldZ);
+
+          for (let y = 0; y < height; y++) {
+
+            let color;
+
+            if (y === height - 1) color = 0x2ecc71; // grass
+            else if (y > height - 5) color = 0x8B4513; // dirt
+            else color = 0x777777; // stone
+
+            const material = new THREE.MeshStandardMaterial({
+              color
+            });
+            const cube = new THREE.Mesh(geometry, material);
+
+            cube.position.set(worldX, y, worldZ);
+            scene.add(cube);
+          }
+        }
+      }
+    }
+
+    /* Generate base 16x16 chunk at 0,0 */
+    generateChunk(0, 0);
+
+    /* ========================= */
+    /*         FPS CAMERA        */
+    /* ========================= */
+
+    let yaw = 0;
+    let pitch = 0;
+    const sensitivity = 0.002;
+    const speed = 0.3;
+    const keys = {};
+
+    document.addEventListener("keydown", e => keys[e.code] = true);
+    document.addEventListener("keyup", e => keys[e.code] = false);
+
+    document.body.addEventListener("click", () => {
+      document.body.requestPointerLock();
+    });
+
+    document.addEventListener("mousemove", (e) => {
+      if (document.pointerLockElement === document.body) {
+        yaw -= e.movementX * sensitivity;
+        pitch -= e.movementY * sensitivity;
+        pitch = Math.max(-Math.PI / 2, Math.min(Math.PI / 2, pitch));
+
+        camera.rotation.order = "YXZ";
+        camera.rotation.y = yaw;
+        camera.rotation.x = pitch;
+      }
+    });
+
+    function updateMovement() {
+      const direction = new THREE.Vector3();
+
+      if (keys["KeyW"]) direction.z += 1;
+      if (keys["KeyS"]) direction.z -= 1;
+      if (keys["KeyA"]) direction.x -= 1;
+      if (keys["KeyD"]) direction.x += 1;
+
+      direction.normalize();
+
+      const forward = new THREE.Vector3(0, 0, -1).applyQuaternion(camera.quaternion);
+      const right = new THREE.Vector3(1, 0, 0).applyQuaternion(camera.quaternion);
+
+      camera.position.addScaledVector(forward, direction.z * speed);
+      camera.position.addScaledVector(right, direction.x * speed);
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      updateMovement();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+
+</body>
+
+</html>
